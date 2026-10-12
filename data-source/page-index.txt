@@ -1,0 +1,69 @@
+Core /foundation-leak-repair-desoto/ | Foundation Leak Repair in DeSoto TX | Primary money page built around the exact domain keyword and emergency homeowner intent
+Core /foundation-repair-desoto-tx/ | Foundation Repair in DeSoto TX | Main broader service page targeting the highest DeSoto foundation repair cluster
+Core /foundation-repair-company-desoto-tx/ | Foundation Repair Company in DeSoto TX | Captures users comparing providers and ready to call
+Core /house-foundation-repair-desoto-tx/ | House Foundation Repair in DeSoto TX | Residential-focused conversion page for homeowners
+Core /home-foundation-repair-desoto-tx/ | Home Foundation Repair in DeSoto TX | Homeowner-language variant separated from house due conversion value
+Sub /foundation-crack-repair-desoto-tx/ | Foundation Crack Repair in DeSoto TX | Targets visible-damage searches with strong lead intent
+Sub /slab-foundation-repair-desoto-tx/ | Slab Foundation Repair in DeSoto TX | High-value structural page for Texas slab homes
+Sub /slab-leak-repair-desoto-tx/ | Slab Leak Repair in DeSoto TX | Crosses plumbing leak and foundation damage intent
+Sub /foundation-leak-detection-desoto-tx/ | Foundation Leak Detection in DeSoto TX | Diagnostic page for uncertain homeowners before repair conversion
+Sub /underground-leak-detection-desoto-tx/ | Underground Leak Detection in DeSoto TX | Targets property owners with hidden leak symptoms
+Sub /water-line-leak-repair-desoto-tx/ | Water Line Leak Repair in DeSoto TX | Connects plumbing line leaks to foundation risk
+Sub /foundation-inspection-desoto-tx/ | Foundation Inspection in DeSoto TX | Lower-friction lead capture for homeowners not ready for repair
+Sub /foundation-leveling-desoto-tx/ | Foundation Leveling in DeSoto TX | Captures severe settlement repair intent
+Sub /house-leveling-desoto-tx/ | House Leveling in DeSoto TX | Homeowner-friendly version of leveling intent
+Sub /pier-and-beam-foundation-repair-desoto-tx/ | Pier and Beam Foundation Repair in DeSoto TX | Specific foundation type page for older homes
+Sub /crawl-space-foundation-repair-desoto-tx/ | Crawl Space Foundation Repair in DeSoto TX | Problem-specific page for crawl space structural issues
+Sub /foundation-drainage-repair-desoto-tx/ | Foundation Drainage Repair in DeSoto TX | Prevention and repair page linking water control to structural outcomes
+Sub /french-drain-foundation-desoto-tx/ | French Drains for Foundation Protection in DeSoto TX | Specific drainage solution with strong conversion path
+Sub /commercial-foundation-repair-desoto-tx/ | Commercial Foundation Repair in DeSoto TX | High-ticket B2B rank-and-rent lead type
+Sub /emergency-foundation-leak-repair-desoto-tx/ | Emergency Foundation Leak Repair in DeSoto TX | Urgency-driven page for immediate call leads
+Calculator /foundation-repair-cost-calculator/ | Foundation Repair Cost Calculator | Lead magnet calculator with estimate-to-inspection CTA
+Calculator /foundation-leak-repair-cost-calculator/ | Foundation Leak Repair Cost Calculator | Calculator aligned to exact domain service
+Calculator /foundation-crack-repair-cost-calculator/ | Foundation Crack Repair Cost Calculator | Converts visual crack concern into inspection lead
+Calculator /slab-leak-repair-cost-calculator/ | Slab Leak Repair Cost Calculator | High-converting plumbing/foundation crossover tool
+Calculator /foundation-inspection-checklist/ | Foundation Inspection Checklist | Interactive checklist that routes risky answers to booking
+Calculator /foundation-crack-width-calculator/ | Foundation Crack Width Calculator | Educates and qualifies crack severity
+Calculator /foundation-drainage-slope-calculator/ | Foundation Drainage Slope Calculator | Tool page supporting drainage service conversions
+Blog /foundation-repair-cost-desoto-tx/ | Foundation Repair Cost in DeSoto TX | Localized pricing page for comparison shoppers
+Blog /foundation-leak-repair-cost-desoto-tx/ | Foundation Leak Repair Cost in DeSoto TX | Specific cost page tied to leak repair intent
+Blog /signs-of-foundation-leak/ | Signs of a Foundation Leak | Symptom education with strong conversion CTAs
+Blog /foundation-cracks-after-rain/ | Foundation Cracks After Rain | Weather-triggered problem page for Texas clay soil context
+Blog /water-pooling-near-foundation/ | Water Pooling Near Your Foundation | Targets drainage symptoms before structural conversion
+Blog /uneven-floors-foundation-problem/ | Uneven Floors and Foundation Problems | Problem page for serious structural symptom
+Blog /sticking-doors-foundation-problem/ | Sticking Doors and Foundation Problems | Early warning sign page for homeowner education
+Blog /foundation-settlement-repair/ | Foundation Settlement Repair | Supports settling-related semantic authority
+Blog /slab-leak-vs-foundation-leak/ | Slab Leak vs Foundation Leak | Intent splitter for confused homeowners
+Blog /foundation-repair-vs-replacement/ | Foundation Repair vs Replacement | Decision page for high-stakes estimate seekers
+Blog /diy-foundation-crack-repair-vs-professional/ | DIY Foundation Crack Repair vs Professional Repair | Converts DIY researchers into inspection leads
+Location /service-area/desoto-tx-foundation-repair/ | Foundation Repair in DeSoto TX | Main service-area page for the target city only
+Location /service-area/desoto-tx-foundation-leak-repair/ | Foundation Leak Repair in DeSoto TX | Exact service-location page aligned to the primary keyword and city
+Location /service-area/desoto-tx-foundation-crack-repair/ | Foundation Crack Repair in DeSoto TX | DeSoto-only location variant for the strongest crack repair term in the export
+Location /service-area/desoto-tx-house-foundation-repair/ | House Foundation Repair in DeSoto TX | DeSoto residential service-area page using SEMrush house/home variants
+Location /service-area/desoto-tx-foundation-repair-company/ | Foundation Repair Company in DeSoto TX | Provider-comparison intent without adding other cities
+Location /service-area/desoto-tx-slab-leak-repair/ | Slab Leak Repair in DeSoto TX | DeSoto-only slab leak page supporting the foundation leak silo
+Location /service-area/desoto-tx-foundation-inspection/ | Foundation Inspection in DeSoto TX | DeSoto-specific diagnostic page for softer conversion intent
+Location /service-area/desoto-tx-foundation-leveling/ | Foundation Leveling in DeSoto TX | DeSoto-only settlement and leveling location page
+Location /service-area/desoto-tx-foundation-drainage-repair/ | Foundation Drainage Repair in DeSoto TX | DeSoto service-area page for water-control problems under the leak theme
+Location /service-area/desoto-tx-pier-and-beam-foundation-repair/ | Pier and Beam Foundation Repair in DeSoto TX | Relevant foundation-type page kept inside one-city strategy
+Location /service-area/75115-foundation-repair/ | Foundation Repair in 75115 | ZIP-code page that stays inside DeSoto instead of branching to other cities
+Location /service-area/75123-foundation-repair/ | Foundation Repair in 75123 | Secondary ZIP-code page for local coverage without adding another city
+Location /service-area/meadowbrook-estates-desoto-foundation-repair/ | Foundation Repair in Meadowbrook Estates DeSoto | Neighborhood-level DeSoto page for hyperlocal relevance
+Location /service-area/silver-creek-crossing-desoto-foundation-repair/ | Foundation Repair in Silver Creek Crossing DeSoto | Neighborhood page focused on local trust and conversion
+Location /service-area/elerson-ranch-desoto-foundation-repair/ | Foundation Repair in Elerson Ranch DeSoto | Neighborhood page that supports DeSoto-only local depth
+Location /service-area/candle-meadow-desoto-foundation-repair/ | Foundation Repair in Candle Meadow DeSoto | Hyperlocal DeSoto sub-area page tied to water and foundation issues
+Location /service-area/hampton-place-desoto-foundation-repair/ | Foundation Repair in Hampton Place DeSoto | Neighborhood page for local relevance within the single-city map
+Location /service-area/creek-tree-estates-desoto-foundation-repair/ | Foundation Repair in Creek Tree Estates DeSoto | Sub-area page supporting DeSoto topical and local coverage
+Location /service-area/frost-farms-desoto-foundation-repair/ | Foundation Repair in Frost Farms DeSoto | Neighborhood-level page under DeSoto only
+Location /service-area/thorntree-desoto-foundation-repair/ | Foundation Repair in Thorntree DeSoto | Local affluent neighborhood page for DeSoto-only rank-and-rent coverage
+Location /service-area/downtown-desoto-foundation-repair/ | Foundation Repair in Downtown DeSoto | Central DeSoto sub-area page for residential and small commercial leads
+Location /service-area/west-desoto-foundation-repair/ | Foundation Repair in West DeSoto TX | Directional local page for one-city coverage without external suburbs
+Location /service-area/east-desoto-foundation-repair/ | Foundation Repair in East DeSoto TX | Directional DeSoto sub-area page built for local coverage
+Location /service-area/north-desoto-foundation-repair/ | Foundation Repair in North DeSoto TX | Directional sub-area page for DeSoto-only map depth
+Location /service-area/south-desoto-foundation-repair/ | Foundation Repair in South DeSoto TX | Directional sub-area page that keeps location targeting inside DeSoto
+Basic /about/ | About DeSoto Foundation Leak Repair | Trust-building page for rank-and-rent lead conversion
+Basic /contact/ | Contact DeSoto Foundation Leak Repair | Primary conversion page with form and phone CTA
+Basic /service-area/ | Foundation Repair Service Areas | Hub page to distribute authority across location cluster
+Basic /resources/ | Foundation Repair Resources | Resource hub for topical authority and internal linking
+Basic /privacy-policy/ | Privacy Policy | Required trust and compliance page
+Basic /terms-and-conditions/ | Terms and Conditions | Required legal/trust page

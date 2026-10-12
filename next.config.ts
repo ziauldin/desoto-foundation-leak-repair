@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  // URLs in the topical map all end with a slash.
+  trailingSlash: true,
   turbopack: {
     rules: {
       "*.css": {

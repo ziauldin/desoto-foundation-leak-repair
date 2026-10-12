@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate": "node scripts/validate-site.mjs",
+    "typecheck": "next typegen && tsc --noEmit",
+    "import-map": "python scripts/import-topical-map.py"
   },
   "dependencies": {
     "next": "16.4.0",

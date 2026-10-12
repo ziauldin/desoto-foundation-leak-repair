@@ -1,69 +1,136 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import { site } from "@/config/site";
+import { generalFaqs } from "@/data/faqs";
+import { calculatorPaths, locationPaths } from "@/data/pages";
+import { buildMetadata } from "@/lib/seo";
+import { faqSchema, localBusinessSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { Section } from "@/components/ui/Section";
+import { ButtonLink } from "@/components/ui/Button";
+import { BookIcon, CalcIcon, DropletIcon, HouseIcon, PinIcon } from "@/components/ui/Icons";
+import { Hero } from "@/components/sections/Hero";
+import { LinkCardGrid } from "@/components/sections/LinkCardGrid";
+import { TrustSection } from "@/components/sections/TrustSection";
+import { ProcessSection } from "@/components/sections/ProcessSection";
+import { TestimonialSection } from "@/components/sections/TestimonialSection";
+import { FaqAccordion } from "@/components/sections/FaqAccordion";
+import { CtaSection } from "@/components/sections/CtaSection";
+import { ContactForm } from "@/components/forms/ContactForm";
 
-export default function Home() {
+export const metadata: Metadata = buildMetadata({
+  title: "DeSoto Foundation Leak Repair | Slab Leak & Foundation Repair in DeSoto TX",
+  description:
+    "Foundation leak detection, slab leak repair, crack repair and foundation leveling for DeSoto TX homes. Free tools, local guides and inspection requests.",
+  path: "/",
+});
+
+const leakServices = [
+  "/foundation-leak-repair-desoto/",
+  "/slab-leak-repair-desoto-tx/",
+  "/foundation-leak-detection-desoto-tx/",
+  "/emergency-foundation-leak-repair-desoto-tx/",
+];
+const structuralServices = [
+  "/foundation-repair-desoto-tx/",
+  "/foundation-crack-repair-desoto-tx/",
+  "/foundation-leveling-desoto-tx/",
+  "/foundation-inspection-desoto-tx/",
+  "/pier-and-beam-foundation-repair-desoto-tx/",
+  "/foundation-drainage-repair-desoto-tx/",
+];
+const problems = [
+  "/signs-of-foundation-leak/",
+  "/water-pooling-near-foundation/",
+  "/foundation-cracks-after-rain/",
+  "/uneven-floors-foundation-problem/",
+  "/sticking-doors-foundation-problem/",
+  "/slab-leak-vs-foundation-leak/",
+];
+const neighborhoods = locationPaths.filter((p) => !p.includes("/desoto-tx-")).slice(0, 8);
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <JsonLd data={[localBusinessSchema(), faqSchema(generalFaqs)]} />
+      <Hero
+        h1="Foundation Leak and Foundation Repair for DeSoto, TX Homes"
+        eyebrow="DeSoto, TX 75115 · Local service only"
+        lead={
+          <p>
+            Water under a slab, cracks that keep growing, doors that won&apos;t latch. We find the cause first, whether it&apos;s a
+            plumbing leak, drainage or soil movement, then fix it and show you the numbers.
           </p>
+        }
+        ctaType="inspection"
+        points={["Slab leak detection and repair", "Foundation crack repair and leveling", "Drainage fixes that protect the slab", "Written findings and pricing"]}
+        aside={<ContactForm compact title="Request a free inspection" />}
+      />
+
+      <Section
+        id="leak-services"
+        eyebrow="Leak repair"
+        title="Foundation leak and slab leak services"
+        intro="Most foundation trouble in DeSoto starts with water. These services find and stop it."
+      >
+        <LinkCardGrid items={leakServices} icon={<DropletIcon />} columns={4} />
+      </Section>
+
+      <Section id="structural-services" eyebrow="Foundation repair" title="Foundation repair services" tone="alt">
+        <LinkCardGrid items={structuralServices} icon={<HouseIcon />} />
+        <div className="mt-8">
+          <ButtonLink href="/foundation-repair-desoto-tx/" variant="outline">
+            All foundation repair services
+          </ButtonLink>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </Section>
+
+      <CtaSection type="leak-estimate" />
+
+      <Section
+        id="problems"
+        eyebrow="Common problems"
+        title="What are you seeing at your house?"
+        intro="Start with the symptom. Each guide explains the likely causes and when it's worth calling."
+        tone="surface"
+      >
+        <LinkCardGrid items={problems} icon={<BookIcon />} />
+      </Section>
+
+      <Section
+        id="calculators"
+        eyebrow="Free tools"
+        title="Estimate cost before you call"
+        intro="Typical North Texas price ranges, plus checklists to see how urgent your signs are."
+      >
+        <LinkCardGrid items={calculatorPaths.slice(0, 4)} icon={<CalcIcon />} columns={4} />
+        <div className="mt-8">
+          <ButtonLink href="/calculators/" variant="outline">
+            See all calculators
+          </ButtonLink>
         </div>
-      </main>
-    </div>
+      </Section>
+
+      <TrustSection />
+      <ProcessSection />
+
+      <Section
+        id="areas"
+        eyebrow="Service area"
+        title={`Serving every part of ${site.city}`}
+        intro="We work in DeSoto only, from the established streets around Hampton Rd to newer subdivisions on the edges of town."
+        tone="surface"
+      >
+        <LinkCardGrid items={neighborhoods} icon={<PinIcon />} columns={4} />
+        <div className="mt-8">
+          <ButtonLink href="/service-area/" variant="outline">
+            View the full DeSoto service area
+          </ButtonLink>
+        </div>
+      </Section>
+
+      <TestimonialSection />
+      <FaqAccordion faqs={generalFaqs} />
+      <CtaSection type="inspection" />
+    </>
   );
 }
