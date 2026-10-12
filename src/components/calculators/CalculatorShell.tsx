@@ -19,7 +19,7 @@ export function CalculatorShell({
   disclaimer: string;
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-surface shadow-lg">
+    <div className="animate-fade-up overflow-hidden rounded-xl border border-border bg-surface shadow-[var(--shadow-lift)]">
       <div className="border-b border-border bg-surface-alt px-5 py-4 sm:px-6">
         <h2 className="text-xl sm:text-2xl">{title}</h2>
       </div>
@@ -189,6 +189,31 @@ export function NumberField({
         />
         <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-sm text-muted">{suffix}</span>
       </div>
+    </div>
+  );
+}
+
+/** Animated horizontal meter for results (0-1). Optional marker shows a target position. */
+export function Meter({ value, label, marker }: { value: number; label: string; marker?: number }) {
+  return (
+    <div className="mt-4">
+      <div
+        role="meter"
+        aria-label={label}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(value * 100)}
+        className="relative h-2.5 overflow-hidden rounded-full bg-white/15"
+      >
+        <div
+          className="h-full rounded-full bg-gradient-to-r from-success via-accent to-accent-dark transition-[width] duration-700 ease-out"
+          style={{ width: `${Math.max(4, value * 100)}%` }}
+        />
+        {marker !== undefined && (
+          <span aria-hidden="true" className="absolute inset-y-0 w-0.5 bg-white" style={{ left: `${marker * 100}%` }} />
+        )}
+      </div>
+      <p className="mt-1 text-xs text-white/60">{label}</p>
     </div>
   );
 }

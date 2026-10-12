@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img">
+  <title>A small two-story retail building with storefront windows and an ochre awning, sitting on a concrete slab beside a sidewalk and parking lot curb</title>
+  <defs>
+    <clipPath id="cm-bg"><rect x="20" y="20" width="600" height="380" rx="32"/></clipPath>
+    <pattern id="cm-brick" width="40" height="24" patternUnits="userSpaceOnUse">
+      <rect width="40" height="24" fill="#c9a27a"/>
+      <path d="M0 11h40M0 23h40M20 0v11M0 12v11M40 12v11" stroke="#ece8e0" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect x="20" y="20" width="600" height="380" rx="32" fill="#ece8e0"/>
+  <g clip-path="url(#cm-bg)">
+    <!-- cloud -->
+    <path d="M70 92h96a18 18 0 0 0-14-32 26 26 0 0 0-48-8 20 20 0 0 0-34 40z" fill="#f6f4ef"/>
+    <!-- parking lot -->
+    <rect x="0" y="344" width="640" height="76" fill="#5c6b73"/>
+    <g stroke="#f6f4ef" stroke-width="4" stroke-linecap="round">
+      <path d="M120 362L104 400M260 362L244 400M400 362L384 400M540 362L524 400"/>
+    </g>
+    <!-- sidewalk -->
+    <rect x="0" y="310" width="640" height="26" fill="#f6f4ef"/>
+    <path d="M0 310H640" stroke="#132636" stroke-width="3"/>
+    <path d="M80 312V334M200 312V334M320 312V334M440 312V334M560 312V334" stroke="#d8d2c6" stroke-width="3"/>
+    <!-- curb -->
+    <rect x="0" y="336" width="640" height="10" fill="#d8d2c6" stroke="#132636" stroke-width="3"/>
+  </g>
+  <!-- wheel stops -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="160" y="366" width="56" height="12" rx="4" fill="#d9922e"/>
+    <rect x="300" y="366" width="56" height="12" rx="4" fill="#d9922e"/>
+    <rect x="440" y="366" width="56" height="12" rx="4" fill="#d9922e"/>
+  </g>
+
+  <!-- tree -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="78" y="246" width="10" height="56" fill="#b98c5a"/>
+    <circle cx="83" cy="224" r="34" fill="#7d9467"/>
+    <path d="M83 252a20 20 0 0 1 0-40" fill="none" stroke="#5f7550" stroke-width="3" stroke-linecap="round"/>
+    <rect x="62" y="296" width="42" height="14" rx="3" fill="#d8d2c6"/>
+  </g>
+
+  <!-- slab -->
+  <rect x="134" y="294" width="452" height="16" fill="#f6f4ef" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M134 302H586" stroke="#d8d2c6" stroke-width="2"/>
+
+  <!-- one-story wing -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="456" y="180" width="122" height="114" fill="url(#cm-brick)"/>
+    <rect x="450" y="168" width="134" height="14" fill="#2d5577"/>
+    <rect x="474" y="206" width="86" height="58" fill="#a9c7e0"/>
+    <path d="M517 206v58" fill="none"/>
+    <rect x="470" y="264" width="94" height="8" fill="#f6f4ef"/>
+  </g>
+
+  <!-- main two-story block -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="148" y="104" width="310" height="190" fill="url(#cm-brick)"/>
+    <rect x="140" y="90" width="326" height="16" fill="#f6f4ef"/>
+    <rect x="148" y="106" width="310" height="10" fill="#1e3a52"/>
+    <!-- upper windows -->
+    <g fill="#a9c7e0">
+      <rect x="170" y="132" width="44" height="46"/><rect x="236" y="132" width="44" height="46"/>
+      <rect x="326" y="132" width="44" height="46"/><rect x="392" y="132" width="44" height="46"/>
+    </g>
+    <g fill="#f6f4ef">
+      <rect x="166" y="178" width="52" height="6"/><rect x="232" y="178" width="52" height="6"/>
+      <rect x="322" y="178" width="52" height="6"/><rect x="388" y="178" width="52" height="6"/>
+    </g>
+    <path d="M192 132v46M258 132v46M348 132v46M414 132v46" fill="none" stroke-width="2.5"/>
+    <!-- sign band -->
+    <rect x="148" y="194" width="310" height="16" fill="#1e3a52"/>
+    <rect x="262" y="198" width="82" height="8" rx="2" fill="#f6e7cf" stroke="none"/>
+    <!-- storefront -->
+    <rect x="160" y="226" width="286" height="68" fill="#2d5577"/>
+    <rect x="168" y="232" width="82" height="62" fill="#a9c7e0"/>
+    <rect x="356" y="232" width="82" height="62" fill="#a9c7e0"/>
+    <rect x="276" y="232" width="54" height="62" fill="#5b8db8"/>
+    <path d="M303 232v62M209 232v62M397 232v62" fill="none"/>
+    <path d="M296 262v8M310 262v8" fill="none" stroke="#f6f4ef" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <!-- awning -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <path d="M152 210H454L466 240H140z" fill="#d9922e"/>
+    <path d="M140 240H466V246Q466 250 462 250H144Q140 250 140 246z" fill="#b5761c"/>
+    <path d="M190 210L184 240M230 210L227 240M270 210L269 240M336 210L337 240M376 210L379 240M416 210L422 240" fill="none" stroke="#b5761c" stroke-width="6" stroke-linecap="butt"/>
+    <path d="M152 210H454L466 240H140z" fill="none"/>
+  </g>
+</svg>

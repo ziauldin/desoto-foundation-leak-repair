@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img">
+  <title>Side view of a brick ranch house corner with a gutter, a downspout extension carrying water away, and ground sloping away from the foundation</title>
+  <defs>
+    <clipPath id="dr-bg"><rect x="20" y="20" width="600" height="380" rx="32"/></clipPath>
+    <pattern id="dr-brick" width="40" height="24" patternUnits="userSpaceOnUse">
+      <rect width="40" height="24" fill="#c9a27a"/>
+      <path d="M0 11h40M0 23h40M20 0v11M0 12v11M40 12v11" stroke="#ece8e0" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect x="20" y="20" width="600" height="380" rx="32" fill="#ece8e0"/>
+  <g clip-path="url(#dr-bg)">
+    <!-- distant cloud -->
+    <path d="M468 104h86a18 18 0 0 0-14-30 24 24 0 0 0-44-6 18 18 0 0 0-28 36z" fill="#f6f4ef"/>
+    <!-- soil -->
+    <path d="M0 300H318L640 338V420H0z" fill="#a98463"/>
+    <path d="M0 340H320L640 376" fill="none" stroke="#8a6b4e" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round"/>
+    <path d="M0 372H300L640 406" fill="none" stroke="#c9ad8f" stroke-width="3" stroke-dasharray="2 18" stroke-linecap="round"/>
+    <!-- lawn -->
+    <path d="M0 300H318L640 338V348L318 310H0z" fill="#7d9467"/>
+    <path d="M318 300L640 338" fill="none" stroke="#5f7550" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <!-- foundation slab -->
+  <rect x="54" y="288" width="258" height="34" fill="#f6f4ef" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M54 300H312" stroke="#d8d2c6" stroke-width="2"/>
+  <!-- brick wall -->
+  <rect x="64" y="168" width="238" height="120" fill="url(#dr-brick)" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+  <!-- window -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="124" y="196" width="78" height="60" fill="#ffffff"/>
+    <rect x="131" y="203" width="64" height="46" fill="#a9c7e0"/>
+    <path d="M163 203v46M131 226h64" fill="none" stroke-width="3"/>
+    <rect x="118" y="256" width="90" height="8" fill="#f6f4ef"/>
+  </g>
+  <!-- roof -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <path d="M40 160L104 92H262L328 160z" fill="#1e3a52"/>
+    <path d="M76 124H292" fill="none" stroke="#2d5577"/>
+    <rect x="40" y="158" width="288" height="10" fill="#f6f4ef"/>
+  </g>
+  <!-- gutter -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <path d="M36 164H336V176Q336 182 330 182H42Q36 182 36 176z" fill="#ffffff"/>
+  </g>
+  <!-- downspout and extension -->
+  <path d="M316 180V282Q316 294 328 295L452 311" fill="none" stroke="#132636" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M316 180V282Q316 294 328 295L450 310.8" fill="none" stroke="#ffffff" stroke-width="12" stroke-linejoin="round"/>
+  <g fill="#ffffff" stroke="#132636" stroke-width="3">
+    <rect x="306" y="214" width="20" height="6" rx="2"/>
+    <rect x="306" y="256" width="20" height="6" rx="2"/>
+  </g>
+  <!-- water leaving extension -->
+  <g fill="#5b8db8">
+    <path d="M458 306q14 2 24 10q-14 0-26-4z"/>
+    <path d="M470 302a4 4 0 1 1 0.1 0z"/>
+  </g>
+  <!-- water flow arrows along slope -->
+  <g fill="none" stroke="#5b8db8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M492 314L532 319M524 313L533 319L525 325"/>
+    <path d="M548 320L584 324.5M576 318L585 324.5L577 330"/>
+  </g>
+  <!-- extension length dimension -->
+  <g stroke="#b5761c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M330 262H446M330 254V270M446 254V278"/>
+    <path d="M340 256L330 262L340 268M436 256L446 262L436 268"/>
+  </g>
+  <!-- slope dimension -->
+  <path d="M322 300H600" stroke="#5c6b73" stroke-width="2" stroke-dasharray="6 6"/>
+  <g stroke="#d9922e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M592 304V328"/>
+    <path d="M586 310L592 303L598 310M586 322L592 329L598 322"/>
+  </g>
+  <circle cx="318" cy="300" r="4" fill="#d9922e" stroke="#132636" stroke-width="2"/>
+</svg>

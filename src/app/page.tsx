@@ -5,17 +5,19 @@ import { calculatorPaths, locationPaths } from "@/data/pages";
 import { buildMetadata } from "@/lib/seo";
 import { faqSchema, localBusinessSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { Section } from "@/components/ui/Section";
+import { Section } from "@/components/home/Section";
 import { ButtonLink } from "@/components/ui/Button";
 import { BookIcon, CalcIcon, DropletIcon, HouseIcon, PinIcon } from "@/components/ui/Icons";
-import { Hero } from "@/components/sections/Hero";
-import { LinkCardGrid } from "@/components/sections/LinkCardGrid";
-import { TrustSection } from "@/components/sections/TrustSection";
-import { ProcessSection } from "@/components/sections/ProcessSection";
-import { TestimonialSection } from "@/components/sections/TestimonialSection";
-import { FaqAccordion } from "@/components/sections/FaqAccordion";
-import { CtaSection } from "@/components/sections/CtaSection";
+import { Hero } from "@/components/home/Hero";
+import { LinkCardGrid } from "@/components/home/LinkCardGrid";
+import { TrustSection } from "@/components/home/TrustSection";
+import { ProcessSection } from "@/components/home/ProcessSection";
+import { TestimonialSection } from "@/components/home/TestimonialSection";
+import { FaqAccordion } from "@/components/home/FaqAccordion";
+import { CtaSection } from "@/components/home/CtaSection";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { TriagePicker } from "@/components/home/TriagePicker";
+import { WaterExplainer } from "@/components/home/WaterExplainer";
 
 export const metadata: Metadata = buildMetadata({
   title: "DeSoto Foundation Leak Repair | Slab Leak & Foundation Repair in DeSoto TX",
@@ -65,6 +67,9 @@ export default function HomePage() {
         points={["Slab leak detection and repair", "Foundation crack repair and leveling", "Drainage fixes that protect the slab", "Written findings and pricing"]}
         aside={<ContactForm compact title="Request a free inspection" />}
       />
+
+      <TriagePicker />
+      <WaterExplainer />
 
       <Section
         id="leak-services"

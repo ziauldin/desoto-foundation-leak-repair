@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="t">
+  <title id="t">Cross-section of a room whose floor slopes a few degrees to one side, with a marble rolling toward the low corner and a spirit level showing its bubble off-center</title>
+  <defs>
+    <clipPath id="bd"><rect x="20" y="20" width="600" height="380" rx="28"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#bd)">
+    <rect x="20" y="20" width="600" height="380" fill="#ece8e0"/>
+    <!-- ground -->
+    <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+      <path d="M10 300H630V410H10Z" fill="#c9ad8f"/>
+      <path d="M10 360C140 352 250 368 370 358S540 352 630 362V410H10Z" fill="#a98463"/>
+      <path d="M10 294H72V302H10ZM568 294H630V302H568Z" fill="#7d9467"/>
+    </g>
+    <g fill="#ece8e0">
+      <ellipse cx="44" cy="330" rx="5" ry="3"/><ellipse cx="596" cy="336" rx="4" ry="2.5"/>
+      <ellipse cx="210" cy="384" rx="4" ry="2.5"/><ellipse cx="452" cy="390" rx="5" ry="3"/>
+    </g>
+  </g>
+
+  <!-- back wall of the room -->
+  <path d="M96 64H544V326L96 294Z" fill="#f6f4ef"/>
+
+  <!-- window -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="146" y="104" width="100" height="92" fill="#ffffff"/>
+    <rect x="156" y="114" width="80" height="72" fill="#a9c7e0"/>
+    <path d="M196 114V186M156 150H236" fill="none"/>
+    <rect x="140" y="196" width="112" height="9" fill="#d8d2c6"/>
+  </g>
+  <path d="M164 140L180 124M206 140L222 124" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- picture hanging plumb -->
+  <g stroke="#132636" stroke-linejoin="round">
+    <path d="M436 96L408 122M436 96L464 122" fill="none" stroke-width="2"/>
+    <rect x="400" y="120" width="72" height="56" fill="#ffffff" stroke-width="3"/>
+    <rect x="408" y="128" width="56" height="40" fill="#a9c7e0" stroke-width="2"/>
+    <path d="M408 168L428 146L442 158L452 150L464 162V168Z" fill="#5f7550" stroke-width="2"/>
+    <circle cx="450" cy="138" r="5" fill="#d9922e" stroke-width="2"/>
+  </g>
+  <circle cx="436" cy="96" r="2.5" fill="#132636"/>
+
+  <!-- pendant light hanging plumb -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <path d="M320 64V118" fill="none" stroke-width="2"/>
+    <path d="M298 142H342L332 118H308Z" fill="#d9922e"/>
+    <path d="M314 142A6 6 0 0 0 326 142" fill="#f6e7cf" stroke-width="2"/>
+  </g>
+
+  <!-- true-level reference -->
+  <path d="M96 292H544" stroke="#132636" stroke-width="2" stroke-dasharray="7 7"/>
+  <path d="M524 292A428 428 0 0 1 523 321.9" fill="none" stroke="#d9922e" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- tilted floor and everything on it -->
+  <g transform="rotate(4 96 292)" stroke="#132636" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="72" y="306" width="496" height="26" fill="#d8d2c6" stroke-width="3"/>
+    <rect x="72" y="292" width="496" height="14" fill="#b98c5a" stroke-width="3"/>
+    <path d="M150 294V304M246 294V304M338 294V304M430 294V304M512 294V304" stroke="#8f6a43" stroke-width="2"/>
+
+    <!-- spirit level -->
+    <rect x="144" y="274" width="180" height="22" rx="3" fill="#b5761c" stroke="none" transform="translate(4 4)"/>
+    <rect x="140" y="270" width="180" height="22" rx="3" fill="#d9922e" stroke-width="3"/>
+    <rect x="140" y="270" width="12" height="22" fill="#132636" stroke-width="3"/>
+    <rect x="308" y="270" width="12" height="22" fill="#132636" stroke-width="3"/>
+    <rect x="166" y="276" width="30" height="10" rx="5" fill="#b5761c" stroke="none"/>
+    <rect x="264" y="276" width="30" height="10" rx="5" fill="#b5761c" stroke="none"/>
+    <rect x="206" y="275" width="48" height="12" rx="6" fill="#a9c7e0" stroke-width="2"/>
+    <ellipse cx="214" cy="281" rx="6" ry="3.5" fill="#ffffff" stroke="none"/>
+    <path d="M224 275V287M236 275V287" stroke-width="2"/>
+
+    <!-- marble with motion trail -->
+    <path d="M350 270H412M370 279H420M358 288H414" stroke="#5c6b73" stroke-width="3"/>
+    <circle cx="442" cy="278" r="14" fill="#5b8db8" stroke-width="3"/>
+    <circle cx="437" cy="273" r="4" fill="#ffffff" stroke="none"/>
+  </g>
+
+  <!-- exterior walls and ceiling -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="72" y="48" width="24" height="254" fill="#d8d2c6"/>
+    <rect x="544" y="48" width="24" height="286" fill="#d8d2c6"/>
+    <rect x="60" y="40" width="520" height="24" fill="#1e3a52"/>
+  </g>
+</svg>

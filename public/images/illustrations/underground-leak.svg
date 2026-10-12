@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="t">
+  <title id="t">Underground leak: a buried water pipe leaking into the soil, with a moisture plume rising to an unusually green, soggy patch of lawn</title>
+  <defs>
+    <clipPath id="bd"><rect x="20" y="20" width="600" height="380" rx="28"/></clipPath>
+    <pattern id="brick" width="24" height="12" patternUnits="userSpaceOnUse">
+      <rect width="24" height="12" fill="#c9a27a"/>
+      <path d="M0 .75H24M0 6.75H24M6 0V6.75M18 6.75V12" stroke="#ece8e0" stroke-width="1.5"/>
+    </pattern>
+    <path id="drop" d="M0-7C2.5-3 5 0 5 3A5 5 0 0 1-5 3C-5 0-2.5-3 0-7Z"/>
+  </defs>
+
+  <g clip-path="url(#bd)">
+    <rect x="20" y="20" width="600" height="380" fill="#ece8e0"/>
+    <path d="M232 76h56a12 12 0 0 0 0-24 18 18 0 0 0-34-4 12 12 0 0 0-22 28Z" fill="#f6f4ef"/>
+
+    <!-- house corner -->
+    <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+      <rect x="512" y="96" width="120" height="96" fill="url(#brick)"/>
+      <path d="M492 100L560 54H640V100Z" fill="#1e3a52"/>
+      <rect x="488" y="96" width="150" height="9" rx="2" fill="#132636"/>
+      <rect x="540" y="124" width="46" height="34" fill="#a9c7e0"/>
+      <path d="M563 124V158" stroke="#ffffff" stroke-width="3"/>
+      <rect x="536" y="158" width="54" height="6" fill="#f6f4ef"/>
+      <rect x="504" y="184" width="140" height="10" fill="#f6f4ef"/>
+    </g>
+
+    <!-- soil -->
+    <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+      <path d="M10 196H630V410H10Z" fill="#c9ad8f"/>
+      <path d="M10 250C120 242 220 258 340 248S540 242 630 250V410H10Z" fill="#a98463"/>
+      <path d="M10 350C140 342 260 358 380 348S560 344 630 352V410H10Z" fill="#8a6b4e"/>
+    </g>
+    <g fill="#c9ad8f">
+      <ellipse cx="84" cy="290" rx="6" ry="3.5"/><ellipse cx="170" cy="318" rx="4" ry="2.5"/>
+      <ellipse cx="490" cy="288" rx="5" ry="3"/><ellipse cx="560" cy="320" rx="7" ry="4"/>
+      <ellipse cx="120" cy="380" rx="5" ry="3"/><ellipse cx="520" cy="378" rx="6" ry="3.5"/>
+    </g>
+    <g fill="#ece8e0">
+      <ellipse cx="70" cy="222" rx="5" ry="3"/><ellipse cx="160" cy="230" rx="3.5" ry="2.5"/>
+      <ellipse cx="480" cy="226" rx="4" ry="2.5"/><ellipse cx="580" cy="218" rx="5" ry="3"/>
+    </g>
+
+    <!-- moisture plume -->
+    <path d="M300 338C286 318 296 302 280 290C258 276 250 262 252 246C240 230 228 214 230 198H430C432 214 420 230 408 246C410 262 402 276 380 290C364 302 374 318 360 338C346 350 314 350 300 338Z" fill="#8a6b4e"/>
+    <path d="M314 332C306 314 312 300 302 290C288 278 280 262 282 246C274 230 270 214 272 198H388C390 214 386 230 378 246C380 262 372 278 358 290C348 300 354 314 346 332C338 340 322 340 314 332Z" fill="#5c6b73"/>
+
+    <!-- buried pipe (dashed) -->
+    <rect x="0" y="314" width="640" height="16" fill="#d8d2c6"/>
+    <path d="M10 314H630M10 330H630" stroke="#132636" stroke-width="3" stroke-dasharray="10 7" stroke-linecap="round"/>
+
+    <!-- lawn -->
+    <path d="M10 186H630V198H10Z" fill="#7d9467" stroke="#132636" stroke-width="3"/>
+    <path d="M60 186l3-7 3 7M110 186l3-6 3 6M170 186l3-7 3 7M470 186l3-6 3 6" fill="#7d9467" stroke="#132636" stroke-width="2" stroke-linejoin="round"/>
+    <!-- soggy green patch -->
+    <path d="M226 198C228 188 236 184 246 184H414C424 184 432 188 434 198Z" fill="#5f7550" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M240 186l4-14 4 14M258 186l3-10 3 10M276 186l4-16 4 16M298 186l3-11 3 11M352 186l4-15 4 15M372 186l3-10 3 10M392 186l4-14 4 14M410 186l3-10 3 10" fill="#5f7550" stroke="#132636" stroke-width="2" stroke-linejoin="round"/>
+  </g>
+
+  <!-- surface puddles -->
+  <g fill="#a9c7e0" stroke="#5b8db8" stroke-width="2">
+    <ellipse cx="324" cy="186" rx="20" ry="4"/>
+    <ellipse cx="270" cy="192" rx="10" ry="2.5"/>
+    <ellipse cx="384" cy="192" rx="12" ry="2.5"/>
+  </g>
+
+  <!-- leak + rising moisture -->
+  <circle cx="330" cy="322" r="5" fill="#5b8db8" stroke="#132636" stroke-width="2"/>
+  <g fill="none" stroke="#a9c7e0" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M320 296l10-10 10 10"/>
+    <path d="M320 262l10-10 10 10"/>
+    <path d="M320 228l10-10 10 10"/>
+  </g>
+  <g fill="#5b8db8" stroke="#132636" stroke-width="1.5">
+    <use href="#drop" transform="translate(296 276) scale(.75)"/>
+    <use href="#drop" transform="translate(364 276) scale(.75)"/>
+    <use href="#drop" transform="translate(290 226) scale(.7)"/>
+    <use href="#drop" transform="translate(370 226) scale(.7)"/>
+    <use href="#drop" transform="translate(316 344) scale(.6)"/>
+    <use href="#drop" transform="translate(344 344) scale(.6)"/>
+  </g>
+
+  <!-- shrub -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="102" y="140" width="10" height="48" fill="#8a6b4e"/>
+    <path d="M74 146a22 22 0 0 1 8-36 28 28 0 0 1 48-2 22 22 0 0 1 8 38Z" fill="#7d9467"/>
+  </g>
+
+  <rect x="20" y="20" width="600" height="380" rx="28" fill="none" stroke="#d8d2c6" stroke-width="2"/>
+</svg>

@@ -10,7 +10,7 @@ function FooterColumn({ title, links }: { title: string; links: NavLink[] }) {
       <ul className="space-y-2 text-[0.95rem]">
         {links.map((l) => (
           <li key={l.href}>
-            <Link href={l.href} className="text-white/80 hover:text-white hover:underline">
+            <Link href={l.href} className="inline-block text-white/80 transition-[translate,scale,transform,opacity,color,background-color,border-color] duration-200 hover:translate-x-1 hover:text-accent">
               {l.label}
             </Link>
           </li>

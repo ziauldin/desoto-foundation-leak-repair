@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img">
+  <title>After a storm, a short downspout dumps rainwater at the base of a brick house, forming a puddle against the foundation and soaking the soil below</title>
+  <defs>
+    <clipPath id="wp-bg"><rect x="20" y="20" width="600" height="380" rx="32"/></clipPath>
+    <pattern id="wp-brick" width="40" height="24" patternUnits="userSpaceOnUse">
+      <rect width="40" height="24" fill="#c9a27a"/>
+      <path d="M0 11h40M0 23h40M20 0v11M0 12v11M40 12v11" stroke="#ece8e0" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect x="20" y="20" width="600" height="380" rx="32" fill="#ece8e0"/>
+  <g clip-path="url(#wp-bg)">
+    <!-- storm clouds -->
+    <path d="M440 98h136a22 22 0 0 0-16-38 30 30 0 0 0-56-10 24 24 0 0 0-64 48z" fill="#f6f4ef"/>
+    <path d="M378 120h150a26 26 0 0 0-20-44 34 34 0 0 0-64-10 28 28 0 0 0-66 54z" fill="#5c6b73" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+    <!-- rain -->
+    <g stroke="#5b8db8" stroke-width="3" stroke-linecap="round">
+      <path d="M396 136l-8 20M430 136l-8 20M464 136l-8 20M498 136l-8 20"/>
+      <path d="M380 176l-8 20M414 176l-8 20M448 176l-8 20M482 176l-8 20M516 176l-8 20M550 150l-8 20M576 196l-8 20"/>
+      <path d="M396 216l-8 20M430 216l-8 20M464 216l-8 20M498 216l-8 20M532 228l-8 20M362 228l-8 20"/>
+    </g>
+    <!-- soil -->
+    <path d="M0 300H330V312Q350 312 370 320Q400 330 430 318Q450 306 476 297L640 282V420H0z" fill="#a98463"/>
+    <!-- saturated soil under the puddle -->
+    <path d="M318 300H476Q506 320 496 344Q484 372 448 368Q422 390 388 378Q356 396 330 384Q318 378 318 364z" fill="#8a6b4e"/>
+    <g fill="#a98463">
+      <circle cx="350" cy="334" r="3"/><circle cx="402" cy="346" r="3"/><circle cx="444" cy="330" r="3"/><circle cx="372" cy="362" r="3"/><circle cx="460" cy="350" r="2.5"/>
+    </g>
+    <path d="M0 360H300M500 372L640 366" fill="none" stroke="#c9ad8f" stroke-width="3" stroke-dasharray="2 16" stroke-linecap="round"/>
+    <!-- lawn -->
+    <path d="M466 297.4L640 282V292L470 306.6z" fill="#7d9467"/>
+    <path d="M466 297.4L640 282" fill="none" stroke="#5f7550" stroke-width="3" stroke-linecap="round"/>
+    <!-- puddle -->
+    <path d="M326 296H478Q452 306 430 318Q400 330 370 320Q350 312 326 312z" fill="#a9c7e0"/>
+    <path d="M326 296H478" stroke="#5b8db8" stroke-width="3" stroke-linecap="round"/>
+    <path d="M388 306h40M372 314h16" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <g fill="none" stroke="#5b8db8" stroke-width="3" stroke-linecap="round"><path d="M400 290q8-6 16 0M444 290q8-6 16 0"/></g>
+  </g>
+  <!-- house wall -->
+  <g clip-path="url(#wp-bg)">
+    <path d="M0 284H330V322H0z" fill="#f6f4ef" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M0 296H330" stroke="#d8d2c6" stroke-width="2"/>
+    <path d="M0 140H316V284H0z" fill="url(#wp-brick)" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="102" y="176" width="92" height="66" fill="#ffffff" stroke="#132636" stroke-width="3"/>
+    <rect x="110" y="184" width="76" height="50" fill="#a9c7e0" stroke="#132636" stroke-width="3"/>
+    <path d="M148 184v50M110 209h76" stroke="#132636" stroke-width="3"/>
+    <rect x="96" y="242" width="104" height="8" fill="#f6f4ef" stroke="#132636" stroke-width="3"/>
+    <path d="M0 64H270L340 132H0z" fill="#1e3a52" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M0 98H305" stroke="#2d5577" stroke-width="3"/>
+    <rect x="0" y="130" width="340" height="10" fill="#f6f4ef" stroke="#132636" stroke-width="3"/>
+    <path d="M0 136H346V148Q346 154 340 154H0z" fill="#ffffff" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+  <!-- short downspout -->
+  <path d="M326 154V252Q326 262 338 266" fill="none" stroke="#132636" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M326 154V252Q326 262 337 265" fill="none" stroke="#ffffff" stroke-width="12" stroke-linejoin="round"/>
+  <g fill="#ffffff" stroke="#132636" stroke-width="3">
+    <rect x="316" y="186" width="20" height="6" rx="2"/>
+    <rect x="316" y="226" width="20" height="6" rx="2"/>
+  </g>
+  <!-- water gushing into puddle -->
+  <path d="M332 260Q358 264 364 282Q368 290 366 296H350Q350 288 346 282Q342 276 332 274z" fill="#5b8db8"/>
+  <g fill="none" stroke="#5b8db8" stroke-width="3" stroke-linecap="round">
+    <path d="M342 288l-6-7M374 288l6-7M378 294l9-3"/>
+  </g>
+  <!-- seepage toward foundation -->
+  <g fill="none" stroke="#f6e7cf" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M380 330l-22 10M366 334l-8 6 9 3"/>
+    <path d="M420 352l-26 8M402 354l-8 6 10 2"/>
+  </g>
+</svg>

@@ -10,7 +10,7 @@ import { buttonClass } from "@/components/ui/Button";
 type Status = "idle" | "sending" | "sent" | "error";
 
 const inputClass =
-  "mt-1 block w-full rounded-md border border-border bg-surface px-3 py-2.5 text-text placeholder:text-muted/70 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30";
+  "mt-1 block w-full rounded-md border border-border bg-surface px-3 py-2.5 text-text transition-[translate,scale,transform,opacity,color,background-color,border-color] duration-200 placeholder:text-muted/70 hover:border-secondary focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15";
 
 export function ContactForm({ title = "Request a foundation inspection", compact = false }: { title?: string; compact?: boolean }) {
   const pathname = usePathname();
@@ -49,8 +49,13 @@ export function ContactForm({ title = "Request a foundation inspection", compact
 
   if (status === "sent") {
     return (
-      <div role="status" className="rounded-lg border border-success/40 bg-surface p-6 text-text shadow-sm">
-        <p className="font-display text-xl font-bold text-primary-dark">Thanks, we got your request.</p>
+      <div role="status" className="animate-fade-up rounded-lg border border-success/40 bg-surface p-6 text-center text-text shadow-sm">
+        <span className="mx-auto grid h-14 w-14 animate-pop place-items-center rounded-full bg-success text-white">
+          <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="3" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+        <p className="mt-4 font-display text-xl font-bold text-primary-dark">Thanks, we got your request.</p>
         <p className="mt-2 text-muted">
           We&apos;ll call you to set up a time. If water is actively leaking, call{" "}
           <a href={site.phoneHref} className="font-semibold text-primary underline">
@@ -151,7 +156,14 @@ export function ContactForm({ title = "Request a foundation inspection", compact
       )}
 
       <button type="submit" disabled={status === "sending"} className={buttonClass("accent", "mt-5 w-full disabled:opacity-60")}>
-        {status === "sending" ? "Sending…" : "Request Inspection"}
+        {status === "sending" ? (
+          <>
+            <span aria-hidden="true" className="h-4 w-4 animate-spin rounded-full border-2 border-primary-dark/30 border-t-primary-dark" />
+            Sending…
+          </>
+        ) : (
+          "Request Inspection"
+        )}
       </button>
       <p className="mt-3 text-xs text-muted">
         By submitting, you agree to be contacted about your request. See our{" "}

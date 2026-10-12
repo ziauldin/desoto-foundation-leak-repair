@@ -5,7 +5,8 @@
 //   - canonical, Open Graph and BreadcrumbList JSON-LD present (except home)
 //   - FAQPage schema whenever an FAQ section renders
 //   - no other DFW city names in page copy (DeSoto-only rule)
-import { readdirSync, readFileSync, statSync } from "node:fs";
+//   - every <img> has alt text and every /images/ file exists
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative, sep } from "node:path";
 
 const root = join(process.cwd(), ".next", "server", "app");
@@ -68,6 +69,15 @@ for (const [route, html] of pages) {
     const path = href.split("#")[0].split("?")[0];
     if (!path || STATIC_FILES.has(path)) continue;
     if (!pages.has(path)) errors.push(`${route}: broken link -> ${href}`);
+  }
+
+  // Every local image must exist in /public and have alt text
+  for (const [tag] of html.matchAll(/<img[^>]*>/g)) {
+    const src = tag.match(/src="([^"]+)"/)?.[1] ?? "";
+    if (!/alt="[^"]+"/.test(tag)) errors.push(`${route}: image without alt text (${src})`);
+    if (src.startsWith("/images/") && !existsSync(join(process.cwd(), "public", decodeURIComponent(src.split("?")[0])))) {
+      errors.push(`${route}: missing image file ${src}`);
+    }
   }
 
   // Visible text only (strip scripts/styles/tags) for the city check.

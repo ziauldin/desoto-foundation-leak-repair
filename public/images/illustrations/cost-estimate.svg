@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img">
+  <title>Foundation repair cost estimate: a clipboard with an itemized estimate sheet, a calculator, a small brick house and stacks of coins</title>
+  <defs>
+    <pattern id="ce-brick" width="16" height="10" patternUnits="userSpaceOnUse">
+      <rect width="16" height="10" fill="#c9a27a"/>
+      <path d="M0 4.5h16M0 9.5h16M8 0v4.5M0 5v5M16 5v5" stroke="#ece8e0" stroke-width="1.5"/>
+    </pattern>
+    <g id="ce-coin">
+      <path d="M-30 0V10A30 10 0 0 0 30 10V0" fill="#b5761c" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+      <ellipse rx="30" ry="10" fill="#d9922e" stroke="#132636" stroke-width="3"/>
+    </g>
+  </defs>
+  <rect x="20" y="20" width="600" height="380" rx="32" fill="#ece8e0"/>
+  <!-- desk line -->
+  <rect x="64" y="352" width="512" height="14" rx="7" fill="#d8d2c6"/>
+
+  <!-- clipboard -->
+  <g transform="rotate(-4 270 220)">
+    <rect x="196" y="78" width="180" height="280" rx="14" fill="#d8d2c6"/>
+    <rect x="184" y="68" width="180" height="280" rx="14" fill="#b98c5a" stroke="#132636" stroke-width="3"/>
+    <rect x="200" y="94" width="148" height="238" rx="4" fill="#ffffff" stroke="#132636" stroke-width="3"/>
+    <rect x="240" y="54" width="68" height="30" rx="8" fill="#2d5577" stroke="#132636" stroke-width="3"/>
+    <circle cx="274" cy="66" r="5" fill="#ece8e0" stroke="#132636" stroke-width="2"/>
+    <!-- estimate sheet lines -->
+    <rect x="216" y="106" width="64" height="10" rx="3" fill="#1e3a52"/>
+    <rect x="216" y="122" width="40" height="6" rx="3" fill="#d8d2c6"/>
+    <g stroke-linecap="round" stroke-width="5">
+      <path d="M216 148H292M310 148H332" stroke="#5c6b73"/>
+      <path d="M216 170H280M310 170H332" stroke="#5c6b73"/>
+      <path d="M216 192H298M310 192H332" stroke="#5c6b73"/>
+      <path d="M216 214H270M310 214H332" stroke="#5c6b73"/>
+      <path d="M216 236H288M310 236H332" stroke="#5c6b73"/>
+    </g>
+    <path d="M216 258H332" stroke="#d8d2c6" stroke-width="3"/>
+    <rect x="216" y="270" width="116" height="22" rx="4" fill="#f6e7cf"/>
+    <path d="M224 281H262M300 281H326" stroke="#b5761c" stroke-width="6" stroke-linecap="round"/>
+    <path d="M222 312l8 8 16-16" fill="none" stroke="#7d9467" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M262 314H330" stroke="#d8d2c6" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- small brick house -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="428" y="104" width="100" height="54" fill="#d8d2c6" stroke="none"/>
+    <rect x="420" y="96" width="100" height="54" fill="url(#ce-brick)"/>
+    <path d="M406 100L470 56L534 100z" fill="#1e3a52"/>
+    <rect x="460" y="116" width="20" height="34" fill="#d9922e"/>
+    <rect x="432" y="110" width="20" height="18" fill="#a9c7e0"/>
+    <rect x="488" y="110" width="20" height="18" fill="#a9c7e0"/>
+    <rect x="412" y="150" width="116" height="8" fill="#f6f4ef"/>
+  </g>
+
+  <!-- calculator -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="418" y="190" width="124" height="170" rx="14" fill="#d8d2c6" stroke="none"/>
+    <rect x="408" y="180" width="124" height="170" rx="14" fill="#1e3a52"/>
+    <rect x="422" y="194" width="96" height="36" rx="5" fill="#a9c7e0"/>
+    <g fill="#f6f4ef">
+      <rect x="422" y="242" width="18" height="16" rx="4"/><rect x="448" y="242" width="18" height="16" rx="4"/><rect x="474" y="242" width="18" height="16" rx="4"/>
+      <rect x="422" y="266" width="18" height="16" rx="4"/><rect x="448" y="266" width="18" height="16" rx="4"/><rect x="474" y="266" width="18" height="16" rx="4"/>
+      <rect x="422" y="290" width="18" height="16" rx="4"/><rect x="448" y="290" width="18" height="16" rx="4"/><rect x="474" y="290" width="18" height="16" rx="4"/>
+      <rect x="422" y="314" width="44" height="16" rx="4"/><rect x="474" y="314" width="18" height="16" rx="4"/>
+    </g>
+    <rect x="500" y="242" width="18" height="40" rx="4" fill="#ece8e0"/>
+    <rect x="500" y="290" width="18" height="40" rx="4" fill="#d9922e"/>
+  </g>
+  <path d="M488 206H508M496 216H508" stroke="#1e3a52" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- coin stacks -->
+  <ellipse cx="128" cy="352" rx="40" ry="10" fill="#d8d2c6"/>
+  <use href="#ce-coin" x="120" y="334"/>
+  <use href="#ce-coin" x="120" y="322"/>
+  <use href="#ce-coin" x="120" y="310"/>
+  <use href="#ce-coin" x="120" y="298"/>
+  <use href="#ce-coin" x="120" y="286"/>
+  <ellipse cx="120" cy="286" rx="18" ry="5.5" fill="none" stroke="#b5761c" stroke-width="3"/>
+  <use href="#ce-coin" x="166" y="334"/>
+  <use href="#ce-coin" x="166" y="322"/>
+  <ellipse cx="166" cy="322" rx="18" ry="5.5" fill="none" stroke="#b5761c" stroke-width="3"/>
+</svg>

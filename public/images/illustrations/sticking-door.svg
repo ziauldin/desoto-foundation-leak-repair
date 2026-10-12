@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="t">
+  <title id="t">Interior door in an out-of-square frame, with a tapered gap along the top of the door, a diagonal drywall crack running up from the frame corner, and arrows showing the frame shifting down</title>
+  <defs>
+    <clipPath id="bd"><rect x="20" y="20" width="600" height="380" rx="28"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#bd)">
+    <rect x="20" y="20" width="600" height="380" fill="#ece8e0"/>
+    
+    <!-- floor -->
+    <path d="M10 364H630V410H10Z" fill="#b98c5a" stroke="#132636" stroke-width="3"/>
+    <path d="M10 384H630" stroke="#8f6a43" stroke-width="2"/>
+    <path d="M90 366V382M230 386V400M330 366V382M470 386V400M560 366V382" stroke="#8f6a43" stroke-width="2"/>
+    <!-- baseboards -->
+    <path d="M10 348H240V364H10ZM400 348H630V364H400Z" fill="#ffffff" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+
+  <!-- framed picture -->
+  <g stroke="#132636" stroke-linejoin="round">
+    <rect x="96" y="132" width="92" height="76" fill="#ffffff" stroke-width="3"/>
+    <rect x="106" y="142" width="72" height="56" fill="#a9c7e0" stroke-width="2"/>
+    <path d="M106 198L130 170L146 186L158 176L178 198Z" fill="#5f7550" stroke-width="2"/>
+    <circle cx="160" cy="158" r="6" fill="#d9922e" stroke-width="2"/>
+  </g>
+
+  <!-- light switch -->
+  <rect x="428" y="214" width="20" height="30" rx="3" fill="#ffffff" stroke="#132636" stroke-width="3"/>
+  <rect x="435" y="222" width="6" height="12" rx="1.5" fill="#d8d2c6" stroke="#132636" stroke-width="1.5"/>
+
+  <!-- door opening (dark gap) -->
+  <path d="M262 108L378 118V364H262Z" fill="#132636"/>
+
+  <!-- door slab -->
+  <g stroke-linejoin="round">
+    <rect x="266" y="119" width="108" height="245" fill="#b98c5a" stroke="#132636" stroke-width="3"/>
+    <g fill="none" stroke="#8f6a43" stroke-width="3">
+      <rect x="280" y="136" width="34" height="84" rx="2"/>
+      <rect x="326" y="136" width="34" height="84" rx="2"/>
+      <rect x="280" y="236" width="34" height="112" rx="2"/>
+      <rect x="326" y="236" width="34" height="112" rx="2"/>
+    </g>
+    <circle cx="360" cy="230" r="6" fill="#d9922e" stroke="#132636" stroke-width="2.5"/>
+    <rect x="262" y="140" width="6" height="16" fill="#5c6b73" stroke="#132636" stroke-width="2"/>
+    <rect x="262" y="320" width="6" height="16" fill="#5c6b73" stroke="#132636" stroke-width="2"/>
+  </g>
+
+  <!-- racked casing -->
+  <path d="M240 86L400 100V364H378V118L262 108V364H240Z" fill="#ffffff" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M250 97L390 109.3" stroke="#d8d2c6" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- drywall crack from frame corner -->
+  <g fill="none" stroke="#132636" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M400 100L412 90L418 92L430 78L444 74L452 62L466 58L472 44L486 34" stroke-width="3.5"/>
+    <path d="M430 78L438 84L448 83M452 62L446 54" stroke-width="2"/>
+    <path d="M240 86L232 80L234 74" stroke-width="2"/>
+  </g>
+
+  <!-- shift arrows -->
+  <g fill="#d9922e" stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <path d="M366 52H378V74H386L372 92L358 74H366Z"/>
+    <path d="M414 140H426V166H434L420 184L406 166H414Z"/>
+  </g>
+</svg>

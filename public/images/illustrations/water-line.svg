@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="t">
+  <title id="t">Front yard cutaway with a curbside water meter box and a buried water service line running under the lawn to the house, leaking into wet soil</title>
+  <defs>
+    <clipPath id="bd"><rect x="20" y="20" width="600" height="380" rx="28"/></clipPath>
+    <pattern id="brick" width="24" height="12" patternUnits="userSpaceOnUse">
+      <rect width="24" height="12" fill="#c9a27a"/>
+      <path d="M0 .75H24M0 6.75H24M6 0V6.75M18 6.75V12" stroke="#ece8e0" stroke-width="1.5"/>
+    </pattern>
+    <path id="drop" d="M0-7C2.5-3 5 0 5 3A5 5 0 0 1-5 3C-5 0-2.5-3 0-7Z"/>
+  </defs>
+
+  <g clip-path="url(#bd)">
+    <rect x="20" y="20" width="600" height="380" fill="#ece8e0"/>
+    <circle cx="76" cy="70" r="16" fill="#d9922e"/>
+    <path d="M150 78h60a12 12 0 0 0 0-24 18 18 0 0 0-34-4 12 12 0 0 0-26 28Z" fill="#f6f4ef"/>
+
+    <!-- soil -->
+    <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+      <path d="M10 212H630V410H10Z" fill="#c9ad8f"/>
+      <path d="M10 270C120 262 240 278 360 268S540 262 630 270V410H10Z" fill="#a98463"/>
+      <path d="M10 346C140 338 260 354 380 344S560 340 630 348V410H10Z" fill="#8a6b4e"/>
+    </g>
+    <g fill="#c9ad8f">
+      <ellipse cx="120" cy="300" rx="6" ry="3.5"/><ellipse cx="420" cy="306" rx="5" ry="3"/>
+      <ellipse cx="560" cy="296" rx="7" ry="4"/><ellipse cx="240" cy="318" rx="4" ry="2.5"/>
+      <ellipse cx="90" cy="376" rx="5" ry="3"/><ellipse cx="500" cy="378" rx="6" ry="3.5"/>
+    </g>
+    <g fill="#ece8e0">
+      <ellipse cx="380" cy="232" rx="5" ry="3"/><ellipse cx="560" cy="240" rx="4" ry="2.5"/><ellipse cx="226" cy="230" rx="3.5" ry="2.5"/>
+    </g>
+
+    <!-- wet patch -->
+    <path d="M236 236C254 222 316 222 336 236C358 252 354 292 330 306C306 320 266 318 246 302C222 284 220 248 236 236Z" fill="#8a6b4e"/>
+    <path d="M256 244C270 236 304 236 316 246C330 258 326 284 310 292C294 300 270 298 260 288C246 274 244 252 256 244Z" fill="#5c6b73"/>
+
+    <!-- street + curb -->
+    <rect x="10" y="214" width="78" height="20" fill="#5c6b73" stroke="#132636" stroke-width="3"/>
+    <path d="M24 222h14M54 222h14" stroke="#ece8e0" stroke-width="3" stroke-linecap="round"/>
+    <rect x="86" y="204" width="18" height="30" fill="#f6f4ef" stroke="#132636" stroke-width="3"/>
+
+    <!-- lawn -->
+    <path d="M104 204H630V214H104Z" fill="#7d9467" stroke="#132636" stroke-width="3"/>
+    <path d="M200 204l3-7 3 7M232 204l3-6 3 6M276 204l3-8 3 8M300 204l3-6 3 6M316 204l3-7 3 7M400 204l3-6 3 6" fill="#7d9467" stroke="#132636" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M262 210H330" stroke="#5f7550" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- service line -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#bd)">
+    <path d="M10 252H130M176 252H462V216" stroke="#132636" stroke-width="14"/>
+    <path d="M10 252H130M176 252H462V216" stroke="#d9922e" stroke-width="8"/>
+    <path d="M10 250H128M178 250H458" stroke="#f6e7cf" stroke-width="2"/>
+  </g>
+
+  <!-- meter box -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <path d="M122 210V270H184V210" fill="#5c6b73"/>
+    <path d="M122 210V270H184V210" fill="none"/>
+    <rect x="116" y="200" width="74" height="10" rx="2" fill="#f6f4ef"/>
+    <rect x="140" y="202" width="26" height="6" rx="1" fill="#132636" stroke="none"/>
+    <path d="M128 252H178" stroke="#132636" stroke-width="12" stroke-linecap="round"/>
+    <path d="M128 252H178" stroke="#d9922e" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="153" cy="248" r="13" fill="#1e3a52"/>
+    <circle cx="153" cy="248" r="7" fill="#a9c7e0" stroke-width="2"/>
+    <path d="M153 248l4-4" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- leak -->
+  <rect x="284" y="244" width="12" height="16" rx="2" fill="#b5761c" stroke="#132636" stroke-width="3"/>
+  <g fill="#5b8db8" stroke="#132636" stroke-width="1.5">
+    <use href="#drop" transform="translate(290 274)"/>
+    <use href="#drop" transform="translate(272 286) scale(.8)"/>
+    <use href="#drop" transform="translate(308 286) scale(.8)"/>
+    <use href="#drop" transform="translate(290 298) scale(.65)"/>
+    <use href="#drop" transform="translate(270 238) scale(.65)"/>
+    <use href="#drop" transform="translate(312 238) scale(.65)"/>
+  </g>
+
+  <!-- tree -->
+  <g transform="translate(336 206) scale(1.2) translate(-380 -206)" stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="374" y="150" width="12" height="56" fill="#8a6b4e"/>
+    <path d="M346 150a26 26 0 0 1 10-42 32 32 0 0 1 52 0 26 26 0 0 1 8 42Z" fill="#5f7550"/>
+    <path d="M370 118a14 14 0 0 1 22-6" fill="none" stroke="#7d9467" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- house -->
+  <g transform="translate(506 208) scale(1.12) translate(-516 -208)" stroke="#132636" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="432" y="196" width="168" height="12" fill="#f6f4ef"/>
+    <rect x="442" y="126" width="148" height="70" fill="url(#brick)"/>
+    <path d="M424 130L516 72L608 130Z" fill="#1e3a52"/>
+    <rect x="420" y="126" width="192" height="8" rx="2" fill="#132636"/>
+    <rect x="530" y="148" width="30" height="48" fill="#2d5577"/>
+    <circle cx="553" cy="174" r="2.5" fill="#d9922e" stroke="none"/>
+    <rect x="458" y="148" width="48" height="30" fill="#a9c7e0"/>
+    <path d="M482 148V178M458 163H506" stroke="#ffffff" stroke-width="3"/>
+    <rect x="454" y="178" width="56" height="6" fill="#f6f4ef"/>
+    <circle cx="516" cy="104" r="9" fill="#f6e7cf"/>
+  </g>
+  <path d="M408 204a12 12 0 0 1 2-16 14 14 0 0 1 22 0 10 10 0 0 1 4 16Z" fill="#7d9467" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+
+  <rect x="20" y="20" width="600" height="380" rx="28" fill="none" stroke="#d8d2c6" stroke-width="2"/>
+</svg>

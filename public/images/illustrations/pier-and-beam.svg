@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="t">
+  <title id="t">Crawl space beneath a raised pier-and-beam floor: wooden joists and a beam resting on concrete pier blocks with shims, a soil floor, and vents in the perimeter skirt wall</title>
+  <defs>
+    <clipPath id="bd"><rect x="20" y="20" width="600" height="380" rx="28"/></clipPath>
+    <pattern id="brick" width="24" height="12" patternUnits="userSpaceOnUse">
+      <rect width="24" height="12" fill="#c9a27a"/>
+      <path d="M0 .75H24M0 6.75H24M6 0V6.75M18 6.75V12" stroke="#ece8e0" stroke-width="1.5"/>
+    </pattern>
+    <pattern id="block" width="64" height="32" patternUnits="userSpaceOnUse">
+      <rect width="64" height="32" fill="#1e3a52"/>
+      <path d="M0 1H64M0 17H64M1 0V17M33 16V32" stroke="#2d5577" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <g clip-path="url(#bd)">
+    <rect x="20" y="20" width="600" height="380" fill="#ece8e0"/>
+
+    <!-- soil floor -->
+    <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+      <path d="M10 276C140 270 250 280 360 274S540 270 630 276V410H10Z" fill="#c9ad8f"/>
+      <path d="M10 344C130 336 250 352 370 342S540 338 630 346V410H10Z" fill="#a98463"/>
+    </g>
+    <g fill="#8a6b4e">
+      <ellipse cx="96" cy="306" rx="5" ry="3"/><ellipse cx="250" cy="300" rx="4" ry="2.5"/>
+      <ellipse cx="410" cy="312" rx="6" ry="3"/><ellipse cx="548" cy="298" rx="3.5" ry="2"/>
+      <ellipse cx="300" cy="318" rx="3" ry="2"/>
+    </g>
+    <g fill="#c9ad8f">
+      <ellipse cx="150" cy="374" rx="5" ry="3"/><ellipse cx="460" cy="372" rx="4" ry="2.5"/>
+      <ellipse cx="330" cy="384" rx="3" ry="2"/>
+    </g>
+  </g>
+
+  <!-- back skirt wall (crawl space) -->
+  <rect x="56" y="110" width="528" height="166" fill="url(#block)"/>
+  <path d="M56 276C140 270 250 280 360 274S540 270 584 274" fill="none" stroke="#132636" stroke-width="3"/>
+
+  <!-- vents -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="212" y="206" width="60" height="34" rx="2" fill="#a9c7e0"/>
+    <rect x="368" y="206" width="60" height="34" rx="2" fill="#a9c7e0"/>
+    <path d="M216 215H268M216 223H268M216 231H268M372 215H424M372 223H424M372 231H424" stroke-width="2"/>
+  </g>
+
+  <!-- siding above floor -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="56" y="36" width="528" height="60" fill="#f6f4ef"/>
+    <path d="M58 52H582M58 68H582M58 84H582" stroke="#d8d2c6"/>
+    <rect x="276" y="44" width="88" height="44" fill="#a9c7e0"/>
+    <path d="M320 44V88" fill="none"/>
+    <rect x="270" y="84" width="100" height="8" fill="#ffffff"/>
+    <rect x="56" y="36" width="528" height="60" fill="none"/>
+  </g>
+
+  <!-- subfloor -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="56" y="96" width="528" height="14" fill="#b98c5a"/>
+    <path d="M150 97V109M262 97V109M374 97V109M486 97V109" stroke="#8f6a43" stroke-width="2"/>
+  </g>
+
+  <!-- joists (end view) -->
+  <g fill="#b98c5a" stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="94" y="110" width="14" height="36"/><rect x="142" y="110" width="14" height="36"/>
+    <rect x="190" y="110" width="14" height="36"/><rect x="238" y="110" width="14" height="36"/>
+    <rect x="286" y="110" width="14" height="36"/><rect x="334" y="110" width="14" height="36"/>
+    <rect x="382" y="110" width="14" height="36"/><rect x="430" y="110" width="14" height="36"/>
+    <rect x="478" y="110" width="14" height="36"/><rect x="526" y="110" width="14" height="36"/>
+  </g>
+
+  <!-- beam -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="70" y="146" width="500" height="30" fill="#b98c5a"/>
+    <path d="M90 156C150 152 190 160 250 156M300 166C360 162 400 170 470 165M500 156C520 154 540 158 556 156" fill="none" stroke="#8f6a43" stroke-width="2" stroke-linecap="round"/>
+    <path d="M232 147V175M408 147V175" fill="none" stroke-width="2"/>
+  </g>
+
+  <!-- piers: shims, block, footing -->
+  <g id="pier" stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="124" y="262" width="72" height="14" rx="2" fill="#d8d2c6"/>
+    <rect x="136" y="188" width="48" height="74" fill="#f6f4ef"/>
+    <path d="M137 225H183" fill="none" stroke-width="2.5"/>
+    <g fill="#d8d2c6" stroke="none"><circle cx="146" cy="198" r="2"/><circle cx="170" cy="204" r="1.5"/><circle cx="156" cy="240" r="2"/><circle cx="174" cy="252" r="1.5"/></g>
+    <path d="M136 176H184V180L136 185Z" fill="#d9922e" stroke-width="2.5"/>
+    <path d="M136 185L184 180V188H136Z" fill="#b5761c" stroke-width="2.5"/>
+  </g>
+  <use href="#pier" x="160"/>
+  <use href="#pier" x="320"/>
+
+  <!-- skirt walls in section -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="44" y="110" width="26" height="170" fill="url(#brick)"/>
+    <rect x="570" y="110" width="26" height="170" fill="url(#brick)"/>
+    <rect x="38" y="278" width="38" height="14" fill="#d8d2c6"/>
+    <rect x="564" y="278" width="38" height="14" fill="#d8d2c6"/>
+  </g>
+</svg>

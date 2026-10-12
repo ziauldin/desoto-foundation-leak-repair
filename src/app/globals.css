@@ -13,7 +13,7 @@
   --color-primary-light: #2d5577;
   --color-secondary: #5c6b73;
   --color-accent: #d9922e;
-  --color-accent-dark: #b5761c;
+  --color-accent-dark: #8a5810;
   --color-accent-soft: #f6e7cf;
   --color-background: #f6f4ef;
   --color-surface: #ffffff;
@@ -21,7 +21,7 @@
   --color-text: #1a2630;
   --color-muted: #55626c;
   --color-border: #d8d2c6;
-  --color-success: #2e7d4f;
+  --color-success: #23663f;
   --color-warning: #9a6514;
 
   --font-display: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
@@ -100,5 +100,193 @@
   }
   .prose-site {
     max-width: var(--container-prose);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Motion system
+   - Scroll reveal: add data-reveal (optionally ="left" | "right" | "scale") to any element.
+     Hidden state only applies once JS adds .motion-ready to <html>, so content is always
+     visible without JS and for crawlers. Stagger with style={{ "--i": index }}.
+   - Everything is disabled under prefers-reduced-motion.
+--------------------------------------------------------------------------- */
+@theme static {
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --shadow-card: 0 1px 2px rgb(19 38 54 / 0.06), 0 4px 14px rgb(19 38 54 / 0.06);
+  --shadow-lift: 0 10px 30px -8px rgb(19 38 54 / 0.25);
+  --animate-fade-up: fade-up 0.55s var(--ease-out-soft) both;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-ripple: ripple 3s var(--ease-out-soft) infinite;
+  --animate-slide-up: slide-up 0.5s var(--ease-out-soft) both;
+  --animate-pop: pop 0.45s var(--ease-out-soft) both;
+}
+
+/* Never starts fully transparent: above-the-fold content stays visible (and counts for LCP) at once. */
+@keyframes fade-up {
+  from { opacity: 0.5; translate: 0 12px; }
+  to { opacity: 1; translate: none; }
+}
+@keyframes rise {
+  from { translate: 0 10px; }
+  to { translate: none; }
+}
+@keyframes ring-out {
+  from { transform: scale(1); opacity: 0.65; }
+  to { transform: scale(1.35); opacity: 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes ripple {
+  from { transform: scale(0.6); opacity: 0.7; }
+  to { transform: scale(2.2); opacity: 0; }
+}
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: none; }
+}
+@keyframes pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  70% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); }
+}
+@keyframes shine {
+  from { transform: translateX(-120%) skewX(-20deg); }
+  to { transform: translateX(260%) skewX(-20deg); }
+}
+
+.motion-ready [data-reveal] {
+  /* translate/scale/opacity are composited: no layout or paint while revealing. */
+  opacity: 0;
+  translate: 0 14px;
+  transition:
+    opacity 0.45s var(--ease-out-soft),
+    translate 0.45s var(--ease-out-soft),
+    scale 0.45s var(--ease-out-soft);
+  /* Stagger, capped so long lists never make people wait. */
+  transition-delay: min(calc(var(--i, 0) * 45ms), 270ms);
+}
+.motion-ready [data-reveal="left"] { translate: -18px 0; }
+.motion-ready [data-reveal="right"] { translate: 18px 0; }
+.motion-ready [data-reveal="scale"] { translate: none; scale: 0.97; }
+.motion-ready [data-reveal].is-in {
+  opacity: 1;
+  translate: none;
+  scale: none;
+}
+/* Keep the hover lift on cards that are also scroll-revealed. */
+.motion-ready [data-reveal].card-lift {
+  transition:
+    opacity 0.45s var(--ease-out-soft),
+    translate 0.45s var(--ease-out-soft),
+    transform 0.3s var(--ease-out-soft),
+    box-shadow 0.3s var(--ease-out-soft);
+  transition-delay: min(calc(var(--i, 0) * 45ms), 270ms), min(calc(var(--i, 0) * 45ms), 270ms), 0s, 0s;
+}
+
+/* Attention ring for call buttons: a scaling pseudo-element (GPU) instead of animating box-shadow. */
+.pulse-ring {
+  position: relative;
+}
+.pulse-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--color-accent);
+  animation: ring-out 2.4s var(--ease-out-soft) infinite;
+  pointer-events: none;
+}
+
+/* Hero entrance: children rise in sequence on first paint (CSS only). */
+.hero-enter > * {
+  animation: rise 0.5s var(--ease-out-soft) both;
+}
+.hero-enter > *:nth-child(2) { animation-delay: 50ms; }
+.hero-enter > *:nth-child(3) { animation-delay: 100ms; }
+.hero-enter > *:nth-child(4) { animation-delay: 150ms; }
+.hero-enter > *:nth-child(n + 5) { animation-delay: 200ms; }
+
+/* Accent CTA shine sweep on hover. */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.45), transparent);
+  transform: translateX(-120%) skewX(-20deg);
+  z-index: -1;
+}
+.btn-shine:hover::after {
+  animation: shine 0.8s var(--ease-out-soft);
+}
+
+/* Lift-on-hover card. */
+.card-lift {
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.3s var(--ease-out-soft),
+    box-shadow 0.3s var(--ease-out-soft);
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+/* Animated underline for inline links. */
+.link-grow {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.3s var(--ease-out-soft);
+}
+.link-grow:hover {
+  background-size: 100% 2px;
+}
+
+/* Smooth <details> open/close where supported (Chromium 131+); instant elsewhere. */
+:root {
+  interpolate-size: allow-keywords;
+}
+details::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition:
+    block-size 0.35s var(--ease-out-soft),
+    content-visibility 0.35s allow-discrete;
+}
+details[open]::details-content {
+  block-size: auto;
+}
+
+::selection {
+  background: var(--color-accent-soft);
+  color: var(--color-primary-dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .motion-ready [data-reveal] {
+    opacity: 1;
+    translate: none;
+    scale: none;
+  }
+  .pulse-ring::before {
+    animation: none;
+    display: none;
   }
 }

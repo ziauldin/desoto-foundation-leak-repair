@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="t">
+  <title id="t">Exterior brick wall with a stair-step crack running diagonally through the mortar joints from the corner of a window, with a crack-width gauge held against it</title>
+  <defs>
+    <clipPath id="bd"><rect x="20" y="20" width="600" height="380" rx="28"/></clipPath>
+    <pattern id="brick" width="64" height="48" patternUnits="userSpaceOnUse">
+      <g fill="#c9a27a">
+        <rect x="2" y="2" width="60" height="20" rx="1.5"/>
+        <rect x="34" y="26" width="60" height="20" rx="1.5"/>
+        <rect x="-30" y="26" width="60" height="20" rx="1.5"/>
+      </g>
+    </pattern>
+  </defs>
+
+  <g clip-path="url(#bd)">
+    <rect x="20" y="20" width="600" height="380" fill="#ece8e0"/>
+
+    <!-- ground -->
+    <path d="M10 352H630V410H10Z" fill="#7d9467"/>
+    <path d="M10 372H630V410H10Z" fill="#a98463"/>
+    <g fill="#c9ad8f">
+      <ellipse cx="96" cy="388" rx="5" ry="3"/><ellipse cx="236" cy="394" rx="4" ry="2.5"/>
+      <ellipse cx="502" cy="386" rx="6" ry="3"/><ellipse cx="580" cy="396" rx="3.5" ry="2"/>
+    </g>
+    <path d="M10 372H630" stroke="#132636" stroke-width="3"/>
+  </g>
+
+  <!-- soffit / eave -->
+  <rect x="64" y="52" width="512" height="20" rx="3" fill="#1e3a52"/>
+  <rect x="64" y="52" width="512" height="20" rx="3" fill="none" stroke="#132636" stroke-width="3"/>
+
+  <!-- brick wall -->
+  <rect x="80" y="72" width="480" height="264" fill="#ece8e0"/>
+  <rect x="80" y="72" width="480" height="264" fill="url(#brick)"/>
+
+  <!-- window -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="124" y="86" width="136" height="12" fill="#d8d2c6"/>
+    <rect x="128" y="98" width="128" height="106" fill="#ffffff"/>
+    <rect x="140" y="110" width="46" height="82" fill="#a9c7e0"/>
+    <rect x="198" y="110" width="46" height="82" fill="#a9c7e0"/>
+    <rect x="122" y="204" width="140" height="12" fill="#d8d2c6"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+    <path d="M150 134L166 118M150 150L176 124M208 134L224 118"/>
+  </g>
+
+  <!-- wall outline -->
+  <rect x="80" y="72" width="480" height="264" fill="none" stroke="#132636" stroke-width="3"/>
+
+  <!-- foundation beam -->
+  <rect x="72" y="336" width="496" height="22" fill="#d8d2c6" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- stair-step crack -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M256 216H288V240H320V264H352V288H384V312H416V336L423 347L418 358" stroke="#132636" stroke-width="5"/>
+    <path d="M320 252L330 258M384 300L376 306M288 228L296 226" stroke="#132636" stroke-width="2"/>
+  </g>
+
+  <!-- crack-width gauge card -->
+  <g transform="rotate(-38 404 252)">
+    <rect x="344" y="236" width="128" height="40" rx="5" fill="#b5761c" transform="translate(5 5)"/>
+    <rect x="344" y="236" width="128" height="40" rx="5" fill="#d9922e" stroke="#132636" stroke-width="3"/>
+    <rect x="352" y="244" width="112" height="12" rx="2" fill="#f6e7cf"/>
+    <g stroke="#132636" stroke-linecap="round">
+      <path d="M360 262V270M376 262V270M392 262V270M408 262V270M424 262V270M440 262V270M456 262V270" stroke-width="2"/>
+      <path d="M368 265V270M384 265V270M400 265V270M416 265V270M432 265V270M448 265V270" stroke-width="1.5"/>
+      <path d="M362 246V254" stroke-width="1"/>
+      <path d="M376 246V254" stroke-width="2"/>
+      <path d="M392 246V254" stroke-width="3"/>
+      <path d="M410 246V254" stroke-width="4.5"/>
+      <path d="M430 246V254" stroke-width="6"/>
+      <path d="M452 246V254" stroke-width="8"/>
+    </g>
+  </g>
+</svg>

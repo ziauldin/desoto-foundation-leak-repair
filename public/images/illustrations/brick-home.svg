@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img">
+  <title>Front view of a single-story brick ranch home with a garage, a visible concrete slab edge, a green lawn and a shade tree</title>
+  <defs>
+    <clipPath id="bh-bg"><rect x="20" y="20" width="600" height="380" rx="32"/></clipPath>
+    <pattern id="bh-brick" width="32" height="20" patternUnits="userSpaceOnUse">
+      <rect width="32" height="20" fill="#c9a27a"/>
+      <path d="M0 9h32M0 19h32M16 0v9M0 10v9M32 10v9" stroke="#ece8e0" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect x="20" y="20" width="600" height="380" rx="32" fill="#ece8e0"/>
+  <g clip-path="url(#bh-bg)">
+    <circle cx="540" cy="82" r="30" fill="#f6e7cf"/>
+    <path d="M180 88h96a18 18 0 0 0-14-32 26 26 0 0 0-48-8 20 20 0 0 0-34 40z" fill="#f6f4ef"/>
+    <!-- lawn -->
+    <rect x="0" y="304" width="640" height="116" fill="#7d9467"/>
+    <path d="M0 304H640" stroke="#5f7550" stroke-width="3"/>
+    <path d="M40 350h60M140 372h80M470 360h70M560 382h40" stroke="#5f7550" stroke-width="3" stroke-linecap="round"/>
+    <!-- driveway and walk -->
+    <path d="M404 310H528L570 420H366z" fill="#f6f4ef" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M389 360H550" stroke="#d8d2c6" stroke-width="3"/>
+    <g fill="#f6f4ef" stroke="#132636" stroke-width="3"><rect x="334" y="318" width="30" height="12" rx="4"/><rect x="342" y="340" width="30" height="12" rx="4"/><rect x="350" y="362" width="30" height="12" rx="4"/></g>
+  </g>
+
+  <!-- slab edge -->
+  <rect x="124" y="296" width="424" height="16" fill="#f6f4ef" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M124 304H548" stroke="#d8d2c6" stroke-width="2"/>
+
+  <!-- walls -->
+  <rect x="132" y="172" width="408" height="124" fill="url(#bh-brick)" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- main hip roof -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <path d="M114 172L190 108H482L558 172z" fill="#1e3a52"/>
+    <path d="M152 140H520" fill="none" stroke="#2d5577"/>
+    <rect x="114" y="170" width="444" height="10" fill="#ffffff"/>
+  </g>
+  <!-- garage gable -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <path d="M384 184L471 112L558 184z" fill="#1e3a52"/>
+    <path d="M408 180L471 128L534 180z" fill="#f6f4ef"/>
+    <path d="M452 164H490" fill="none" stroke="#d8d2c6" stroke-width="4"/>
+    <path d="M456 156H486M456 172H486" fill="none" stroke="#d8d2c6" stroke-width="3"/>
+    <rect x="384" y="180" width="174" height="8" fill="#ffffff"/>
+  </g>
+
+  <!-- windows with shutters -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="150" y="204" width="12" height="54" fill="#2d5577"/>
+    <rect x="212" y="204" width="12" height="54" fill="#2d5577"/>
+    <rect x="162" y="204" width="50" height="54" fill="#a9c7e0"/>
+    <path d="M187 204v54M162 231h50" fill="none"/>
+    <rect x="236" y="204" width="12" height="54" fill="#2d5577"/>
+    <rect x="298" y="204" width="12" height="54" fill="#2d5577"/>
+    <rect x="248" y="204" width="50" height="54" fill="#a9c7e0"/>
+    <path d="M273 204v54M248 231h50" fill="none"/>
+  </g>
+  <!-- front door -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="324" y="206" width="48" height="90" fill="#f6f4ef"/>
+    <rect x="330" y="212" width="36" height="84" fill="#d9922e"/>
+    <rect x="338" y="222" width="20" height="22" fill="#f6e7cf"/>
+    <circle cx="359" cy="264" r="2.5" fill="#132636"/>
+  </g>
+  <!-- garage door -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="402" y="204" width="128" height="92" fill="#f6f4ef"/>
+    <path d="M402 227H530M402 250H530M402 273H530" fill="none" stroke="#d8d2c6"/>
+    <path d="M412 213H436M454 213H478M496 213H520" fill="none" stroke="#a9c7e0" stroke-width="6"/>
+    <rect x="402" y="204" width="128" height="92" fill="none"/>
+  </g>
+  <!-- shrubs -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <path d="M144 296a16 16 0 0 1 30-8a16 16 0 0 1 30 0a16 16 0 0 1 30 0a16 16 0 0 1 30 0a16 16 0 0 1 30 8z" fill="#5f7550"/>
+  </g>
+
+  <!-- tree -->
+  <g transform="translate(8 0)">
+    <path d="M70 330V236M70 270l-14-14M70 258l14-14" fill="none" stroke="#132636" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M70 330V236M70 270l-14-14M70 258l14-14" fill="none" stroke="#b98c5a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <g stroke="#132636" stroke-width="6">
+      <circle cx="72" cy="190" r="42"/><circle cx="48" cy="222" r="28"/><circle cx="98" cy="222" r="28"/>
+    </g>
+    <g fill="#7d9467">
+      <circle cx="72" cy="190" r="42"/><circle cx="48" cy="222" r="28"/><circle cx="98" cy="222" r="28"/>
+    </g>
+  </g>
+</svg>

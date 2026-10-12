@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="t">
+  <title id="t">Cross-section of a concrete slab with wood flooring above and a leaking copper pipe below, wet soil spreading under a hairline crack</title>
+  <defs>
+    <clipPath id="sec"><rect x="56" y="56" width="528" height="320" rx="20"/></clipPath>
+    <path id="drop" d="M0-7C2.5-3 5 0 5 3A5 5 0 0 1-5 3C-5 0-2.5-3 0-7Z"/>
+  </defs>
+
+  <rect x="20" y="20" width="600" height="380" rx="28" fill="#ece8e0"/>
+  
+  <g clip-path="url(#sec)">
+    <!-- baseboard / room -->
+    <rect x="56" y="56" width="528" height="48" fill="#ffffff"/>
+    <rect x="56" y="102" width="528" height="18" fill="#f6f4ef"/>
+    <rect x="470" y="68" width="18" height="26" rx="3" fill="#f6f4ef" stroke="#d8d2c6" stroke-width="2"/>
+    <path d="M476 78v4M482 78v4" stroke="#5c6b73" stroke-width="2" stroke-linecap="round"/>
+    <path d="M56 102H584" stroke="#132636" stroke-width="3"/>
+    <path d="M56 108H584" stroke="#d8d2c6" stroke-width="2"/>
+
+    <!-- flooring -->
+    <rect x="56" y="120" width="528" height="18" fill="#f6e7cf"/>
+    <path d="M136 120V138M248 120V138M372 120V138M470 120V138" stroke="#b5761c" stroke-width="2"/>
+    <path d="M80 129H120M168 127H220M270 130H330M396 128H448M500 129H560" stroke="#d9922e" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- slab -->
+    <rect x="56" y="138" width="528" height="90" fill="#f6f4ef"/>
+    <g fill="#d8d2c6">
+      <circle cx="84" cy="160" r="4"/><circle cx="120" cy="196" r="3"/><circle cx="158" cy="168" r="2.5"/>
+      <circle cx="196" cy="208" r="4"/><circle cx="230" cy="158" r="3"/><circle cx="262" cy="188" r="2.5"/>
+      <circle cx="292" cy="212" r="3"/><circle cx="372" cy="164" r="3.5"/><circle cx="400" cy="204" r="2.5"/>
+      <circle cx="438" cy="178" r="4"/><circle cx="476" cy="210" r="3"/><circle cx="510" cy="160" r="2.5"/>
+      <circle cx="546" cy="194" r="3.5"/><circle cx="96" cy="216" r="2"/><circle cx="356" cy="214" r="2"/>
+    </g>
+    <path d="M132 186H200M440 150H496M484 208H560" stroke="#d8d2c6" stroke-width="2" stroke-dasharray="6 6"/>
+
+    <!-- gravel base + soil -->
+    <rect x="56" y="228" width="528" height="22" fill="#c9ad8f"/>
+    <g fill="#ece8e0" stroke="#8a6b4e" stroke-width="1.5">
+      <ellipse cx="80" cy="240" rx="6" ry="4"/><ellipse cx="128" cy="236" rx="5" ry="3.5"/><ellipse cx="170" cy="242" rx="6" ry="4"/>
+      <ellipse cx="214" cy="237" rx="4" ry="3"/><ellipse cx="420" cy="240" rx="6" ry="4"/><ellipse cx="466" cy="236" rx="4" ry="3"/>
+      <ellipse cx="510" cy="242" rx="6" ry="4"/><ellipse cx="556" cy="237" rx="5" ry="3.5"/>
+    </g>
+    <rect x="56" y="250" width="528" height="130" fill="#a98463"/>
+    <g fill="#c9ad8f">
+      <ellipse cx="92" cy="300" rx="6" ry="3.5"/><ellipse cx="150" cy="342" rx="5" ry="3"/><ellipse cx="200" cy="296" rx="4" ry="2.5"/>
+      <ellipse cx="470" cy="300" rx="5" ry="3"/><ellipse cx="520" cy="344" rx="7" ry="4"/><ellipse cx="560" cy="290" rx="4" ry="2.5"/>
+    </g>
+
+    <!-- wet zone -->
+    <path d="M276 230C300 236 360 236 384 230L396 250H264Z" fill="#a98463"/>
+    <path d="M226 250C214 286 236 312 228 336C222 362 262 384 300 376C330 392 380 388 404 368C436 346 420 318 434 292C444 268 432 254 432 250Z" fill="#8a6b4e"/>
+    <path d="M268 250C258 280 276 300 270 320C268 340 300 356 330 350C360 356 388 340 384 318C380 298 398 278 392 250Z" fill="#5c6b73"/>
+    <!-- section lines -->
+    <path d="M56 120H584M56 138H584M56 228H584M56 250H584" stroke="#132636" stroke-width="3"/>
+  </g>
+
+  <!-- copper pipe -->
+  <g clip-path="url(#sec)" fill="none" stroke-linecap="round">
+    <path d="M40 262H600" stroke="#132636" stroke-width="21"/>
+    <path d="M40 262H600" stroke="#d9922e" stroke-width="15"/>
+    <path d="M40 258H600" stroke="#f6e7cf" stroke-width="3"/>
+  </g>
+  <rect x="316" y="248" width="28" height="28" rx="3" fill="#b5761c" stroke="#132636" stroke-width="3"/>
+  <path d="M326 276l4 6 4-6" fill="#5b8db8" stroke="#132636" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- leak droplets -->
+  <g fill="#5b8db8" stroke="#132636" stroke-width="1.5">
+    <use href="#drop" transform="translate(330 300)"/>
+    <use href="#drop" transform="translate(306 316) scale(.85)"/>
+    <use href="#drop" transform="translate(356 314) scale(.85)"/>
+    <use href="#drop" transform="translate(330 334) scale(.75)"/>
+    <use href="#drop" transform="translate(288 290) scale(.65)"/>
+    <use href="#drop" transform="translate(374 290) scale(.65)"/>
+  </g>
+  <g fill="#a9c7e0">
+    <circle cx="300" cy="342" r="3"/><circle cx="362" cy="344" r="3"/><circle cx="276" cy="320" r="2.5"/>
+    <circle cx="386" cy="322" r="2.5"/><circle cx="330" cy="358" r="2.5"/>
+  </g>
+
+  <!-- hairline crack -->
+  <path d="M330 140L324 154L334 170L327 186L333 200L329 212" fill="none" stroke="#132636" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M324 154L314 160M334 170L344 176" fill="none" stroke="#132636" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M323 138L330 148L337 138Z" fill="#132636"/>
+
+  <rect x="56" y="56" width="528" height="320" rx="20" fill="none" stroke="#132636" stroke-width="3"/>
+</svg>

@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from "react";
 import type { CalcField, CalculatorContent, ChecklistItem } from "@/types/content";
-import { CalculatorShell, NumberField, RangeField, SelectField, money } from "./CalculatorShell";
+import { AnimatedNumber } from "@/components/motion/AnimatedNumber";
+import { CalculatorShell, Meter, NumberField, RangeField, SelectField, money } from "./CalculatorShell";
 
 /** Picks the right engine for a calculator's data. All config comes from src/data/content/calculators.ts. */
 export function CalculatorTool({ calculator }: { calculator: CalculatorContent }) {
@@ -97,7 +98,8 @@ function CostCalculator({
         <>
           <p className="eyebrow text-accent!">Estimated range</p>
           <p className="mt-2 font-display text-4xl font-bold sm:text-5xl">
-            {money(estimate.low)} <span className="text-white/60">–</span> {money(estimate.high)}
+            <AnimatedNumber value={estimate.low} format={money} /> <span className="text-white/60">–</span>{" "}
+            <AnimatedNumber value={estimate.high} format={money} />
           </p>
           <p className="mt-3 text-white/80">
             Typical range for a DeSoto home with these inputs. Most of the spread comes from what an inspection finds under the house.
@@ -145,7 +147,7 @@ function ChecklistTool({ title, disclaimer, items }: { title: string; disclaimer
               .filter((i) => i.area === area)
               .map((item) => (
                 <li key={item.id}>
-                  <label className="flex cursor-pointer items-start gap-3 rounded-md border border-border p-3 hover:bg-background has-[:checked]:border-primary has-[:checked]:bg-accent-soft">
+                  <label className="flex cursor-pointer items-start gap-3 rounded-md border border-border p-3 transition-[translate,scale,transform,opacity,color,background-color,border-color] duration-200 hover:-translate-y-px hover:bg-background active:scale-[0.99] has-[:checked]:border-primary has-[:checked]:bg-accent-soft has-[:checked]:shadow-sm">
                     <input
                       type="checkbox"
                       checked={checked.has(item.id)}
@@ -162,7 +164,8 @@ function ChecklistTool({ title, disclaimer, items }: { title: string; disclaimer
       result={
         <>
           <p className="eyebrow text-accent!">Your result</p>
-          <p className="mt-2 font-display text-3xl font-bold">{verdict.label}</p>
+          <p key={verdict.label} className="mt-2 animate-pop font-display text-3xl font-bold">{verdict.label}</p>
+          <Meter value={Math.min(1, score / 14)} label="Concern level" />
           <p className="mt-1 text-white/70">
             {checked.size} sign{checked.size === 1 ? "" : "s"} checked · score {score}
           </p>
@@ -243,7 +246,8 @@ function CrackWidthTool({ title, disclaimer }: { title: string; disclaimer: stri
             <p className="eyebrow text-accent!">Width band</p>
             <p className="mt-1 text-white/85">{fraction} · {crackLocations[location].toLowerCase()}</p>
             <p className="mt-5 eyebrow text-accent!">Assessment</p>
-            <p className="mt-2 font-display text-3xl font-bold">{band.label}</p>
+            <p key={band.label} className="mt-2 animate-pop font-display text-3xl font-bold">{band.label}</p>
+            <Meter value={Math.min(1, score / 10)} label="Severity" />
             <p className="mt-3 text-white/85">{band.text}</p>
           </>
         ) : (
@@ -292,7 +296,10 @@ function DrainageSlopeTool({ title, disclaimer }: { title: string; disclaimer: s
         status ? (
           <>
             <p className="eyebrow text-accent!">Your slope</p>
-            <p className="mt-2 font-display text-5xl font-bold">{percent.toFixed(1)}%</p>
+            <p className="mt-2 font-display text-5xl font-bold">
+              <AnimatedNumber value={percent} format={(n) => `${n.toFixed(1)}%`} />
+            </p>
+            <Meter value={Math.max(0, Math.min(1, percent / (target * 1.6)))} label="Slope vs target" marker={1 / 1.6} />
             <p className="mt-1 text-white/75">{per10.toFixed(1)} in of fall per 10 ft · target {target}%</p>
             <p className={`mt-5 font-display text-2xl font-bold ${status.tone === "good" ? "text-[#8fd3a8]" : "text-accent"}`}>{status.label}</p>
             <p className="mt-2 text-white/85">{status.text}</p>

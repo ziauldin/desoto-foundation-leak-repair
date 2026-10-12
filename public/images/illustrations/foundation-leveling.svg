@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="t">
+  <title id="t">Cutaway of a house on a concrete slab with three stacked concrete piers driven into clay soil below, one topped by a hydraulic jack lifting the sagging slab edge back to level</title>
+  <defs>
+    <clipPath id="bd"><rect x="20" y="20" width="600" height="380" rx="28"/></clipPath>
+    <pattern id="brick" width="24" height="12" patternUnits="userSpaceOnUse">
+      <rect width="24" height="12" fill="#c9a27a"/>
+      <path d="M0 .75H24M0 6.75H24M6 0V6.75M18 6.75V12" stroke="#ece8e0" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+
+  <g clip-path="url(#bd)">
+    <rect x="20" y="20" width="600" height="380" fill="#ece8e0"/>
+    <circle cx="94" cy="80" r="18" fill="#d9922e"/>
+
+    <!-- soil layers -->
+    <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+      <path d="M10 252H630V410H10Z" fill="#c9ad8f"/>
+      <path d="M10 300C120 292 220 306 330 298S530 292 630 302V410H10Z" fill="#a98463"/>
+      <path d="M10 360C140 352 250 366 370 356S540 352 630 360V410H10Z" fill="#8a6b4e"/>
+    </g>
+    <g fill="#ece8e0">
+      <ellipse cx="66" cy="276" rx="5" ry="3"/><ellipse cx="560" cy="282" rx="6" ry="3.5"/>
+      <ellipse cx="256" cy="330" rx="4" ry="2.5"/><ellipse cx="100" cy="334" rx="3" ry="2"/>
+      <ellipse cx="392" cy="336" rx="5" ry="3"/><ellipse cx="540" cy="384" rx="4" ry="2.5"/>
+      <ellipse cx="250" cy="384" rx="3.5" ry="2"/>
+    </g>
+    <!-- grass -->
+    <path d="M10 246H120V254H10ZM520 246H630V254H520Z" fill="#7d9467" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+
+  <!-- piers (stacked cylinders) -->
+  <g fill="#f6f4ef" stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <g id="pier">
+      <path d="M172 350V372A18 5 0 0 0 208 372V350A18 5 0 0 1 172 350Z"/>
+      <path d="M172 324V346A18 5 0 0 0 208 346V324A18 5 0 0 1 172 324Z"/>
+      <path d="M172 298V320A18 5 0 0 0 208 320V298A18 5 0 0 1 172 298Z"/>
+      <path d="M172 272V294A18 5 0 0 0 208 294V272A18 5 0 0 1 172 272Z"/>
+      <rect x="164" y="262" width="52" height="10" fill="#d8d2c6"/>
+    </g>
+    <use href="#pier" x="130"/>
+    <path d="M432 362V384A18 5 0 0 0 468 384V362A18 5 0 0 1 432 362Z"/>
+    <path d="M432 336V358A18 5 0 0 0 468 358V336A18 5 0 0 1 432 336Z"/>
+    <path d="M432 310V332A18 5 0 0 0 468 332V310A18 5 0 0 1 432 310Z"/>
+    <rect x="424" y="298" width="52" height="10" fill="#d8d2c6"/>
+  </g>
+
+  <!-- hydraulic jack -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <path d="M466 289C500 291 518 276 546 250" fill="none" stroke="#132636" stroke-width="5" stroke-linecap="round"/>
+    <path d="M466 289C500 291 518 276 546 250" fill="none" stroke="#d9922e" stroke-width="2" stroke-linecap="round"/>
+    <rect x="442" y="268" width="16" height="14" fill="#5c6b73"/>
+    <rect x="434" y="280" width="32" height="18" rx="2" fill="#2d5577"/>
+    <path d="M428 264.5L472 268V274L428 270.5Z" fill="#132636"/>
+  </g>
+
+  <!-- slab -->
+  <path d="M120 240H392L520 250V272L392 262H120Z" fill="#f6f4ef" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M150 251H178M232 251H272M326 251H352" stroke="#d8d2c6" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- house -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <path d="M146 124H494V248L392 240H146Z" fill="url(#brick)"/>
+    <path d="M122 130L320 56L518 130Z" fill="#1e3a52"/>
+    <rect x="132" y="126" width="376" height="8" fill="#132636"/>
+    <rect x="180" y="152" width="60" height="50" fill="#a9c7e0"/>
+    <path d="M210 152V202" fill="none"/>
+    <rect x="400" y="152" width="60" height="50" fill="#a9c7e0"/>
+    <path d="M430 152V202" fill="none"/>
+    <rect x="290" y="164" width="50" height="76" fill="#2d5577"/>
+    <path d="M176 202H244M396 202H464" fill="none" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <circle cx="331" cy="204" r="3" fill="#d9922e"/>
+  <path d="M462 206L470 214L466 220L474 232" fill="none" stroke="#132636" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- original level reference -->
+  <path d="M392 240H540" stroke="#132636" stroke-width="2" stroke-dasharray="6 6"/>
+
+  <!-- pump on grade -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <rect x="532" y="222" width="56" height="28" rx="4" fill="#2d5577"/>
+    <circle cx="552" cy="236" r="7" fill="#ffffff"/>
+    <path d="M552 236L556 232" fill="none" stroke-width="2" stroke-linecap="round"/>
+    <path d="M574 222V206H596" fill="none" stroke="#132636" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- up arrow -->
+  <path d="M552 196V156H540L562 128L584 156H572V196Z" fill="#d9922e" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+</svg>

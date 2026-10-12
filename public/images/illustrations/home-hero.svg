@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="t">
+  <title id="t">Cutaway of a single-story brick ranch home on a concrete slab, with layered clay soil below and a water line leaking under the slab</title>
+  <defs>
+    <clipPath id="bd"><rect x="20" y="20" width="600" height="380" rx="28"/></clipPath>
+    <pattern id="brick" width="24" height="12" patternUnits="userSpaceOnUse">
+      <rect width="24" height="12" fill="#c9a27a"/>
+      <path d="M0 .75H24M0 6.75H24M6 0V6.75M18 6.75V12" stroke="#ece8e0" stroke-width="1.5"/>
+    </pattern>
+    <path id="drop" d="M0-7C2.5-3 5 0 5 3A5 5 0 0 1-5 3C-5 0-2.5-3 0-7Z"/>
+  </defs>
+
+  <g clip-path="url(#bd)">
+    <rect x="20" y="20" width="600" height="380" fill="#ece8e0"/>
+    <circle cx="96" cy="84" r="18" fill="#d9922e"/>
+    <path d="M500 74h66a14 14 0 0 0 0-28 20 20 0 0 0-38-6 14 14 0 0 0-28 34Z" fill="#f6f4ef"/>
+
+    <!-- soil layers -->
+    <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+      <path d="M10 242H630V410H10Z" fill="#c9ad8f"/>
+      <path d="M10 300C110 290 210 308 320 298S520 290 630 300V410H10Z" fill="#a98463"/>
+      <path d="M10 354C140 346 240 362 360 352S540 346 630 356V410H10Z" fill="#8a6b4e"/>
+    </g>
+    <g fill="#ece8e0">
+      <ellipse cx="78" cy="272" rx="5" ry="3"/><ellipse cx="540" cy="268" rx="6" ry="3.5"/>
+      <ellipse cx="470" cy="282" rx="3.5" ry="2.5"/><ellipse cx="150" cy="284" rx="3" ry="2"/>
+    </g>
+    <g fill="#c9ad8f">
+      <ellipse cx="96" cy="328" rx="6" ry="3.5"/><ellipse cx="208" cy="334" rx="4" ry="2.5"/>
+      <ellipse cx="438" cy="324" rx="5" ry="3"/><ellipse cx="566" cy="330" rx="7" ry="4"/>
+      <ellipse cx="150" cy="380" rx="5" ry="3"/><ellipse cx="420" cy="384" rx="6" ry="3.5"/>
+      <ellipse cx="560" cy="378" rx="4" ry="2.5"/>
+    </g>
+
+    <!-- wet zone around leak -->
+    <path d="M250 268C262 254 312 252 330 262C352 274 360 300 348 322C336 342 300 346 282 334C258 320 236 286 250 268Z" fill="#8a6b4e"/>
+    <path d="M268 276C278 266 306 266 318 274C332 284 334 304 324 318C312 330 292 330 282 320C268 306 260 286 268 276Z" fill="#5c6b73"/>
+
+    <!-- grass -->
+    <path d="M10 234H630V246H10Z" fill="#7d9467" stroke="#132636" stroke-width="3"/>
+    <path d="M40 234l4-8 4 8M74 234l3-6 3 6M540 234l4-8 4 8M584 234l3-6 3 6" fill="#7d9467" stroke="#132636" stroke-width="2" stroke-linejoin="round"/>
+  </g>
+
+  <!-- water supply line under slab -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#bd)">
+    <path d="M20 280H396V246" stroke="#132636" stroke-width="15"/>
+    <path d="M20 280H396V246" stroke="#d9922e" stroke-width="9"/>
+    <path d="M20 278H390" stroke="#f6e7cf" stroke-width="2"/>
+  </g>
+  <rect x="300" y="272" width="12" height="16" rx="2" fill="#b5761c" stroke="#132636" stroke-width="3"/>
+
+  <!-- leak droplets -->
+  <g fill="#5b8db8" stroke="#132636" stroke-width="1.5">
+    <use href="#drop" transform="translate(306 300)"/>
+    <use href="#drop" transform="translate(290 314) scale(.8)"/>
+    <use href="#drop" transform="translate(324 312) scale(.8)"/>
+    <use href="#drop" transform="translate(306 326) scale(.7)"/>
+  </g>
+  <g fill="#a9c7e0">
+    <circle cx="284" cy="294" r="3"/><circle cx="330" cy="294" r="3"/>
+    <circle cx="276" cy="326" r="2.5"/><circle cx="338" cy="328" r="2.5"/>
+  </g>
+
+  <!-- slab -->
+  <rect x="134" y="226" width="352" height="26" fill="#f6f4ef" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="#d8d2c6">
+    <circle cx="160" cy="238" r="2"/><circle cx="196" cy="244" r="1.5"/><circle cx="232" cy="236" r="2"/>
+    <circle cx="276" cy="242" r="1.5"/><circle cx="344" cy="236" r="2"/><circle cx="380" cy="244" r="1.5"/>
+    <circle cx="430" cy="238" r="2"/><circle cx="462" cy="244" r="1.5"/>
+  </g>
+
+  <!-- house -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="156" y="140" width="308" height="86" fill="url(#brick)"/>
+    <path d="M190 92H430L484 138H136Z" fill="#1e3a52"/>
+    <path d="M250 92L232 138M370 92L388 138" stroke="#2d5577" stroke-width="2"/>
+    <rect x="130" y="136" width="360" height="10" rx="2" fill="#132636"/>
+    <rect x="288" y="168" width="38" height="58" fill="#2d5577"/>
+    <circle cx="318" cy="198" r="2.5" fill="#d9922e" stroke="none"/>
+    <rect x="186" y="164" width="62" height="38" fill="#a9c7e0"/>
+    <path d="M217 164V202M186 183H248" stroke="#ffffff" stroke-width="3"/>
+    <rect x="182" y="202" width="70" height="7" fill="#f6f4ef"/>
+    <rect x="368" y="164" width="62" height="38" fill="#a9c7e0"/>
+    <path d="M399 164V202M368 183H430" stroke="#ffffff" stroke-width="3"/>
+    <rect x="364" y="202" width="70" height="7" fill="#f6f4ef"/>
+  </g>
+  <path d="M190 166l14-0M372 166l14 0" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- shrubs -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round">
+    <path d="M150 226a16 16 0 0 1 4-26 18 18 0 0 1 32 4 14 14 0 0 1 8 22Z" fill="#5f7550"/>
+    <path d="M100 234a12 12 0 0 1 2-20 14 14 0 0 1 26 2 12 12 0 0 1 6 18Z" fill="#7d9467"/>
+  </g>
+
+  <!-- gutter + downspout -->
+  <g stroke="#132636" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M466 146H478V214L496 228H512V238H490L466 220Z" fill="#f6f4ef"/>
+    <rect x="502" y="238" width="34" height="6" rx="2" fill="#d8d2c6"/>
+  </g>
+  <g fill="#5b8db8">
+    <circle cx="522" cy="232" r="2.5"/><circle cx="530" cy="228" r="2"/>
+  </g>
+
+  <rect x="20" y="20" width="600" height="380" rx="28" fill="none" stroke="#d8d2c6" stroke-width="2"/>
+</svg>

@@ -5,6 +5,8 @@ import { mainNav } from "@/data/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyCtaBar } from "@/components/layout/StickyCtaBar";
+import { RevealObserver } from "@/components/motion/RevealObserver";
+import { BackToTop } from "@/components/motion/BackToTop";
 import "./globals.css";
 
 // Display: sturdy semi-condensed sans common on contractor signage. Body: highly readable humanist sans.
@@ -34,7 +36,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-US" className={`${display.variable} ${body.variable}`}>
+    <html lang="en-US" data-scroll-behavior="smooth" className={`${display.variable} ${body.variable}`}>
       <body className="flex min-h-screen flex-col">
         <a
           href="#main"
@@ -48,6 +50,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </main>
         <Footer />
         <StickyCtaBar />
+        <BackToTop />
+        <RevealObserver />
       </body>
     </html>
   );

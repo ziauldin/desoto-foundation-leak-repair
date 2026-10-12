@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img">
+  <title>Cross-section of a French drain beside a foundation: a gravel-filled trench with a fabric-wrapped perforated pipe collecting water and carrying it away</title>
+  <defs>
+    <clipPath id="fd-bg"><rect x="20" y="20" width="600" height="380" rx="32"/></clipPath>
+    <pattern id="fd-brick" width="40" height="24" patternUnits="userSpaceOnUse">
+      <rect width="40" height="24" fill="#c9a27a"/>
+      <path d="M0 11h40M0 23h40M20 0v11M0 12v11M40 12v11" stroke="#ece8e0" stroke-width="2"/>
+    </pattern>
+    <pattern id="fd-gravel" width="48" height="34" patternUnits="userSpaceOnUse">
+      <rect width="48" height="34" fill="#d8d2c6"/>
+      <ellipse cx="8" cy="8" rx="7" ry="6" fill="#f6f4ef"/>
+      <ellipse cx="25" cy="6" rx="6" ry="5" fill="#c9ad8f"/>
+      <ellipse cx="40" cy="10" rx="7" ry="6" fill="#5c6b73"/>
+      <ellipse cx="16" cy="22" rx="8" ry="6" fill="#5c6b73"/>
+      <ellipse cx="33" cy="25" rx="7" ry="6" fill="#f6f4ef"/>
+      <ellipse cx="2" cy="28" rx="5" ry="4" fill="#c9ad8f"/>
+      <ellipse cx="46" cy="29" rx="4" ry="4" fill="#c9ad8f"/>
+    </pattern>
+    <path id="fd-drop" d="M0-9C4-3 7 1 7 4A7 7 0 1 1-7 4C-7 1-4-3 0-9z" fill="#5b8db8"/>
+  </defs>
+  <rect x="20" y="20" width="600" height="380" rx="32" fill="#ece8e0"/>
+  <g clip-path="url(#fd-bg)">
+    <!-- rain cloud -->
+    <path d="M370 92h132a24 24 0 0 0-18-40 32 32 0 0 0-60-8 24 24 0 0 0-54 48z" fill="#f6f4ef" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+    <g stroke="#a9c7e0" stroke-width="4" stroke-linecap="round">
+      <path d="M392 106l-8 18M424 106l-8 18M456 106l-8 18M488 106l-8 18M408 134l-6 14M440 134l-6 14M472 134l-6 14"/>
+    </g>
+    <!-- soil -->
+    <path d="M0 159L640 191V420H0z" fill="#a98463"/>
+    <path d="M0 380L640 400M60 300L200 307" fill="none" stroke="#8a6b4e" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round"/>
+    <!-- trench gravel -->
+    <path d="M230 182.5L640 203V360L230 338z" fill="url(#fd-gravel)"/>
+    <path d="M230 170.5V338L640 360" fill="none" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+    <!-- perforated pipe wrapped in fabric -->
+    <path d="M250 305L660 327" stroke="#132636" stroke-width="50" stroke-linecap="round"/>
+    <path d="M250 305L660 327" stroke="#f6e7cf" stroke-width="44" stroke-linecap="round"/>
+    <path d="M250 305L660 327" stroke="#d9922e" stroke-width="44" stroke-linecap="round" stroke-dasharray="2 12"/>
+    <path d="M250 305L660 327" stroke="#132636" stroke-width="32" stroke-linecap="round"/>
+    <path d="M250 305L660 327" stroke="#ffffff" stroke-width="26" stroke-linecap="round"/>
+    <path d="M250 313L660 335" stroke="#a9c7e0" stroke-width="10" stroke-linecap="round"/>
+    <g fill="#132636">
+      <circle cx="280" cy="298.6" r="3"/><circle cx="320" cy="300.7" r="3"/><circle cx="360" cy="302.9" r="3"/>
+      <circle cx="400" cy="305" r="3"/><circle cx="440" cy="307.2" r="3"/><circle cx="480" cy="309.3" r="3"/>
+      <circle cx="520" cy="311.5" r="3"/><circle cx="560" cy="313.6" r="3"/><circle cx="600" cy="315.8" r="3"/>
+    </g>
+    <!-- flow arrows in pipe -->
+    <g fill="none" stroke="#5b8db8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M332 299l10 7-10 7M346 300l10 7-10 7"/>
+      <path d="M452 306l10 7-10 7M466 307l10 7-10 7"/>
+      <path d="M572 312l10 7-10 7M586 313l10 7-10 7"/>
+    </g>
+    <!-- lawn -->
+    <path d="M0 159L640 191V203L0 171z" fill="#7d9467"/>
+    <path d="M0 159L640 191" fill="none" stroke="#5f7550" stroke-width="3"/>
+    <g stroke="#5f7550" stroke-width="3" stroke-linecap="round">
+      <path d="M268 172l-3-9M274 172l2-10M520 185l-3-9M526 185l2-10M590 189l-3-9M596 189l2-10"/>
+    </g>
+  </g>
+  <!-- house wall and foundation -->
+  <g clip-path="url(#fd-bg)">
+    <path d="M0 146H168V250H0" fill="#f6f4ef" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M0 166H168" stroke="#d8d2c6" stroke-width="2"/>
+    <path d="M0 56H160V146H0z" fill="url(#fd-brick)" stroke="#132636" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="64" y="80" width="58" height="46" fill="#a9c7e0" stroke="#132636" stroke-width="3"/>
+    <path d="M93 80v46M64 103h58" stroke="#132636" stroke-width="3"/>
+  </g>
+  <path d="M20 40H176L186 58H20" fill="#1e3a52" stroke="#132636" stroke-width="3" stroke-linejoin="round" clip-path="url(#fd-bg)"/>
+  <rect x="20" y="56" width="168" height="10" fill="#ffffff" stroke="#132636" stroke-width="3" clip-path="url(#fd-bg)"/>
+  <!-- water entering -->
+  <use href="#fd-drop" x="292" y="226"/>
+  <use href="#fd-drop" x="372" y="250"/>
+  <use href="#fd-drop" x="456" y="232"/>
+  <use href="#fd-drop" x="540" y="258"/>
+  <use href="#fd-drop" x="196" y="234"/>
+  <use href="#fd-drop" x="200" y="296"/>
+  <g fill="none" stroke="#1e3a52" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M292 244v18M286 256l6 7 6-7"/>
+    <path d="M372 268v14M366 276l6 7 6-7"/>
+    <path d="M456 250v20M450 264l6 7 6-7"/>
+    <path d="M540 276v12M534 282l6 7 6-7"/>
+    <path d="M182 254h30M206 248l7 6-7 6"/>
+    <path d="M186 316h30M210 310l7 6-7 6"/>
+  </g>
+</svg>
