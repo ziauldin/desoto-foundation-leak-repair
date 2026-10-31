@@ -12,7 +12,19 @@ type Status = "idle" | "sending" | "sent" | "error";
 const inputClass =
   "mt-1 block w-full rounded-md border border-border bg-surface px-3 py-2.5 text-text transition-[translate,scale,transform,opacity,color,background-color,border-color] duration-200 placeholder:text-muted/70 hover:border-secondary focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15";
 
-export function ContactForm({ title = "Request a foundation inspection", compact = false }: { title?: string; compact?: boolean }) {
+export function ContactForm({
+  title = "Request a foundation inspection",
+  compact = false,
+  inModal = false,
+  defaultIssue = "",
+}: {
+  title?: string;
+  compact?: boolean;
+  /** Preselected "What do you need help with?" option. */
+  defaultIssue?: string;
+  /** Leaves room for the popup's close button. */
+  inModal?: boolean;
+}) {
   const pathname = usePathname();
   const uid = useId();
   const [status, setStatus] = useState<Status>("idle");
@@ -82,7 +94,7 @@ export function ContactForm({ title = "Request a foundation inspection", compact
 
   return (
     <form onSubmit={onSubmit} noValidate className="rounded-lg bg-surface p-5 text-text shadow-lg sm:p-6" aria-labelledby={`${uid}-title`}>
-      <p id={`${uid}-title`} className="font-display text-xl font-bold text-primary-dark">
+      <p id={`${uid}-title`} className={`font-display text-xl font-bold text-primary-dark ${inModal ? "pr-12" : ""}`}>
         {title}
       </p>
       <p className="mt-1 text-sm text-muted">DeSoto, TX homes and buildings only. We reply by phone.</p>
@@ -124,7 +136,7 @@ export function ContactForm({ title = "Request a foundation inspection", compact
           <label htmlFor={`${uid}-issue`} className="text-sm font-semibold">
             What do you need help with? <span aria-hidden="true">*</span>
           </label>
-          <select {...field("issue")} required defaultValue="" className={inputClass}>
+          <select {...field("issue")} required defaultValue={defaultIssue} className={inputClass}>
             <option value="" disabled>
               Choose one
             </option>

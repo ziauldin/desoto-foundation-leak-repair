@@ -1,12 +1,12 @@
 import { site } from "@/config/site";
 import type { FAQ } from "@/types/content";
 
-/** Two-column FAQ: heading block left, plus/minus disclosure list right. */
+/** Centered FAQ: heading block above a plus/minus disclosure list. */
 export function ServiceFaq({ title, faqs }: { title: string; faqs: FAQ[] }) {
   return (
     <section id="faq" aria-labelledby="faq-heading" className="py-14 sm:py-20">
-      <div className="container-site grid gap-10 lg:grid-cols-[1fr_2fr]">
-        <div>
+      <div className="container-site mx-auto grid max-w-3xl gap-10">
+        <div className="text-center">
           <p className="eyebrow">FAQ</p>
           <h2 id="faq-heading" className="mt-2">
             {title}

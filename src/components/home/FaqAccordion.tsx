@@ -6,8 +6,8 @@ import { ChevronIcon } from "@/components/ui/Icons";
 export function FaqAccordion({ faqs, title = "Frequently asked questions" }: { faqs: FAQ[]; title?: string }) {
   if (!faqs.length) return null;
   return (
-    <Section id="faq" eyebrow="FAQ" title={title}>
-      <div className="max-w-3xl divide-y divide-border rounded-lg border border-border bg-surface">
+    <Section id="faq" eyebrow="FAQ" title={title} align="center">
+      <div className="mx-auto max-w-3xl divide-y divide-border rounded-lg border border-border bg-surface">
         {faqs.map((faq) => (
           <details key={faq.question} className="group px-5 [&_summary::-webkit-details-marker]:hidden">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4">

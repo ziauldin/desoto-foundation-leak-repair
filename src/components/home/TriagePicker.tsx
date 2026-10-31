@@ -71,7 +71,7 @@ export function TriagePicker() {
                     </span>
                     <span className="mt-4 font-display text-lg font-semibold leading-snug text-primary-dark">{o.title}</span>
                     <span className="mt-1.5 flex-1 text-sm text-muted">{o.text}</span>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-dark">
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-danger">
                       {o.cta}
                       <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
                         →

@@ -2,16 +2,18 @@ import type { PageRecord, ServiceContent } from "@/types/content";
 import { breadcrumbSchema, faqSchema, localBusinessSchema, serviceSchema } from "@/lib/schema";
 import { imageForPath } from "@/data/images";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import {
   MethodsTable,
   ProcessTimeline,
   ServiceCtaBand,
+  ServiceEstimator,
   ServiceFaq,
   ServiceHero,
   ServiceOverview,
   ServiceRelated,
   ServiceReviews,
-  SignStrip,
+  QuickFacts,
   SignsChecklist,
   SoilExplainer,
 } from "@/components/service";
@@ -38,7 +40,7 @@ export function ServicePageTemplate({ page, content }: { page: PageRecord; conte
         urgent={content.urgent}
         formTitle={`Request ${name.toLowerCase()} help`}
       />
-      <SignStrip signs={content.signs} />
+      <QuickFacts path={page.path} />
       <ServiceOverview
         title={`${name} for DeSoto homes`}
         paragraphs={content.intro}
@@ -48,9 +50,11 @@ export function ServicePageTemplate({ page, content }: { page: PageRecord; conte
       <SignsChecklist title={`Signs you may need ${name.toLowerCase()}`} signs={content.signs} />
       <SoilExplainer paragraphs={content.whyItMatters} />
       <MethodsTable items={content.included} />
+      <ServiceEstimator path={page.path} name={name} />
       <ServiceCtaBand type={content.ctaType} />
       <ProcessTimeline title={`How ${name.toLowerCase()} works`} steps={content.process} />
       <ServiceRelated services={page.relatedServices} supporting={page.relatedPages} />
+      <WhyChooseUs />
       <ServiceReviews />
       <ServiceFaq title={`${name} questions`} faqs={content.faqs} />
       <ServiceCtaBand type={content.ctaType} />

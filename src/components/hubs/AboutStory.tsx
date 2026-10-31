@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { site } from "@/config/site";
-import { defaultProcess, trustPoints } from "@/data/trust";
+import { defaultProcess } from "@/data/trust";
 import { breadcrumbSchema, localBusinessSchema } from "@/lib/schema";
 import { images } from "@/data/images";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { ButtonLink } from "@/components/ui/Button";
+import { WhyChooseUs } from "@/components/home/WhyChooseUs";
+import { TeamSection } from "@/components/hubs/TeamSection";
 import type { PageRecord } from "@/types/content";
 
 const story = [
@@ -40,19 +42,8 @@ export function AboutStory({ page }: { page: PageRecord }) {
         </div>
       </div>
 
-      <section aria-labelledby="principles-h" className="bg-surface py-14 sm:py-20">
-        <div className="container-site">
-          <h2 id="principles-h">What you can expect</h2>
-          <dl className="mt-8 grid gap-8 sm:grid-cols-2">
-            {trustPoints.map((t, i) => (
-              <div key={t.title} data-reveal style={{ "--i": i } as React.CSSProperties} className="rounded-lg border-l-4 border-accent bg-background p-5">
-                <dt className="font-display text-xl font-semibold text-primary-dark">{t.title}</dt>
-                <dd className="mt-1 text-muted">{t.text}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
+      <WhyChooseUs />
+      <TeamSection />
 
       <section aria-labelledby="visit-h" className="py-14 sm:py-20">
         <div className="container-site grid gap-10 lg:grid-cols-2">

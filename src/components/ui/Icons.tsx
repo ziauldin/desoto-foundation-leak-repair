@@ -69,3 +69,42 @@ export const BookIcon = ({ className = "h-6 w-6" }: IconProps) => (
     <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17ZM4 21.5A2.5 2.5 0 0 1 6.5 19H20" />
   </svg>
 );
+
+export const RulerIcon = ({ className = "h-6 w-6" }: IconProps) => (
+  <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...base}>
+    <path d="m3.5 15.5 12-12 5 5-12 12zM7.5 11.5l2 2M10.5 8.5l2 2M13.5 5.5l2 2" />
+  </svg>
+);
+
+export const ClipboardIcon = ({ className = "h-6 w-6" }: IconProps) => (
+  <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...base}>
+    <rect x="5" y="4" width="14" height="17.5" rx="2" />
+    <path d="M9 4V2.5h6V4M8.5 10h7M8.5 14h7M8.5 18h4" />
+  </svg>
+);
+
+export const ClockIcon = ({ className = "h-6 w-6" }: IconProps) => (
+  <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...base}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 7v5l3 2" />
+  </svg>
+);
+
+export const HandshakeIcon = ({ className = "h-6 w-6" }: IconProps) => (
+  <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...base}>
+    <path d="m2 11 4-4 4 1.5L13 6l4 1 5 4M2 11l4 5h2l3 2.5a1.5 1.5 0 0 0 2-2.2M22 11l-4 5-3.5-3M10 8.5l-1.5 2a1.5 1.5 0 0 0 2.2 2l2.3-1.5 3.5 3" />
+  </svg>
+);
+
+export const SearchIcon = ({ className = "h-6 w-6" }: IconProps) => (
+  <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...base}>
+    <circle cx="11" cy="11" r="7" />
+    <path d="m20 20-3.5-3.5" />
+  </svg>
+);
+
+export const WrenchIcon = ({ className = "h-6 w-6" }: IconProps) => (
+  <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...base}>
+    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z" />
+  </svg>
+);

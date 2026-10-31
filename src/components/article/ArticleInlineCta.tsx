@@ -12,7 +12,7 @@ export function ArticleInlineCta({ type }: { type: CtaType }) {
       <p className="font-display text-xl font-bold text-primary-dark">{cta.heading}</p>
       <p className="mt-1 text-muted">{cta.text}</p>
       <p className="mt-3 flex flex-wrap gap-x-6 gap-y-2 font-semibold">
-        <Link href={ctaHref(type, site.phoneHref)} className="text-primary underline decoration-accent decoration-2 underline-offset-4 transition-colors hover:text-accent-dark">
+        <Link href={ctaHref(type, site.phoneHref)} data-contact-popup={type !== "emergency" || undefined} className="text-primary underline decoration-accent decoration-2 underline-offset-4 transition-colors hover:text-accent-dark">
           {cta.label} →
         </Link>
         <a href={site.phoneHref} className="inline-flex items-center gap-1.5 text-accent-dark">

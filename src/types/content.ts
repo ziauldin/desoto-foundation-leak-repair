@@ -171,6 +171,8 @@ export type CalcField =
       unit: string;
       perUnitLow: number;
       perUnitHigh: number;
+      /** Only shown (and counted) while another select field has this option chosen. */
+      showIf?: { field: string; option: number };
     };
 
 export interface ChecklistItem {

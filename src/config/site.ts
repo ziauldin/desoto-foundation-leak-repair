@@ -7,10 +7,10 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://desotofoundationleakrepair.com",
   tagline: "Foundation leak and foundation repair for DeSoto, TX homes",
 
-  // PLACEHOLDER: 555-01xx numbers are reserved for fiction. Replace with the tracking number.
-  phoneDisplay: "(972) 555-0142",
-  phoneHref: "tel:+19725550142",
-  // PLACEHOLDER inbox shown on the contact page.
+  // From desotofoundationrepairpros.com, the business renting the site.
+  phoneDisplay: "(469) 625-0726",
+  phoneHref: "tel:+14696250726",
+  // PLACEHOLDER inbox: the renting business doesn't publish an email address.
   email: "info@desotofoundationleakrepair.com",
 
   city: "DeSoto",

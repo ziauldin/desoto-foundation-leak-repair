@@ -5,8 +5,10 @@ export function LocationFaq({ areaName, faqs }: { areaName: string; faqs: FAQ[] 
   return (
     <section id="faq" aria-labelledby="faq-heading" className="border-t border-border bg-surface py-14 sm:py-20">
       <div className="container-site">
-        <h2 id="faq-heading">{areaName} foundation questions</h2>
-        <ol className="mt-8 grid gap-x-12 gap-y-8 md:grid-cols-2">
+        <h2 id="faq-heading" className="text-center">
+          {areaName} foundation questions
+        </h2>
+        <ol className="mx-auto mt-8 grid max-w-5xl gap-x-12 gap-y-8 md:grid-cols-2">
           {faqs.map((f, i) => (
             <li key={f.question} data-reveal style={{ "--i": i } as React.CSSProperties} className="grid grid-cols-[2.5rem_1fr]">
               <span className="font-display text-2xl font-bold text-accent-dark" aria-hidden="true">

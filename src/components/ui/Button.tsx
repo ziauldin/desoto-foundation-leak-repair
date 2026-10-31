@@ -32,8 +32,9 @@ export function ButtonLink({
       </a>
     );
   }
+  // Inspection-request CTAs open the site-wide popup form (see ContactModal).
   return (
-    <Link href={href} className={buttonClass(variant, className)}>
+    <Link href={href} className={buttonClass(variant, className)} data-contact-popup={href === "/contact/" || undefined}>
       {children}
     </Link>
   );

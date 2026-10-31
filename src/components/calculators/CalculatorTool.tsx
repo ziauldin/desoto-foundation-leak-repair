@@ -2,21 +2,38 @@
 
 import { useMemo, useState } from "react";
 import type { CalcField, CalculatorContent, ChecklistItem } from "@/types/content";
+import { defaultValues, estimateCost, visibleFields } from "@/lib/estimate";
 import { AnimatedNumber } from "@/components/motion/AnimatedNumber";
 import { CalculatorShell, Meter, NumberField, RangeField, SelectField, money } from "./CalculatorShell";
 
-/** Picks the right engine for a calculator's data. All config comes from src/data/content/calculators.ts. */
-export function CalculatorTool({ calculator }: { calculator: CalculatorContent }) {
-  const { tool, shortName, disclaimer } = calculator;
+type Heading = "h2" | "h3";
+
+/**
+ * Picks the right engine for a calculator's data. All config comes from src/data/content/calculators.ts.
+ * nested: rendered under another section heading (service pages), so the tool title becomes an h3.
+ * hideTitle: the page H1 already names the tool (calculator pages), so skip the title bar.
+ */
+export function CalculatorTool({
+  calculator,
+  nested = false,
+  hideTitle = false,
+}: {
+  calculator: CalculatorContent;
+  nested?: boolean;
+  hideTitle?: boolean;
+}) {
+  const heading: Heading = nested ? "h3" : "h2";
+  const { tool, disclaimer } = calculator;
+  const shortName = hideTitle ? "" : calculator.shortName;
   switch (tool.kind) {
     case "cost":
-      return <CostCalculator title={shortName} disclaimer={disclaimer} {...tool} />;
+      return <CostCalculator title={shortName} heading={heading} disclaimer={disclaimer} {...tool} />;
     case "checklist":
-      return <ChecklistTool title={shortName} disclaimer={disclaimer} items={tool.items} />;
+      return <ChecklistTool title={shortName} heading={heading} disclaimer={disclaimer} items={tool.items} />;
     case "crack-width":
-      return <CrackWidthTool title={shortName} disclaimer={disclaimer} />;
+      return <CrackWidthTool title={shortName} heading={heading} disclaimer={disclaimer} />;
     case "drainage-slope":
-      return <DrainageSlopeTool title={shortName} disclaimer={disclaimer} />;
+      return <DrainageSlopeTool title={shortName} heading={heading} disclaimer={disclaimer} />;
   }
 }
 
@@ -24,6 +41,7 @@ export function CalculatorTool({ calculator }: { calculator: CalculatorContent }
 
 function CostCalculator({
   title,
+  heading,
   disclaimer,
   baseLow,
   baseHigh,
@@ -31,44 +49,27 @@ function CostCalculator({
   fields,
 }: {
   title: string;
+  heading: Heading;
   disclaimer: string;
   baseLow: number;
   baseHigh: number;
   minimum: number;
   fields: CalcField[];
 }) {
-  const [values, setValues] = useState<Record<string, number>>(() =>
-    Object.fromEntries(fields.map((f) => [f.id, f.type === "select" ? (f.defaultIndex ?? 0) : f.defaultValue])),
-  );
-
-  const estimate = useMemo(() => {
-    let low = baseLow;
-    let high = baseHigh;
-    let multiplier = 1;
-    for (const f of fields) {
-      const v = values[f.id];
-      if (f.type === "select") {
-        const opt = f.options[v];
-        low += opt?.low ?? 0;
-        high += opt?.high ?? 0;
-        multiplier *= opt?.multiplier ?? 1;
-      } else {
-        low += v * f.perUnitLow;
-        high += v * f.perUnitHigh;
-      }
-    }
-    const round = (n: number) => Math.round(n / 50) * 50;
-    return { low: Math.max(minimum, round(low * multiplier)), high: Math.max(minimum, round(high * multiplier)) };
-  }, [values, fields, baseLow, baseHigh, minimum]);
+  const [values, setValues] = useState<Record<string, number>>(() => defaultValues(fields));
+  const visible = useMemo(() => visibleFields(fields, values), [fields, values]);
+  const estimate = useMemo(() => estimateCost({ baseLow, baseHigh, minimum, fields }, values), [values, fields, baseLow, baseHigh, minimum]);
 
   const set = (id: string, v: number) => setValues((prev) => ({ ...prev, [id]: v }));
 
   return (
     <CalculatorShell
       title={title}
+      heading={heading}
       disclaimer={disclaimer}
       ctaLabel="Get Your Exact Price"
-      inputs={fields.map((f) =>
+      summary={estimate.low === estimate.high ? `From ${money(estimate.low)}` : `${money(estimate.low)} – ${money(estimate.high)}`}
+      inputs={visible.map((f) =>
         f.type === "select" ? (
           <SelectField
             key={f.id}
@@ -98,8 +99,17 @@ function CostCalculator({
         <>
           <p className="eyebrow text-accent!">Estimated range</p>
           <p className="mt-2 font-display text-4xl font-bold sm:text-5xl">
-            <AnimatedNumber value={estimate.low} format={money} /> <span className="text-white/60">–</span>{" "}
-            <AnimatedNumber value={estimate.high} format={money} />
+            {estimate.low === estimate.high ? (
+              // Both ends clamped to the minimum job size: a "$1,800 – $1,800" range reads like a bug.
+              <>
+                <span className="text-white/60">From</span> <AnimatedNumber value={estimate.low} format={money} />
+              </>
+            ) : (
+              <>
+                <AnimatedNumber value={estimate.low} format={money} /> <span className="text-white/60">–</span>{" "}
+                <AnimatedNumber value={estimate.high} format={money} />
+              </>
+            )}
           </p>
           <p className="mt-3 text-white/80">
             Typical range for a DeSoto home with these inputs. Most of the spread comes from what an inspection finds under the house.
@@ -112,7 +122,7 @@ function CostCalculator({
 
 // ---- Checklist ---------------------------------------------------------------------
 
-function ChecklistTool({ title, disclaimer, items }: { title: string; disclaimer: string; items: ChecklistItem[] }) {
+function ChecklistTool({ title, heading, disclaimer, items }: { title: string; heading: Heading; disclaimer: string; items: ChecklistItem[] }) {
   const [checked, setChecked] = useState<Set<string>>(new Set());
   const areas = [...new Set(items.map((i) => i.area))];
   const score = items.filter((i) => checked.has(i.id)).reduce((sum, i) => sum + i.weight, 0);
@@ -137,8 +147,10 @@ function ChecklistTool({ title, disclaimer, items }: { title: string; disclaimer
   return (
     <CalculatorShell
       title={title}
+      heading={heading}
       disclaimer={disclaimer}
       ctaLabel="Schedule an Inspection"
+      summary={verdict.label}
       inputs={areas.map((area) => (
         <fieldset key={area}>
           <legend className="font-display text-lg font-semibold text-primary-dark">{area}</legend>
@@ -191,7 +203,7 @@ const crackTypes = [
 ];
 const crackLocations = ["Exterior brick", "Exposed slab edge", "Interior drywall", "Floor or tile"];
 
-function CrackWidthTool({ title, disclaimer }: { title: string; disclaimer: string }) {
+function CrackWidthTool({ title, heading, disclaimer }: { title: string; heading: Heading; disclaimer: string }) {
   const [unit, setUnit] = useState<"in" | "mm">("in");
   const [width, setWidth] = useState(0.125);
   const [type, setType] = useState(0);
@@ -203,8 +215,11 @@ function CrackWidthTool({ title, disclaimer }: { title: string; disclaimer: stri
   const valid = Number.isFinite(inches) && inches >= 0;
   const widthScore = inches < 1 / 16 ? 0 : inches < 1 / 8 ? 1 : inches <= 1 / 4 ? 2 : 3;
   const score = widthScore + crackTypes[type].score + (displaced === 1 ? 3 : 0) + (growing === 1 ? 2 : growing === 2 ? 1 : 0);
+  // An offset (one side higher) points to movement whatever the width, so it always lands in the top band.
   const band =
-    score <= 1
+    displaced === 1
+      ? { label: "Possible structural movement", text: "One side sitting higher than the other means the foundation has moved. Have it inspected with elevation readings before sealing." }
+      : score <= 1
       ? { label: "Likely cosmetic", text: "Usually shrinkage or minor seasonal movement. Seal it if it lets water in, mark the ends, and re-check in 30 days." }
       : score <= 4
         ? { label: "Monitor and consider sealing", text: "Not an emergency, but worth tracking. If it grows or doors nearby start sticking, schedule an inspection." }
@@ -215,8 +230,10 @@ function CrackWidthTool({ title, disclaimer }: { title: string; disclaimer: stri
   return (
     <CalculatorShell
       title={title}
+      heading={heading}
       disclaimer={disclaimer}
       ctaLabel="Have This Crack Inspected"
+      summary={valid ? band.label : "Enter a crack width"}
       inputs={
         <>
           <SelectField id="crack-unit" label="Measure in" value={unit === "in" ? 0 : 1} options={["Inches", "Millimeters"]} onChange={(i) => {
@@ -260,7 +277,7 @@ function CrackWidthTool({ title, disclaimer }: { title: string; disclaimer: stri
 
 // ---- Drainage slope ----------------------------------------------------------------
 
-function DrainageSlopeTool({ title, disclaimer }: { title: string; disclaimer: string }) {
+function DrainageSlopeTool({ title, heading, disclaimer }: { title: string; heading: Heading; disclaimer: string }) {
   const [distance, setDistance] = useState(10);
   const [drop, setDrop] = useState(3);
   const [surface, setSurface] = useState(0);
@@ -283,8 +300,10 @@ function DrainageSlopeTool({ title, disclaimer }: { title: string; disclaimer: s
   return (
     <CalculatorShell
       title={title}
+      heading={heading}
       disclaimer={disclaimer}
       ctaLabel="Request a Drainage Check"
+      summary={status ? `${percent.toFixed(1)}% · ${status.label}` : "Enter a distance"}
       inputs={
         <>
           <SelectField id="slope-surface" label="Surface next to the foundation" value={surface} options={["Soil, lawn or beds (target 5%)", "Concrete or pavers (target 2%)"]} onChange={setSurface} />

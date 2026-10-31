@@ -91,7 +91,7 @@ export function articleSchema(input: { headline: string; description: string; pa
     description: input.description,
     mainEntityOfPage: absoluteUrl(input.path),
     publisher: { "@id": businessId },
-    author: { "@type": "Organization", name: site.name },
+    author: { "@type": "Organization", name: site.name, url: absoluteUrl("/about/") },
   };
 }
 

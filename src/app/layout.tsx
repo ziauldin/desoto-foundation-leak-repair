@@ -5,6 +5,7 @@ import { mainNav } from "@/data/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyCtaBar } from "@/components/layout/StickyCtaBar";
+import { ContactModal } from "@/components/forms/ContactModal";
 import { RevealObserver } from "@/components/motion/RevealObserver";
 import { BackToTop } from "@/components/motion/BackToTop";
 import "./globals.css";
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </main>
         <Footer />
         <StickyCtaBar />
+        <ContactModal />
         <BackToTop />
         <RevealObserver />
       </body>

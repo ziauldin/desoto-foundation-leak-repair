@@ -2,7 +2,7 @@ import Link from "next/link";
 import { site } from "@/config/site";
 import { linkLabel } from "@/data/pages";
 import type { SiteImage as SiteImageData } from "@/data/images";
-import { PhoneIcon } from "@/components/ui/Icons";
+import { ArrowIcon, PhoneIcon } from "@/components/ui/Icons";
 import { SiteImage } from "@/components/ui/SiteImage";
 
 export function ServiceOverview({
@@ -35,17 +35,17 @@ export function ServiceOverview({
           </figure>
         {nextSteps.length > 0 && (
           <aside data-reveal="right" className="rounded-lg bg-primary-dark p-6 text-white shadow-[var(--shadow-lift)]">
-            <p className="font-display text-lg font-semibold text-accent">Next steps</p>
-            <ol className="mt-4 space-y-3">
-              {nextSteps.map((p, i) => (
+            <p className="font-display text-lg font-semibold text-accent">Related pages</p>
+            <ul className="mt-4 space-y-3">
+              {nextSteps.map((p) => (
                 <li key={p}>
-                  <Link href={p} className="group flex gap-3 text-white/90 hover:text-white">
-                    <span className="font-display text-accent">{i + 1}.</span>
+                  <Link href={p} className="group flex items-center gap-2 text-white/90 hover:text-white">
+                    <ArrowIcon className="h-4 w-4 shrink-0 text-accent transition-transform group-hover:translate-x-0.5" />
                     <span className="link-grow">{linkLabel(p)}</span>
                   </Link>
                 </li>
               ))}
-            </ol>
+            </ul>
             <a href={site.phoneHref} className="mt-6 flex items-center gap-2 border-t border-white/15 pt-4 font-display text-lg font-semibold text-accent">
               <PhoneIcon className="h-4 w-4" /> {site.phoneDisplay}
             </a>

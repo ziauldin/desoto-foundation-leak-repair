@@ -58,6 +58,8 @@ for (const [route, html] of pages) {
   if (!/property="og:title"/.test(html)) errors.push(`${route}: missing og:title`);
   if (route !== "/" && !/"BreadcrumbList"/.test(html)) errors.push(`${route}: missing BreadcrumbList schema`);
   if (/id="faq"/.test(html) && !/"FAQPage"/.test(html)) errors.push(`${route}: FAQ section without FAQPage schema`);
+  // Service-template pages are the ones with the signs checklist (location pages also carry Service schema).
+  if (/id="signs-heading"/.test(html) && !/id="estimate"/.test(html)) errors.push(`${route}: service page without its calculator (serviceCalculator in calculators.ts)`);
 
   (titles.get(title) ?? titles.set(title, []).get(title)).push(route);
   (descs.get(desc) ?? descs.set(desc, []).get(desc)).push(route);

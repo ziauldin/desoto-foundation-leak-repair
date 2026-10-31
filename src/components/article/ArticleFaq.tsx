@@ -4,7 +4,9 @@ import type { FAQ } from "@/types/content";
 export function ArticleFaq({ faqs }: { faqs: FAQ[] }) {
   return (
     <section id="faq" aria-labelledby="faq-h" className="scroll-mt-28">
-      <h2 id="faq-h">Questions homeowners ask</h2>
+      <h2 id="faq-h" className="text-center">
+        Questions homeowners ask
+      </h2>
       <div className="mt-6 space-y-7">
         {faqs.map((f, i) => (
           <div key={f.question} data-reveal style={{ "--i": i } as React.CSSProperties} className="border-l-2 border-accent/40 pl-5">

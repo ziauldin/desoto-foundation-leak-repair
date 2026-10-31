@@ -2,6 +2,7 @@ import Link from "next/link";
 import { site } from "@/config/site";
 import { footerCompany, footerLocations, footerServices, footerTools } from "@/data/navigation";
 import type { NavLink } from "@/types/content";
+import { Logo } from "@/components/brand/Logo";
 
 function FooterColumn({ title, links }: { title: string; links: NavLink[] }) {
   return (
@@ -25,7 +26,7 @@ export function Footer() {
     <footer className="bg-primary-dark pb-24 text-white lg:pb-0">
       <div className="container-site grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-1">
-          <p className="font-display text-xl font-bold">{site.name}</p>
+          <Logo variant="dark" />
           <p className="mt-3 text-sm text-white/75">
             Foundation leak detection, slab leak repair and foundation repair for homes and small buildings in DeSoto, TX.
           </p>

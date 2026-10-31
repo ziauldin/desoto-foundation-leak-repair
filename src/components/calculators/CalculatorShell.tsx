@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { site } from "@/config/site";
 import { buttonClass } from "@/components/ui/Button";
@@ -7,29 +9,61 @@ import { PhoneIcon } from "@/components/ui/Icons";
 /** Shared calculator frame: inputs | result, then CTA and disclaimer. Every tool renders inside this. */
 export function CalculatorShell({
   title,
+  heading: Heading = "h2",
   inputs,
   result,
   ctaLabel = "Get an Exact Price",
   disclaimer,
+  summary,
 }: {
   title: string;
+  heading?: "h2" | "h3";
   inputs: ReactNode;
   result: ReactNode;
   ctaLabel?: string;
   disclaimer: string;
+  /** One-line result for the mobile bar, e.g. "$3,800 – $9,200". */
+  summary: string;
 }) {
+  const inputsRef = useRef<HTMLDivElement>(null);
+  const resultRef = useRef<HTMLDivElement>(null);
+  const [showBar, setShowBar] = useState(false);
+
+  // Phones stack the result under the inputs. While the inputs are on screen and the result isn't,
+  // pin a one-line result above the sticky call bar so every change is visible as it happens.
+  useEffect(() => {
+    const inputs = inputsRef.current;
+    const result = resultRef.current;
+    if (!inputs || !result) return;
+    const inView = new Map<Element, boolean>();
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) inView.set(e.target, e.isIntersecting);
+        setShowBar(!!inView.get(inputs) && !inView.get(result));
+      },
+      { rootMargin: "0px 0px -120px 0px" },
+    );
+    io.observe(inputs);
+    io.observe(result);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <div className="animate-fade-up overflow-hidden rounded-xl border border-border bg-surface shadow-[var(--shadow-lift)]">
-      <div className="border-b border-border bg-surface-alt px-5 py-4 sm:px-6">
-        <h2 className="text-xl sm:text-2xl">{title}</h2>
-      </div>
+      {title && (
+        <div className="border-b border-border bg-surface-alt px-5 py-4 sm:px-6">
+          <Heading className="text-xl sm:text-2xl">{title}</Heading>
+        </div>
+      )}
       <div className="grid lg:grid-cols-[1.25fr_1fr]">
-        <div className="space-y-6 p-5 sm:p-6">{inputs}</div>
-        <div className="flex flex-col bg-primary-dark p-5 text-white sm:p-6" aria-live="polite">
+        <div ref={inputsRef} className="space-y-6 p-5 sm:p-6">
+          {inputs}
+        </div>
+        <div ref={resultRef} className="flex scroll-mt-24 flex-col bg-primary-dark p-5 text-white sm:p-6" aria-live="polite">
           <div className="flex-1">{result}</div>
           <div className="mt-6 space-y-2 border-t border-white/15 pt-5">
             <p className="text-sm text-white/80">Want a real number for your house? An inspection turns this range into a written price.</p>
-            <Link href="/contact/" className={buttonClass("accent", "w-full")}>
+            <Link href="/contact/" data-contact-popup className={buttonClass("accent", "w-full")}>
               {ctaLabel}
             </Link>
             <a href={site.phoneHref} className={buttonClass("outline-light", "w-full")}>
@@ -41,6 +75,18 @@ export function CalculatorShell({
       <p className="border-t border-border bg-background px-5 py-4 text-sm text-muted sm:px-6">
         <strong className="text-text">Disclaimer:</strong> {disclaimer}
       </p>
+      <button
+        type="button"
+        aria-hidden={!showBar}
+        tabIndex={showBar ? 0 : -1}
+        onClick={() => resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}
+        className={`fixed inset-x-3 bottom-[5.25rem] z-30 flex items-center justify-between gap-3 rounded-lg bg-primary-dark px-4 py-3 text-left text-white shadow-[var(--shadow-lift)] transition-[translate,opacity] duration-300 lg:hidden ${
+          showBar ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
+        }`}
+      >
+        <span className="font-display text-lg font-bold">{summary}</span>
+        <span className="shrink-0 text-sm font-semibold text-accent">See result ↓</span>
+      </button>
     </div>
   );
 }

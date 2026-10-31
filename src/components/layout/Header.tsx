@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { site } from "@/config/site";
 import type { NavGroup } from "@/types/content";
 import { buttonClass } from "@/components/ui/Button";
+import { Logo } from "@/components/brand/Logo";
 import { ChevronIcon, CloseIcon, MenuIcon, PhoneIcon } from "@/components/ui/Icons";
 import { onScrollChange } from "@/lib/scroll";
 
@@ -37,23 +38,6 @@ export function Header({ nav }: { nav: NavGroup[] }) {
         </div>
       </div>
     </header>
-  );
-}
-
-function Logo() {
-  return (
-    <Link href="/" className="group flex shrink-0 items-center gap-2.5">
-      <svg viewBox="0 0 40 40" className="h-9 w-9 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105" aria-hidden="true">
-        <rect width="40" height="40" rx="6" className="fill-primary" />
-        <path d="M8 21 20 11l12 10v10H8z" className="fill-none stroke-white" strokeWidth="2.5" strokeLinejoin="round" />
-        <path d="M5 31h30" className="stroke-accent" strokeWidth="3" strokeLinecap="round" />
-        <path d="M20 19.5s3 3.2 3 5.4a3 3 0 0 1-6 0c0-2.2 3-5.4 3-5.4Z" className="fill-accent" />
-      </svg>
-      <span className="font-display leading-tight">
-        <span className="block text-lg font-bold text-primary-dark">DeSoto Foundation</span>
-        <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-muted">Leak Repair</span>
-      </span>
-    </Link>
   );
 }
 

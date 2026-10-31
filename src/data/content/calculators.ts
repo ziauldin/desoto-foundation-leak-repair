@@ -5,6 +5,10 @@ import type { CalculatorContent } from "@/types/content";
 const costDisclaimer =
   "This is a planning estimate based on typical North Texas pricing, not a quote. Real cost depends on what an on-site inspection finds: number and location of piers, soil conditions, plumbing test results, access, permits and engineering. Final pricing is given in writing after an inspection.";
 
+// Leak calculators: no piers involved unless the leak has already moved the slab.
+const leakDisclaimer =
+  "This is a planning estimate based on typical North Texas pricing, not a quote. Real cost depends on what leak detection finds: which line is leaking, where it runs under the slab, pipe material, the flooring over it, access, permits, and whether the slab has moved. Final pricing is given in writing after the leak is located.";
+
 export const calculatorContent: CalculatorContent[] = [
   {
     path: "/foundation-repair-cost-calculator/",
@@ -124,22 +128,24 @@ export const calculatorContent: CalculatorContent[] = [
           options: [
             { label: "Spot repair through the slab", low: 1500, high: 4000 },
             { label: "Reroute the line (partial)", low: 2000, high: 6000 },
-            { label: "Tunnel under the slab", low: 0, high: 0 },
+            // Setup and pipe repair; the tunnel itself is priced per foot below.
+            { label: "Tunnel under the slab", low: 500, high: 1000 },
             { label: "Whole-home repipe", low: 4500, high: 12000 },
           ],
         },
         {
           id: "tunnel",
           type: "range",
-          label: "Tunnel length (if tunneling)",
-          help: "Leave at 0 unless tunneling. Tunnels typically run $150–$350 per foot.",
-          min: 0,
+          label: "Tunnel length",
+          help: "Tunnels typically run $150–$350 per foot, measured from the nearest exterior wall to the leak.",
+          min: 5,
           max: 60,
           step: 5,
-          defaultValue: 0,
+          defaultValue: 20,
           unit: "ft",
           perUnitLow: 150,
           perUnitHigh: 350,
+          showIf: { field: "method", option: 2 },
         },
         {
           id: "flooring",
@@ -167,7 +173,7 @@ export const calculatorContent: CalculatorContent[] = [
       { title: "Method sets the range", text: "Spot repairs are cheapest but break the slab. Reroutes avoid the slab entirely. Tunneling protects floors but is priced by the foot." },
       { title: "Water under a slab can move the slab", text: "A leak that ran for months can soften soil and cause settlement, which adds foundation work to the bill." },
     ],
-    disclaimer: costDisclaimer,
+    disclaimer: leakDisclaimer,
     primaryService: "/foundation-leak-repair-desoto/",
     faqs: [
       { question: "How much does slab leak detection cost?", answer: "Typical leak detection in the DeSoto area runs about $250 to $600, depending on whether it's a supply or drain line and how many tests are needed. Many plumbers credit part of it toward the repair." },
@@ -280,14 +286,16 @@ export const calculatorContent: CalculatorContent[] = [
         {
           id: "tunnel",
           type: "range",
-          label: "Tunnel length (if tunneling)",
-          min: 0,
+          label: "Tunnel length",
+          help: "Measured from the nearest exterior wall to the leak.",
+          min: 5,
           max: 60,
           step: 5,
-          defaultValue: 0,
+          defaultValue: 20,
           unit: "ft",
           perUnitLow: 150,
           perUnitHigh: 350,
+          showIf: { field: "method", option: 2 },
         },
         {
           id: "line",
@@ -316,7 +324,7 @@ export const calculatorContent: CalculatorContent[] = [
       { title: "Tunneling is priced per foot", text: "Tunnels avoid breaking floors but typically cost $150 to $350 per linear foot plus setup." },
       { title: "Drain lines cost more", text: "Older DeSoto slabs often have cast-iron drains, which are harder to test and repair than supply lines." },
     ],
-    disclaimer: costDisclaimer,
+    disclaimer: leakDisclaimer,
     primaryService: "/slab-leak-repair-desoto-tx/",
     faqs: [
       { question: "What's the average slab leak repair cost?", answer: "Many slab leak repairs in North Texas fall between $2,000 and $4,000 including detection. Tunneling jobs and whole-home repipes cost more. A leak on a drain line in an older slab is usually at the high end." },
@@ -418,3 +426,34 @@ export const calculatorContent: CalculatorContent[] = [
     ctaType: "inspection",
   },
 ];
+
+/**
+ * The calculator embedded on each service page. Every service in services.ts needs an entry
+ * (scripts/validate-site.mjs checks this).
+ */
+export const serviceCalculator: Record<string, string> = {
+  "/foundation-leak-repair-desoto/": "/foundation-leak-repair-cost-calculator/",
+  "/foundation-repair-desoto-tx/": "/foundation-repair-cost-calculator/",
+  "/foundation-repair-company-desoto-tx/": "/foundation-repair-cost-calculator/",
+  "/house-foundation-repair-desoto-tx/": "/foundation-repair-cost-calculator/",
+  "/home-foundation-repair-desoto-tx/": "/foundation-repair-cost-calculator/",
+  "/foundation-crack-repair-desoto-tx/": "/foundation-crack-repair-cost-calculator/",
+  "/slab-foundation-repair-desoto-tx/": "/foundation-repair-cost-calculator/",
+  "/slab-leak-repair-desoto-tx/": "/slab-leak-repair-cost-calculator/",
+  "/foundation-leak-detection-desoto-tx/": "/foundation-leak-repair-cost-calculator/",
+  "/underground-leak-detection-desoto-tx/": "/foundation-leak-repair-cost-calculator/",
+  "/water-line-leak-repair-desoto-tx/": "/foundation-leak-repair-cost-calculator/",
+  "/foundation-inspection-desoto-tx/": "/foundation-inspection-checklist/",
+  "/foundation-leveling-desoto-tx/": "/foundation-repair-cost-calculator/",
+  "/house-leveling-desoto-tx/": "/foundation-repair-cost-calculator/",
+  "/pier-and-beam-foundation-repair-desoto-tx/": "/foundation-repair-cost-calculator/",
+  "/crawl-space-foundation-repair-desoto-tx/": "/foundation-repair-cost-calculator/",
+  "/foundation-drainage-repair-desoto-tx/": "/foundation-drainage-slope-calculator/",
+  "/french-drain-foundation-desoto-tx/": "/foundation-drainage-slope-calculator/",
+  // Cost calculators are priced for homes, so commercial gets the building-agnostic crack check.
+  "/commercial-foundation-repair-desoto-tx/": "/foundation-crack-width-calculator/",
+  "/emergency-foundation-leak-repair-desoto-tx/": "/foundation-leak-repair-cost-calculator/",
+};
+
+export const calculatorForService = (servicePath: string) =>
+  calculatorContent.find((c) => c.path === serviceCalculator[servicePath]);

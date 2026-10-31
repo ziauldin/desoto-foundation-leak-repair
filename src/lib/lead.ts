@@ -35,3 +35,29 @@ export function validateLead(input: Partial<LeadInput>): LeadErrors {
   if (!input.issue) errors.issue = "Please choose what you need help with.";
   return errors;
 }
+
+/** Best-fit issue option for a service page path, used to preselect the popup form. "" leaves it unselected. */
+export function issueForService(path: string): string {
+  if (/drain/.test(path)) return "Drainage or water pooling";
+  if (/commercial/.test(path)) return "Commercial property";
+  if (/inspection/.test(path)) return "Foundation inspection";
+  if (/crack/.test(path)) return "Foundation cracks";
+  if (/slab-leak|leak-detection|water-line/.test(path)) return "Slab leak or high water bill";
+  if (/leak/.test(path)) return "Foundation leak / water near foundation";
+  if (/leveling/.test(path)) return "Uneven floors or sticking doors";
+  return "";
+}
+
+/**
+ * Attributes that make a service link open the site-wide popup form (see ContactModal) instead of
+ * navigating. The href still points at the service page, so crawlers and no-JS visitors reach it.
+ */
+export function servicePopupAttrs(path: string, label: string) {
+  return {
+    "data-contact-popup": true,
+    "data-popup-title": `Ask about ${label.toLowerCase()}`,
+    "data-popup-issue": issueForService(path),
+    "data-popup-link": path,
+    "data-popup-link-label": label,
+  };
+}

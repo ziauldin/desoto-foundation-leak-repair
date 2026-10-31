@@ -16,6 +16,7 @@ export function Section({
   title,
   intro,
   tone = "default",
+  align = "left",
   children,
   className = "",
 }: {
@@ -24,6 +25,7 @@ export function Section({
   title?: string;
   intro?: ReactNode;
   tone?: Tone;
+  align?: "left" | "center";
   children: ReactNode;
   className?: string;
 }) {
@@ -32,7 +34,7 @@ export function Section({
     <section id={id} aria-labelledby={headingId} className={`py-14 sm:py-20 ${tones[tone]} ${className}`}>
       <div className="container-site">
         {(eyebrow || title || intro) && (
-          <header data-reveal className="mb-8 max-w-3xl sm:mb-10">
+          <header data-reveal className={`mb-8 max-w-3xl sm:mb-10 ${align === "center" ? "mx-auto text-center" : ""}`}>
             {eyebrow && <p className="eyebrow mb-2">{eyebrow}</p>}
             {title && <h2 id={headingId}>{title}</h2>}
             {intro && (

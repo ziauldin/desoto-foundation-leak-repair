@@ -28,7 +28,7 @@ export function CalculatorPageTemplate({ page, content }: { page: PageRecord; co
       <ToolHeader h1={page.h1} crumbs={page.breadcrumbs} summary={content.summary} />
       <section aria-label={content.shortName} className="py-8 sm:py-10">
         <div className="container-site">
-          <CalculatorTool calculator={content} />
+          <CalculatorTool calculator={content} hideTitle />
         </div>
       </section>
       <ToolGuide intro={content.intro} steps={content.howItWorks} image={imageForPath(page.path)} />

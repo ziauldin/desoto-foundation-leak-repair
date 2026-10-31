@@ -5,8 +5,10 @@ export function ToolFaq({ faqs }: { faqs: FAQ[] }) {
   return (
     <section id="faq" aria-labelledby="faq-heading" className="bg-surface py-14">
       <div className="container-site">
-        <h2 id="faq-heading">Calculator questions</h2>
-        <ul className="mt-8 grid gap-5 md:grid-cols-2">
+        <h2 id="faq-heading" className="text-center">
+          Calculator questions
+        </h2>
+        <ul className="mx-auto mt-8 grid max-w-5xl gap-5 md:grid-cols-2">
           {faqs.map((f, i) => (
             <li key={f.question} data-reveal style={{ "--i": i } as React.CSSProperties} className="card-lift rounded-lg bg-background p-6">
               <h3 className="text-lg">

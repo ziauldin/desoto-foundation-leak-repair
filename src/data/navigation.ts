@@ -75,12 +75,13 @@ export const footerLocations: NavLink[] = [
   .map((href) => link(href));
 
 export const footerTools: NavLink[] = [
-  "/foundation-repair-cost-calculator/",
-  "/foundation-leak-repair-cost-calculator/",
-  "/foundation-inspection-checklist/",
-  "/foundation-repair-cost-desoto-tx/",
-  "/signs-of-foundation-leak/",
-].map((href) => link(href));
+  link("/foundation-repair-cost-calculator/"),
+  link("/foundation-leak-repair-cost-calculator/"),
+  link("/foundation-inspection-checklist/"),
+  // Its short name ("Foundation Repair Cost") reads like a duplicate of the calculator above.
+  link("/foundation-repair-cost-desoto-tx/", "Foundation Repair Cost Guide"),
+  link("/signs-of-foundation-leak/"),
+];
 
 export const footerCompany: NavLink[] = [
   { label: "About", href: "/about/" },

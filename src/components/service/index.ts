@@ -1,5 +1,5 @@
 export { ServiceHero } from "./ServiceHero";
-export { SignStrip } from "./SignStrip";
+export { QuickFacts } from "./QuickFacts";
 export { ServiceOverview } from "./ServiceOverview";
 export { SignsChecklist } from "./SignsChecklist";
 export { SoilExplainer } from "./SoilExplainer";
@@ -9,3 +9,4 @@ export { ProcessTimeline } from "./ProcessTimeline";
 export { ServiceRelated } from "./ServiceRelated";
 export { ServiceReviews } from "./ServiceReviews";
 export { ServiceFaq } from "./ServiceFaq";
+export { ServiceEstimator } from "./ServiceEstimator";
