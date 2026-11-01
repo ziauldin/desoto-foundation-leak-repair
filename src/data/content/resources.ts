@@ -22,16 +22,16 @@ export const resourceContent: ResourceContent[] = [
         heading: "Typical Foundation Repair Price Ranges in DeSoto",
         paragraphs: [
           "These are typical ranges for North Texas residential work. They are a starting point for budgeting and for judging whether an estimate is in the normal range, not a quote for your house. The final price for your home is set after an on-site inspection that measures floor elevations, checks for plumbing leaks, and looks at drainage around the slab or crawl space, since all three change the scope of the job.",
-          "General foundation repair for a typical DeSoto brick home on a slab often lands between $4,000 and $15,000. Minor jobs, such as a few piers under one settled corner, can start around $1,800. Large jobs that need piers around most of the perimeter plus interior piers under the middle of the house can run $25,000 or more. Most homes fall somewhere in the middle, depending on how much of the slab has moved.",
+          "Foundation repair cost scales mainly with how much of the house needs support. A small job, such as a few piers under one settled corner, is a modest project. A large job that needs piers around most of the perimeter plus interior piers under the middle of the house is a much bigger undertaking in materials, labor, and time on site. Most DeSoto homes fall somewhere between those two extremes, depending on how much of the slab has moved.",
         ],
         bullets: [
-          "General foundation repair: often $4,000 to $15,000 (minor jobs from about $1,800; large jobs $25,000+)",
-          "Exterior piers: roughly $400 to $1,000 per pier",
+          "General foundation repair: scales with the total number of piers and how much of the house is affected",
+          "Exterior piers: priced per pier, so the more piers needed, the larger the job",
           "Interior piers: more per pier than exterior, because the slab has to be broken out and patched",
-          "Foundation crack injection: about $300 to $800 per crack",
-          "Pier and beam shimming or adjustment: about $1,000 to $5,000",
-          "French drain installation: about $25 to $60 per linear foot",
-          "Structural engineer's report: about $400 to $800",
+          "Foundation crack injection: priced per crack, based on length, depth, and access",
+          "Pier and beam shimming or adjustment: scales with how many piers and shims need attention",
+          "French drain installation: priced per linear foot of drain run",
+          "Structural engineer's report: a flat fee for an independent, written opinion",
         ],
       },
       {
@@ -67,7 +67,7 @@ export const resourceContent: ResourceContent[] = [
         heading: "How to Compare Foundation Repair Estimates",
         paragraphs: [
           "Two estimates for the same house can look far apart until you line them up. Ask each contractor for the number of piers, pier type and depth, where each pier goes, whether interior piers are included, and what happens if more lift is needed than planned. A low bid with half the piers is not a cheaper version of the same job. It is a different, smaller job that may not fix the problem.",
-          "Ask whether the estimate includes a plumbing test after lifting, cleanup, and any drainage corrections. Get the warranty terms in writing, read them, and check whether they transfer to a future buyer. If the numbers or the recommended scope are very different between contractors, an independent engineer's report for $400 to $800 gives everyone the same plan to bid against and usually settles the question.",
+          "Ask whether the estimate includes a plumbing test after lifting, cleanup, and any drainage corrections. Get the warranty terms in writing, read them, and check whether they transfer to a future buyer. If the numbers or the recommended scope are very different between contractors, an independent engineer's report gives everyone the same plan to bid against and usually settles the question.",
         ],
         bullets: [
           "Pier count, type, and layout drawing",
@@ -92,22 +92,32 @@ export const resourceContent: ResourceContent[] = [
       {
         question: "What is the average foundation repair cost in DeSoto, TX?",
         answer:
-          "For a typical DeSoto brick home on a slab, general foundation repair often falls between $4,000 and $15,000. Small jobs with a few piers can start around $1,800, and whole-perimeter work with interior piers can pass $25,000. Final pricing comes after an on-site inspection that measures how much the slab has moved.",
+          "There's no single number, because cost scales with how many piers are needed and how much of the house is affected. A small job with a few piers under one settled corner is far less than whole-perimeter work with interior piers added in. Final pricing comes after an on-site inspection that measures how much the slab has moved and turns that into a specific pier count and layout.",
       },
       {
         question: "Why are interior piers more expensive than exterior piers?",
         answer:
-          "Exterior piers are installed by digging beside the foundation. Interior piers require cutting through flooring and breaking out a section of the slab, installing the pier, then patching the concrete and often the flooring. That extra demolition and restoration is why interior piers typically cost more than the $400 to $1,000 range for exterior piers.",
+          "Exterior piers are installed by digging beside the foundation. Interior piers require cutting through flooring and breaking out a section of the slab, installing the pier, then patching the concrete and often the flooring. That extra demolition and restoration, cutting the slab, setting the pier, and patching concrete and flooring, is why interior piers cost more per pier than exterior ones.",
       },
       {
         question: "Do I need a structural engineer before foundation repair?",
         answer:
-          "Not always, but it helps when estimates disagree, when you are buying or selling, or when the movement is severe. An engineer's report typically costs $400 to $800 and gives you an independent repair plan that contractors can bid against, so you are comparing the same scope of work.",
+          "Not always, but it helps when estimates disagree, when you are buying or selling, or when the movement is severe. An engineer's report is a flat, one-time fee that gives you an independent repair plan contractors can bid against, so you are comparing the same scope of work instead of comparing apples to oranges.",
       },
       {
         question: "Can fixing drainage lower my foundation repair cost?",
         answer:
           "It can keep the problem from getting bigger. Gutters that drain at the slab and soil that slopes toward the house keep the clay cycling between wet and dry. Correcting grading and adding drains will not lift a slab that has already dropped, but it often limits how many piers are needed and protects the repair afterward.",
+      },
+      {
+        question: "Is financing available for foundation repair?",
+        answer:
+          "Yes. Financing is available for homeowners who would rather spread a larger repair, such as perimeter piering, over monthly payments instead of paying the full estimate up front. Ask about financing options when you get your written estimate.",
+      },
+      {
+        question: "Is it worth fixing a foundation instead of walking away from the problem?",
+        answer:
+          "For almost every DeSoto house, yes. A pier job sized to the movement you have now is almost always smaller, and less disruptive, than the same house two or three years later with more cracking, more sticking doors, and sloped floors, and an unrepaired foundation is one of the first things a buyer's inspector flags. Waiting rarely makes the job smaller.",
       },
     ],
     ctaType: "cost-check",
@@ -129,13 +139,13 @@ export const resourceContent: ResourceContent[] = [
           "These are typical ranges for North Texas homes and are meant for planning, not as a quote. The actual cost depends on the pipe material, the leak's location, the access method, the flooring on top, and what the inspection finds about the slab. Final pricing is set after an on-site inspection and leak detection visit, once the leak has been located and the condition of the surrounding pipe is known.",
         ],
         bullets: [
-          "Leak detection (pressure test, acoustic and thermal location): about $250 to $600",
-          "Slab leak spot repair through the floor: about $1,500 to $4,000",
-          "Tunneling under the slab: about $150 to $350 per linear foot",
-          "Partial reroute of the affected line: about $2,000 to $6,000",
-          "Whole-home repipe: about $4,500 to $12,000",
-          "Foundation repair if the leak caused movement: often $4,000 to $15,000",
-          "Structural engineer's report, if needed: about $400 to $800",
+          "Leak detection (pressure test, acoustic and thermal location): a flat visit fee, the same regardless of what's found",
+          "Slab leak spot repair through the floor: priced by how much slab and flooring must be opened and restored",
+          "Tunneling under the slab: priced per linear foot, so cost rises the farther the leak is from an outside wall",
+          "Partial reroute of the affected line: priced by the length of pipe rerouted and the access required",
+          "Whole-home repipe: a larger whole-house project priced well above a single-leak repair",
+          "Foundation repair if the leak caused movement: scales with the number of piers and how much of the slab moved",
+          "Structural engineer's report, if needed: a flat fee for an independent, written opinion",
         ],
       },
       {
@@ -164,7 +174,7 @@ export const resourceContent: ResourceContent[] = [
         heading: "Insurance and Foundation Leaks",
         paragraphs: [
           "Many homeowners policies treat a sudden plumbing leak differently than gradual settlement. Some will pay for access and tear-out, meaning the cost to break the slab or open walls to reach the pipe, plus resulting water damage. The pipe repair itself and any foundation settlement are often excluded, and slow leaks that went on for months may be denied as wear and tear.",
-          "Check your policy wording or call your agent before work starts, so you know what to document. Keep the leak detection report, dated photos, and itemized invoices. If foundation movement is involved, the structural repair is usually your cost, so it helps to get the leak repair and the foundation repair priced as separate line items that an adjuster can review on their own.",
+          "Check your policy wording or call your agent before work starts, so you know what to document. Keep the leak detection report, dated photos, and itemized invoices. If foundation movement is involved, the structural repair is usually your cost, so it helps to get the leak repair and the foundation repair priced as separate line items that an adjuster can review on their own. When insurance does not pick up the tab, financing is available so a leak plus foundation repair doesn't have to be paid for in one lump sum.",
         ],
       },
     ],
@@ -182,12 +192,12 @@ export const resourceContent: ResourceContent[] = [
       {
         question: "How much does slab leak detection cost in DeSoto?",
         answer:
-          "Leak detection in North Texas typically runs about $250 to $600. That usually covers a pressure test to confirm the leak and electronic location using acoustic or thermal equipment. Drain line problems may need a camera inspection as well. Final pricing comes after an on-site visit.",
+          "Leak detection is typically a flat visit fee. That usually covers a pressure test to confirm the leak and electronic location using acoustic or thermal equipment. Drain line problems may need a camera inspection as well, which can add to the visit. Final pricing comes after an on-site visit.",
       },
       {
         question: "Is tunneling better than breaking through the floor?",
         answer:
-          "Tunneling saves your flooring and avoids indoor dust, but at roughly $150 to $350 per linear foot it gets expensive when the leak is far from an outside wall. A spot repair through the slab is often cheaper for leaks near the edge or under inexpensive flooring. The right choice depends on location and what sits on top.",
+          "Tunneling saves your flooring and avoids indoor dust, but because it's priced by the foot, it gets more expensive the farther the leak is from an outside wall. A spot repair through the slab is often the more economical choice for leaks near the edge or under inexpensive flooring. The right choice depends on location and what sits on top.",
       },
       {
         question: "Will my insurance pay for a slab leak?",
@@ -197,7 +207,12 @@ export const resourceContent: ResourceContent[] = [
       {
         question: "Should I repipe instead of repairing one leak?",
         answer:
-          "If the home has had more than one slab leak, or the inspection finds corroded or failing pipe in several places, a partial reroute ($2,000 to $6,000) or whole-home repipe ($4,500 to $12,000) can cost less over time than repeated spot repairs. For a single leak in otherwise sound pipe, a spot repair is usually reasonable.",
+          "If the home has had more than one slab leak, or the inspection finds corroded or failing pipe in several places, a partial reroute or whole-home repipe can cost less over time than paying for repeated spot repairs one at a time. For a single leak in otherwise sound pipe, a spot repair is usually the more reasonable choice.",
+      },
+      {
+        question: "Can a slab leak be fixed without tearing up the floor?",
+        answer:
+          "Often, yes. Tunneling reaches the pipe from outside the slab, so tile, wood, and carpet stay untouched, though it costs more per foot than a spot repair and adds up on a leak near the center of the house. If the pipe has more than one weak spot, rerouting through the attic or walls can avoid the slab entirely.",
       },
     ],
     ctaType: "cost-check",
@@ -291,6 +306,11 @@ export const resourceContent: ResourceContent[] = [
         answer:
           "It can be. If water is surfacing indoors, the meter is spinning quickly, or you have no hot water and a warm floor, shut off the main valve and call right away. A slow leak is less urgent but should still be located soon, because every week of saturation gives the clay more time to move the slab.",
       },
+      {
+        question: "How long does it take for a leak to damage a foundation?",
+        answer:
+          "There is no fixed timeline. Expansive clay can start swelling within days of steady saturation, but visible damage, cracks, a hump in the floor, doors that stick, usually takes weeks to a few months to show up, depending on how much water is leaking and how close the leak is to the slab edge. The longer it runs undetected, the larger the affected area gets.",
+      },
     ],
     ctaType: "leak-estimate",
   },
@@ -301,7 +321,7 @@ export const resourceContent: ResourceContent[] = [
     summary:
       "Why new foundation and wall cracks often show up after heavy rain in DeSoto, which ones are normal, and which ones need an inspection.",
     intro: [
-      "It surprises a lot of homeowners: after weeks of drought, a few days of heavy rain, and suddenly there are new cracks in the drywall, a gap at the brick, or a door that won't close. Rain did not break the foundation on its own. It changed the soil under it, and the soil moved the house. Understanding that chain makes it much easier to decide what to do next.",
+      "Weeks of drought, three days of hard rain, and now there's a new crack over the hallway door and a gap opening where the brick meets the trim. Rain did not break the foundation on its own. It changed the soil under it, and the soil moved the house. Understanding that chain makes it much easier to decide what to do next.",
       "DeSoto homes sit on expansive North Texas clay that shrinks and cracks in dry weather and swells hard when it gets wet. When a big spring or fall storm follows a long hot summer, the soil around the slab edges can rise quickly and unevenly. This guide explains what is happening, how to tell cosmetic cracks from structural ones, and what to fix first.",
     ],
     sections: [
@@ -379,6 +399,11 @@ export const resourceContent: ResourceContent[] = [
         answer:
           "Expansive clay keeps moving as it wets and dries. A crack that opens during drought may close partway after rain, and the reverse can happen too. That back-and-forth is why a single measurement is not enough. Tracking a crack over several weeks shows whether it is seasonal or getting worse.",
       },
+      {
+        question: "What does it typically cost to fix cracks that appear after rain?",
+        answer:
+          "A stable hairline crack can usually be sealed inexpensively with a DIY kit. A crack tied to real movement usually means professional crack injection, priced per crack based on length, depth, and access, often paired with drainage corrections. If the rain exposed settlement rather than just a crack, full foundation repair scales with how many piers are needed, with final pricing after an on-site inspection.",
+      },
     ],
     ctaType: "inspection",
   },
@@ -419,7 +444,7 @@ export const resourceContent: ResourceContent[] = [
         heading: "Fixes From Simple to Structural",
         paragraphs: [
           "Start with the low-cost items. Clean the gutters, add downspout extensions that discharge at least 5 to 10 feet from the slab, and pull back mulch and soil so the top edge of the foundation is visible. Point sprinklers away from the house. These steps alone fix a surprising number of pooling problems and cost little more than a weekend of work.",
-          "If the yard itself is the problem, regrading adds fill near the house and shapes a swale to carry water around it. Where space is tight or a slope cannot be built, a French drain, a gravel trench with perforated pipe, collects water and carries it to a lower discharge point. French drains typically cost about $25 to $60 per linear foot in North Texas, with final pricing after an on-site look at the lot.",
+          "If the yard itself is the problem, regrading adds fill near the house and shapes a swale to carry water around it. Where space is tight or a slope cannot be built, a French drain, a gravel trench with perforated pipe, collects water and carries it to a lower discharge point. French drains are priced per linear foot of trench, so cost rises with the length of the run and how difficult the ground is to dig, with final pricing after an on-site look at the lot. For a longer drain run, financing is an option so the cost isn't all due at once.",
         ],
         bullets: [
           "Clean gutters and add downspout extensions or buried drain lines",
@@ -468,6 +493,11 @@ export const resourceContent: ResourceContent[] = [
         answer:
           "Keeping soil moisture steady during long droughts can reduce shrinkage, and some homeowners use soaker hoses a foot or two from the slab. The key word is steady. Overwatering or letting water pool creates the same problem in reverse, so use timers and check the soil before adding more.",
       },
+      {
+        question: "How quickly should water drain away from the foundation?",
+        answer:
+          "Water should be moving off the yard within a few hours of rain stopping, not standing overnight. If a spot still has standing water a full day later, or every storm, that is long enough for clay underneath to swell unevenly, and it is worth checking the grade and downspouts in that area before the next storm.",
+      },
     ],
     ctaType: "inspection",
   },
@@ -478,7 +508,7 @@ export const resourceContent: ResourceContent[] = [
     summary:
       "How to tell whether sloping or uneven floors in a DeSoto home point to slab settlement, pier and beam problems, or something less serious.",
     intro: [
-      "Uneven floors are one of the clearer signs that a foundation has moved. You might notice a ball rolling to one side of a room, furniture that rocks, a dip near the middle of the house, or a hump in a hallway. In a slab home, it usually means part of the slab has settled or heaved. In a pier and beam home, it can mean piers have sunk or beams have sagged.",
+      "Set a marble on the floor and if it rolls to the same corner of the room every time, that's a foundation question, not a carpet question. You might also notice furniture that rocks, a dip near the middle of the house, or a hump in a hallway. In a slab home, it usually means part of the slab has settled or heaved. In a pier and beam home, it can mean piers have sunk or beams have sagged.",
       "Not every sloping floor is a structural emergency. Some older DeSoto homes settled a little decades ago and then stopped. What matters is how much the floor is off, whether it is getting worse, and what else is happening around it. This guide explains how to check your floors, what usually causes the problem, and what the repair options look like for each foundation type.",
     ],
     sections: [
@@ -507,14 +537,14 @@ export const resourceContent: ResourceContent[] = [
         heading: "Pier and Beam Homes: Sagging and Sinking Supports",
         paragraphs: [
           "Older pier and beam homes have a crawl space under the floor. Floors in these homes go out of level when piers sink into soft soil, when wood shims shrink or rot, or when beams and joists sag because they are undersized, spaced too far apart, or damaged by moisture. Standing water or poor ventilation in the crawl space speeds up all of these problems.",
-          "These problems are often easier to fix than slab movement, because the crawl space gives direct access to the supports. Repairs commonly include re-shimming with steel or composite shims, adding piers under sagging beams, and replacing damaged wood. Shimming and adjustment typically costs about $1,000 to $5,000 in North Texas, with final pricing after an on-site inspection of the crawl space.",
+          "These problems are often easier to fix than slab movement, because the crawl space gives direct access to the supports. Repairs commonly include re-shimming with steel or composite shims, adding piers under sagging beams, and replacing damaged wood. Shimming and adjustment is priced by how many piers and shims need attention and how much of the framing needs replacing, with final pricing after an on-site inspection of the crawl space. Financing is available if you'd rather pay for that over time than all at once.",
         ],
       },
       {
         heading: "When Uneven Floors Need a Professional",
         paragraphs: [
           "A small, stable slope in an older home may be something you can live with. A slope that is getting worse, one that comes with new cracks and sticking doors, or one that appeared suddenly deserves an inspection. Floors that feel soft or bouncy in a pier and beam home also need attention, because that can be moisture damage to the framing rather than a support problem.",
-          "An inspection should give you an elevation map, a likely cause, and a repair plan you can understand. If you are considering a large repair, a structural engineer's report, typically $400 to $800, gives you an independent opinion before you commit. That report is also useful paperwork if you plan to sell the house in the next few years, since buyers and their inspectors will ask about the floors.",
+          "An inspection should give you an elevation map, a likely cause, and a repair plan you can understand. If you are considering a large repair, a structural engineer's report, a flat fee for an independent opinion, is worth getting before you commit. That report is also useful paperwork if you plan to sell the house in the next few years, since buyers and their inspectors will ask about the floors.",
         ],
       },
     ],
@@ -532,7 +562,7 @@ export const resourceContent: ResourceContent[] = [
       {
         question: "How much floor slope is too much?",
         answer:
-          "There is no single number that applies to every house, but a slope you can feel when walking, or one that grows over time, deserves a closer look. Engineers usually look at the overall pattern of elevation differences across the floor rather than one spot. An inspection with an elevation survey gives you a clear answer.",
+          "Many structural engineers use roughly 1 inch of elevation change over 20 feet as a rough line between normal and concerning, but no single number applies to every house. A slope you can feel when walking, or one that grows over time, deserves a closer look regardless of the exact measurement. An inspection with an elevation survey gives you a precise number for your floor, not just a rule of thumb.",
       },
       {
         question: "Can uneven floors be fixed without lifting the house?",
@@ -630,6 +660,11 @@ export const resourceContent: ResourceContent[] = [
         answer:
           "Often, but not always completely. Leveling the foundation moves frames back toward square, and many doors start working again. Doors that were planed or had strike plates moved may need readjusting afterward. Expect a carpenter's touch-up as part of finishing a foundation repair.",
       },
+      {
+        question: "Can I stay in my house while a foundation is being repaired?",
+        answer:
+          "Most DeSoto repairs are done while the home is occupied. Exterior pier work happens outside and rarely affects daily life beyond some yard noise. Interior piers mean a section of flooring is cut and the work area is closed off for a few hours to a couple of days per pier, which most homeowners work around without needing to move out.",
+      },
     ],
     ctaType: "schedule",
   },
@@ -640,7 +675,7 @@ export const resourceContent: ResourceContent[] = [
     summary:
       "What foundation settlement is, why it happens on North Texas clay, the difference between normal and damaging settlement, and how it is repaired.",
     intro: [
-      "Every house settles a little after it is built. Foundation settlement becomes a problem when one part of the house sinks more than another. That differential settlement is what cracks brick, racks door frames, and tilts floors, and it is the most common reason DeSoto homeowners end up calling for foundation repair. The good news is that it is also one of the best understood problems to fix.",
+      "A half-inch drop at one corner of a DeSoto slab is enough to crack brick, jam a door, and tilt a floor within a single dry summer. Foundation settlement becomes a problem when one part of the house sinks more than another. That differential settlement is what cracks brick, racks door frames, and tilts floors, and it is the most common reason DeSoto homeowners end up calling for foundation repair. The good news is that it is also one of the best understood problems to fix.",
       "In this area, settlement is driven mostly by the expansive clay under the slab losing moisture, along with poor drainage, large trees, and the occasional plumbing leak that washes soil away. This guide explains what is happening under the house, how settlement is measured and repaired, and what you can do afterward to keep it from coming back, including the simple drainage habits that matter most on clay soil.",
     ],
     sections: [
@@ -669,7 +704,7 @@ export const resourceContent: ResourceContent[] = [
         heading: "How Settlement Is Repaired",
         paragraphs: [
           "Most settlement repair on slab homes uses piers. Steel push piers or concrete pressed pilings are driven down through the active clay toward more stable soil, then the slab is lifted with hydraulic jacks and set on the piers. Exterior piers are installed by digging along the outside of the foundation. Interior piers require breaking through the slab and cost more because of the extra demolition and patching.",
-          "Typical North Texas pricing is roughly $400 to $1,000 per exterior pier, with overall repairs often in the $4,000 to $15,000 range, and final pricing after an on-site inspection. A good repair plan also deals with the cause, such as drainage corrections, a root barrier near large trees, or a plumbing repair, so the new support is not fighting the same conditions that caused the settlement.",
+          "Exterior piers are priced per pier, so the overall cost scales directly with how many piers the house needs, with final pricing after an on-site inspection. Financing is available for homeowners who need to spread that cost out rather than pay it in one draw. A good repair plan also deals with the cause, such as drainage corrections, a root barrier near large trees, or a plumbing repair, so the new support is not fighting the same conditions that caused the settlement.",
         ],
       },
       {
@@ -709,6 +744,11 @@ export const resourceContent: ResourceContent[] = [
         question: "Do trees really cause foundation settlement?",
         answer:
           "Large trees pull a lot of water from the soil, and on shrink-swell clay that can dry out the ground under the nearest part of the slab. That side then drops more than the rest. Root barriers and careful watering can help. Removing a large tree suddenly can also cause the soil to swell, so get advice first.",
+      },
+      {
+        question: "How much foundation settling is considered normal?",
+        answer:
+          "A small amount of uniform settlement in the first years after a house is built is normal and usually harmless, since the whole house moves together. What matters is differential settlement, one area dropping more than another, which shows up as cracks and sticking doors. Any difference you can measure with a level, especially one that is growing, is worth having checked rather than guessed at.",
       },
     ],
     ctaType: "inspection",
@@ -753,7 +793,7 @@ export const resourceContent: ResourceContent[] = [
         heading: "The Right Order of Repairs",
         paragraphs: [
           "When both problems exist, fix the leak first. Leveling a foundation over an active leak puts the new piers on soil that is still changing, and the lift may not hold. After the plumbing repair, give the soil time to dry and stabilize, then re-check floor elevations before deciding on structural work. Sometimes the movement turns out to be smaller than it first looked.",
-          "If you are not sure which problem you have, start with a meter test and a visual check of drainage around the house. A leak detection visit, typically $250 to $600 in North Texas, answers the plumbing question. An inspection with elevation readings answers the structural one. Together they give you a plan that fixes the cause instead of just the symptoms.",
+          "If you are not sure which problem you have, start with a meter test and a visual check of drainage around the house. A leak detection visit, a flat fee regardless of what's found, answers the plumbing question. An inspection with elevation readings answers the structural one. Together they give you a plan that fixes the cause instead of just the symptoms. If the two repairs add up to more than you want to pay at once, financing can cover both as one job.",
         ],
         bullets: [
           "Step 1: Confirm or rule out a plumbing leak with a meter test and leak detection",
@@ -772,7 +812,7 @@ export const resourceContent: ResourceContent[] = [
         ["How it is found", "Pressure test, acoustic and thermal location, camera", "Visual inspection, grading check, crack and elevation survey"],
         ["Who repairs it", "Plumber, often with a foundation contractor's input", "Foundation and drainage contractor"],
         ["Typical repair", "Spot repair, tunneling, reroute, or repipe", "Drainage fixes, crack sealing, French drains, leveling"],
-        ["Typical cost range", "Detection $250-$600; spot repair $1,500-$4,000", "French drain $25-$60/ft; foundation repair often $4,000-$15,000"],
+        ["What drives cost", "Detection is a flat fee; spot repair scales with slab and flooring opened", "French drains price per foot; foundation repair scales with pier count"],
         ["Insurance", "Access and tear-out may be covered for a sudden leak", "Settlement and drainage damage usually excluded"],
       ],
     },
@@ -806,6 +846,11 @@ export const resourceContent: ResourceContent[] = [
         answer:
           "Often, yes. Some policies cover access and tear-out for a sudden plumbing leak, plus resulting water damage. Damage from settlement, poor drainage, or groundwater is usually excluded. Policies vary, so check yours and keep leak detection reports and photos if a pipe is involved.",
       },
+      {
+        question: "Is a slab leak a serious problem?",
+        answer:
+          "Yes, treat it as urgent even if there is no visible water. A slab leak keeps running whether you notice it or not, and the longer it goes, the more likely the saturated clay is to move the foundation. A moving water meter or an unexplained jump in the water bill is reason enough to schedule leak detection, not wait and see.",
+      },
     ],
     ctaType: "leak-estimate",
   },
@@ -816,7 +861,7 @@ export const resourceContent: ResourceContent[] = [
     summary:
       "When a damaged foundation can be repaired, when replacement is on the table, and how cost, disruption, and long-term results compare.",
     intro: [
-      "When a foundation problem looks serious, it is natural to wonder whether the whole thing needs to be replaced. For most homes, the answer is no. Piers, leveling, drainage fixes, and targeted repairs handle the large majority of foundation problems in North Texas, at a fraction of the cost and disruption of tearing out and rebuilding a foundation under an occupied house.",
+      "A handful of stair-step cracks running up the brick is enough to make most DeSoto homeowners wonder if the whole foundation needs tearing out and starting over. For most homes, the answer is no. Piers, leveling, drainage fixes, and targeted repairs handle the large majority of foundation problems in North Texas, at a fraction of the cost and disruption of tearing out and rebuilding a foundation under an occupied house.",
       "Replacement does come up in a few situations, mostly older pier and beam homes with badly deteriorated supports, or slabs with structural failures that cannot be corrected by lifting. This guide compares the two approaches on cost, timeline, and results, and lists the questions to ask before you accept a recommendation either way. A clear understanding of both options makes it much easier to judge any estimate you receive.",
     ],
     sections: [
@@ -824,7 +869,7 @@ export const resourceContent: ResourceContent[] = [
         heading: "What Foundation Repair Covers",
         paragraphs: [
           "Repair means keeping the existing foundation and correcting what went wrong with it. On slab homes that usually means installing piers under the settled areas and lifting the slab back toward level, sealing cracks, and fixing the drainage or plumbing problems that caused the movement in the first place. The concrete itself is usually sound. It just lost support underneath.",
-          "On pier and beam homes, repair can include re-shimming, replacing failed piers, adding supports under sagging beams, and replacing rotted sills or joists. Typical North Texas foundation repair runs about $4,000 to $15,000, with minor jobs from around $1,800 and large jobs $25,000 or more. Final pricing comes after an on-site inspection of the specific house, because pier count, access, and the condition of the framing vary so much from one home to the next.",
+          "On pier and beam homes, repair can include re-shimming, replacing failed piers, adding supports under sagging beams, and replacing rotted sills or joists. Foundation repair cost scales with pier count, access, and the condition of the framing, which is why final pricing comes only after an on-site inspection of the specific house; those factors vary so much from one home to the next that no flat number applies broadly. Financing is available for repair, which is part of why it's worth pricing before assuming you need the far larger cost of replacement.",
         ],
       },
       {
@@ -844,7 +889,7 @@ export const resourceContent: ResourceContent[] = [
       {
         heading: "How to Decide Between the Two",
         paragraphs: [
-          "Start with a full inspection that includes floor elevations, a plumbing test, and a look at drainage. If a contractor recommends replacement, ask exactly why repair will not work, which specific failures they found, and get it in writing. For a decision this large, an independent structural engineer's report, typically $400 to $800, is worth the cost and protects you from being oversold.",
+          "Start with a full inspection that includes floor elevations, a plumbing test, and a look at drainage. If a contractor recommends replacement, ask exactly why repair will not work, which specific failures they found, and get it in writing. For a decision this large, an independent structural engineer's report, a flat one-time fee, is worth it and protects you from being oversold.",
           "Compare the long-term picture too. A well-done repair with drainage corrections can hold for many years. Replacement resets the foundation, but the new one still sits on the same expansive clay as the old one, so drainage and moisture control around the house matter either way. Neither option removes the need for good maintenance afterward, including gutters, grading, and steady soil moisture during drought.",
         ],
       },
@@ -860,7 +905,7 @@ export const resourceContent: ResourceContent[] = [
       columns: ["Factor", "Foundation Repair", "Foundation Replacement"],
       rows: [
         ["Typical use", "Settlement, cracks, uneven floors, most movement", "Severe structural failure or deteriorated supports"],
-        ["Typical cost", "Often $4,000-$15,000; large jobs $25,000+", "Priced per project; usually many times a typical repair"],
+        ["What drives cost", "Pier count and how much of the house is affected", "Priced per project; usually many times a typical repair"],
         ["Timeline", "Often a few days to a couple of weeks", "Weeks to months, with temporary support"],
         ["Disruption", "Mostly outside work; interior piers need slab breakout", "Major: utilities disconnected, house may be vacated"],
         ["What stays", "Existing slab or framing is kept and supported", "Foundation is removed and rebuilt"],
@@ -886,7 +931,7 @@ export const resourceContent: ResourceContent[] = [
       {
         question: "How do I know if a replacement recommendation is legitimate?",
         answer:
-          "Ask the contractor to explain in writing why repair will not work and what specific failures they found. Then get an independent structural engineer's report, typically $400 to $800 in North Texas. If the engineer's plan calls for repair, you can have contractors bid on that scope.",
+          "Ask the contractor to explain in writing why repair will not work and what specific failures they found. Then get an independent structural engineer's report, a flat one-time fee, and have the engineer explain the findings in writing. If the engineer's plan calls for repair, you can have contractors bid on that scope.",
       },
       {
         question: "Does a repaired foundation hurt resale value?",
@@ -897,6 +942,11 @@ export const resourceContent: ResourceContent[] = [
         question: "Is partial replacement an option?",
         answer:
           "Often, especially with pier and beam homes. Failed piers, beams, or sections of framing can be replaced while the rest of the structure stays in place. On slabs, a badly damaged section can sometimes be removed and repoured. An inspection shows whether a targeted approach will work.",
+      },
+      {
+        question: "Can I stay in my home during foundation repair or replacement?",
+        answer:
+          "For most repairs, yes. Piering is done a section at a time, so the rest of the house stays livable, and interior work closes off one area for a day or two per pier. Full replacement is different: it usually requires temporary support, disconnected utilities, and often moving out for weeks to months, which is one more reason repair is the first option explored.",
       },
     ],
     ctaType: "inspection",
@@ -945,14 +995,14 @@ export const resourceContent: ResourceContent[] = [
         heading: "What DIY Kits Can and Cannot Do",
         paragraphs: [
           "Epoxy kits bond the two sides of a crack together and can restore some strength to a stable crack. Polyurethane kits stay flexible and are better at sealing out water in cracks that move slightly with the seasons. Both work best on clean, dry cracks with injection that reaches the full depth of the concrete, which is harder to get right at home than the packaging suggests.",
-          "Neither will stop a foundation from settling or heaving. On expansive clay, a rigid epoxy repair over an active crack often just moves the crack a few inches over. A professional crack injection typically costs about $300 to $800 per crack in North Texas, which is worth it when the crack needs proper preparation, deeper injection, or written documentation of the repair.",
+          "Neither will stop a foundation from settling or heaving. On expansive clay, a rigid epoxy repair over an active crack often just moves the crack a few inches over. Professional crack injection is priced per crack based on length, depth, and the prep work required, which is worth it when the crack needs proper preparation, deeper injection, or written documentation of the repair.",
         ],
       },
       {
         heading: "The Real Cost Comparison",
         paragraphs: [
-          "A DIY kit costs far less up front, often under a hundred dollars. If the crack is cosmetic and stable, that is the better deal and there is no reason to pay more. The math changes when the crack is a symptom. Patching it can delay finding a plumbing leak or a drainage problem, and the foundation repair later can be larger than it would have been if caught early.",
-          "A sensible middle path is to measure the crack with the crack width calculator, fix obvious drainage issues like downspouts and grading, and keep tracking. If anything grows or new symptoms appear, schedule an inspection before patching further. Final pricing for any professional repair always comes after an on-site inspection, not from photos alone, because the cause of a crack is rarely visible from the crack itself.",
+          "A DIY kit costs far less up front than a professional repair. If the crack is cosmetic and stable, that is the better deal and there is no reason to pay more. The math changes when the crack is a symptom. Patching it can delay finding a plumbing leak or a drainage problem, and the foundation repair later can be larger than it would have been if caught early.",
+          "A sensible middle path is to measure the crack carefully yourself, fix obvious drainage issues like downspouts and grading, and keep tracking. If anything grows or new symptoms appear, schedule an inspection before patching further. Final pricing for any professional repair always comes after an on-site inspection, not from photos alone, because the cause of a crack is rarely visible from the crack itself. If the inspection turns up piers or drainage work on top of the crack repair, financing is available to cover it.",
         ],
       },
     ],
@@ -960,7 +1010,7 @@ export const resourceContent: ResourceContent[] = [
       columns: ["Factor", "DIY Crack Repair", "Professional Repair"],
       rows: [
         ["Best for", "Stable hairline cracks under 1/16 inch", "Cracks 1/8 inch or wider, growing, or displaced"],
-        ["Typical cost", "Kit and supplies, often under $100", "About $300-$800 per crack; more if piers are needed"],
+        ["What drives cost", "Kit and supplies only, a small one-time purchase", "Priced per crack based on length, depth, and prep; more if piers are needed"],
         ["Diagnosis", "Visual check only", "Elevation survey, plumbing and drainage check"],
         ["Addresses the cause", "No, seals the surface only", "Yes, finds and fixes the underlying movement"],
         ["Materials", "Retail epoxy or polyurethane kits", "Pro-grade injection, plus structural repair if needed"],
@@ -998,6 +1048,11 @@ export const resourceContent: ResourceContent[] = [
         question: "Will a DIY patch cause problems when I sell?",
         answer:
           "A neat, documented repair of a hairline crack usually is not a concern. A patch over a structural crack can raise questions if an inspector finds signs of movement around it. Keeping photos and measurements from before and after the patch helps show what the crack was and that it has stayed stable.",
+      },
+      {
+        question: "Is it better to repair a foundation crack from inside or outside?",
+        answer:
+          "For a stable, cosmetic crack, sealing from whichever side is easier to reach is fine. For a crack caused by active movement, repairing from inside with injection is common because it does not require excavation, but it only addresses the crack itself. The drainage or soil problem on the outside still needs to be fixed, or a new crack opens nearby.",
       },
     ],
     ctaType: "inspection",

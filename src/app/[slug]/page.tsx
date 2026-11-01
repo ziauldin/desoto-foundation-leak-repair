@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
-  calculatorsByPath,
   getPage,
+  hiddenPaths,
   resourcesByPath,
   rootSlugPages,
   servicesByPath,
@@ -12,7 +12,6 @@ import { legalContent } from "@/data/content/legal";
 import { metadataForPage } from "@/lib/seo";
 import { ServicePageTemplate } from "@/components/templates/ServicePageTemplate";
 import { ProblemPageTemplate } from "@/components/templates/ProblemPageTemplate";
-import { CalculatorPageTemplate } from "@/components/templates/CalculatorPageTemplate";
 import { BasicPageTemplate } from "@/components/templates/BasicPageTemplate";
 
 // Every root-level page in the topical map (services, calculators, resources, legal) is
@@ -44,12 +43,12 @@ export default async function Page({ params }: PageProps<"/[slug]">) {
       if (!content) notFound();
       return <ServicePageTemplate page={page} content={content} />;
     }
-    case "calculator": {
-      const content = calculatorsByPath.get(path);
-      if (!content) notFound();
-      return <CalculatorPageTemplate page={page} content={content} />;
-    }
+    case "calculator":
+      // Calculators are hidden site-wide until their content pass is finished.
+      notFound();
     case "blog": {
+      // The two dedicated cost-guide pages are individually hidden until their content is ready to publish.
+      if (hiddenPaths.includes(path)) notFound();
       const content = resourcesByPath.get(path);
       if (!content) notFound();
       return <ProblemPageTemplate page={page} content={content} />;

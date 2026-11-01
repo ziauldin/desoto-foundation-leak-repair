@@ -59,7 +59,7 @@ export function ProblemPageTemplate({ page, content }: { page: PageRecord; conte
             ))}
 
             {content.comparison && <ComparisonTable comparison={content.comparison} />}
-            <WhenToCall items={content.whenToCall} service={content.primaryService} calculator={content.primaryCalculator} />
+            <WhenToCall items={content.whenToCall} service={content.primaryService} />
             <ArticleFaq faqs={content.faqs} />
           </div>
         </div>

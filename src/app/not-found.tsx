@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { linkLabel } from "@/data/pages";
 
-const popular = ["/foundation-leak-repair-desoto/", "/foundation-repair-desoto-tx/", "/foundation-repair-cost-calculator/", "/service-area/"];
+const popular = ["/foundation-leak-repair-desoto/", "/foundation-repair-desoto-tx/", "/signs-of-foundation-leak/", "/service-area/"];
 
 export default function NotFound() {
   return (

@@ -218,14 +218,14 @@ export const locationContent: LocationContent[] = [
     summary:
       "A local look at house foundation repair in DeSoto: which home styles and building eras see which problems, and how residential repairs are covered citywide.",
     intro: [
-      "Residential foundation problems in DeSoto tend to line up with when a house was built. Midsize homes from the late 1960s and 1970s, like those in Hampton Place Estates, often have conventionally reinforced slabs and older plumbing. Larger brick homes from the late 1970s through the 1990s, found in areas such as Meadowbrook Estates, Thorntree and Creek Tree Estates, have had decades of clay movement to show wear. Homes built in the 2000s, like Elerson Ranch and Candle Meadow, usually sit on post-tension slabs.",
-      "Each of those groups calls for a slightly different approach. A 1970s house may need leak testing and leveling. A 1990s two-story may need attention at heavy corners. A newer home may mostly need drainage corrected before small movement becomes a bigger issue.",
+      "Building age changes what a repair involves (our DeSoto leak repair coverage page breaks that down by neighborhood and era), but house style and layout change it just as much. A single-story ranch distributes weight evenly across the slab; a two-story adds concentrated load at the interior bearing walls, which is where DeSoto's older two-story homes tend to show cracks on the second floor first. A house with a garage on one end carries less weight there than under the living space, so settlement is rarely uniform across a residential slab.",
+      "Additions and patios complicate it further. A room added ten or twenty years after the original build usually sits on its own slab pour, poured by a different crew to a different standard, so it moves on its own schedule and cracks right at the seam with the original house. We see that joint-line cracking on houses of every age across DeSoto, not just older ones.",
       "For details on how residential foundation repair works, see our main house foundation repair page. This page is about DeSoto's homes specifically and how we cover them across the city.",
     ],
     localFactors: [
       {
-        title: "Housing age",
-        text: "The year a DeSoto home was built tells a lot about its slab design, plumbing materials and how long it has been exposed to soil movement.",
+        title: "Load distribution by house style",
+        text: "Single-story homes spread weight evenly; two-story homes and homes with a garage on one end carry uneven loads, which shapes where movement shows up first.",
       },
       {
         title: "Two-story and larger homes",
@@ -236,8 +236,8 @@ export const locationContent: LocationContent[] = [
         text: "Room additions and patio slabs poured later often move differently than the original slab, which leaves cracks where they meet.",
       },
       {
-        title: "Yard drainage",
-        text: "Flower beds, flat yards and short downspouts send water toward the house. Many residential repairs in DeSoto include drainage fixes.",
+        title: "Garage and porch slab breaks",
+        text: "A garage or covered porch poured as its own slab section is a common spot for a visible crack even when the main house slab is stable.",
       },
     ],
     landmarks: ["Hampton Rd", "Pleasant Run Rd", "Parkerville Rd", "Cockrell Hill Rd", "Moseley Park"],
@@ -252,9 +252,9 @@ export const locationContent: LocationContent[] = [
     ],
     faqs: [
       {
-        question: "Does the age of my DeSoto home change the repair approach?",
+        question: "Does a two-story house need a different repair approach than a single-story?",
         answer:
-          "Often, yes. Older homes from the 1960s and 1970s are more likely to need plumbing checked along with the foundation. Homes from the 1980s and 1990s have had longer exposure to clay movement. Newer homes on post-tension slabs usually need a different kind of evaluation. An inspection takes the home's age and construction into account.",
+          "Often, yes. A two-story home concentrates more weight over the interior bearing walls, so that's typically where piers go and where cracks show up first on the upper floor. A single-story home spreads load more evenly across the slab, so movement there is often more uniform. An inspection measures your specific layout rather than assuming based on style.",
       },
       {
         question: "Can an addition or patio cause foundation cracks?",
@@ -278,7 +278,7 @@ export const locationContent: LocationContent[] = [
     summary:
       "What it means to hire a foundation repair company that works only in DeSoto, and the questions DeSoto homeowners should ask before signing anything.",
     intro: [
-      "When you compare foundation repair companies in DeSoto, local knowledge matters. A crew that works only in DeSoto sees the same clay soil, the same drainage patterns and the same types of houses over and over. That makes it easier to recognize when a crack is seasonal, when a leak is the real cause and when a home actually needs piers.",
+      "Get three foundation repair quotes in DeSoto and you can end up with three different diagnoses for the same crack, because most companies split their time across the whole Dallas-Fort Worth area instead of learning one city's soil. A crew that works only in DeSoto sees the same clay soil, the same drainage patterns and the same types of houses over and over. That makes it easier to recognize when a crack is seasonal, when a leak is the real cause and when a home actually needs piers.",
       "We focus on DeSoto and nowhere else. That keeps the service area simple: if your property is in DeSoto, from the neighborhoods near I-35E to the homes along Westmoreland Rd and Cockrell Hill Rd, it is covered. It also means inspections can be scheduled around the city without long drive times eating into the day.",
       "This page is about choosing a provider, not the repair itself. For the full overview of how we work, see our main foundation repair company page. Below are local factors worth asking any company about.",
     ],
@@ -338,21 +338,21 @@ export const locationContent: LocationContent[] = [
       "Where slab leaks show up across DeSoto, what local conditions make them worse and how slab leak calls are covered citywide.",
     intro: [
       "Nearly every DeSoto home built on a slab has water and drain lines running underneath it. When one of those lines leaks, the water has nowhere to go but into the clay. In DeSoto, that can mean one section of the slab swells and lifts while the rest of the house stays put, or soil washes away and lets that section drop.",
-      "Slab leak symptoms in DeSoto homes often show up in summer, when the rest of the yard is dry and a leak under the house stands out. Homeowners notice a warm spot on the floor, a higher water bill, a musty smell or a crack that seems to come from nowhere. In older neighborhoods with original plumbing, leaks can come from aging drain lines as well as supply lines.",
-      "For the slab leak repair process, rerouting options and what is involved, see our main slab leak repair page. This page focuses on DeSoto conditions and coverage.",
+      "The two kinds of slab leak behave differently, and the difference matters when you're trying to figure out what you have. A supply line is pressurized, so a leak there pushes water out continuously, which is why it shows up fastest on the water meter: shut off every fixture in the house, check the small leak-indicator dial on the meter, and if it is still turning, water is going somewhere. A drain line only leaks when water is running through it, so it builds slower and is more likely to show up as a smell or a damp patch than a sudden bill spike.",
+      "For the repair process, rerouting options and what is involved once a leak is confirmed, see our main slab leak repair page, which covers DeSoto's leak repair symptom list in full. This page focuses on sorting out which type of leak you're dealing with and DeSoto-wide coverage.",
     ],
     localFactors: [
       {
-        title: "Plumbing age by neighborhood",
-        text: "Homes from the late 1960s and 1970s are more likely to have aging under-slab drain lines than homes built in the 2000s.",
+        title: "Supply vs. drain: different tells",
+        text: "A pressurized supply leak shows up fast on the meter. A drain leak only runs when water is used, so it tends to show up as odor or a slow-growing damp spot instead.",
+      },
+      {
+        title: "The meter test",
+        text: "With every fixture off, the small leak-indicator dial on the water meter should sit still. If it's turning, water is leaving the system somewhere, which is the single fastest way to rule a supply leak in or out before calling anyone.",
       },
       {
         title: "Soil movement stresses pipes",
         text: "When clay swells and shrinks, the slab and the pipes below it shift. Joints and fittings under the slab take that stress.",
-      },
-      {
-        title: "Hot water line leaks",
-        text: "A leak on a hot water line under the slab can create a warm spot on the floor, one of the more recognizable slab leak signs.",
       },
       {
         title: "Dry season contrast",
@@ -371,9 +371,9 @@ export const locationContent: LocationContent[] = [
     ],
     faqs: [
       {
-        question: "How do I know if my DeSoto home has a slab leak?",
+        question: "How do I tell a supply line leak from a drain line leak?",
         answer:
-          "Common signs include a water bill that jumps without explanation, a warm or damp spot on the floor, the sound of running water when nothing is on, a musty smell and new cracks in flooring. You can also turn off every fixture and watch the water meter. If it keeps moving, there may be a leak.",
+          "Start with the meter test: turn off every fixture and appliance, then watch the small leak-indicator dial. If it's moving, you likely have a pressurized supply leak, and the water bill will usually confirm it within a billing cycle or two. If the meter sits still but you're noticing a musty smell, a damp patch that only shows up after the house has been used, or a slow-draining fixture, that points more toward a drain line. Either way, electronic leak location is what confirms the exact spot before anything gets cut into.",
       },
       {
         question: "Are slab leaks more common in older DeSoto neighborhoods?",
@@ -397,7 +397,7 @@ export const locationContent: LocationContent[] = [
     summary:
       "Who in DeSoto typically asks for a foundation inspection, what local conditions an inspection looks for and how inspections are scheduled across the city.",
     intro: [
-      "DeSoto homeowners ask for foundation inspections for a lot of different reasons. Some just bought an older home and want a baseline. Some are getting ready to sell and want to know what a buyer's inspector will find. Others noticed a crack after a storm or a door that no longer latches. An inspection is the lowest-pressure way to get a clear answer.",
+      "A new crack after a storm, a door that suddenly stopped latching, or buying an older DeSoto home without knowing its history: these are the usual reasons homeowners call for a foundation inspection. Some just bought an older home and want a baseline. Some are getting ready to sell and want to know what a buyer's inspector will find. An inspection is the lowest-pressure way to get a clear answer.",
       "Inspections in DeSoto are shaped by local conditions. We look for the classic signs of clay movement, check floor elevations, look at grading and downspouts and watch for signs of an under-slab leak. In older homes, plumbing gets more attention. In newer homes on post-tension slabs, the focus is often on drainage and early movement.",
       "For details on what a foundation inspection includes, see our main inspection page. This page covers DeSoto-specific situations and how we reach every part of the city.",
     ],
@@ -635,28 +635,28 @@ export const locationContent: LocationContent[] = [
     areaName: "75115",
     shortName: "75115",
     summary:
-      "Foundation repair, leak detection and drainage service for properties in the 75115 ZIP code, which covers essentially every street address in DeSoto.",
+      "What the 75115 ZIP code means for a DeSoto foundation claim: insurance paperwork, appraisal district records and disclosure forms, all explained for homeowners getting ready to file, sell or refinance.",
     intro: [
-      "If your home or building has a DeSoto street address, it is almost certainly in 75115. That ZIP code covers essentially the whole city, from neighborhoods near I-35E to homes along Westmoreland Rd, Cockrell Hill Rd and everything between. It includes older subdivisions near the center of town and newer ones on the edges.",
-      "Because 75115 covers so much ground, the foundation problems inside it vary. Older 1960s and 1970s homes may need plumbing leaks ruled out. Brick homes from the 1980s and 1990s often show stair-step cracks from years of clay movement. Newer homes on post-tension slabs tend to need drainage and early movement checked.",
-      "What ties them together is the soil. Every home in 75115 sits on North Texas expansive clay, which moves with the weather. Our service area is the same as this ZIP code, so any property in 75115 can be scheduled for an inspection.",
+      "If your home or building has a DeSoto street address, it is almost certainly in 75115. That ZIP code covers essentially the whole city, from neighborhoods near I-35E to homes along Westmoreland Rd, Cockrell Hill Rd and everything between.",
+      "ZIP code 75115 is the number that shows up on the paperwork around a foundation problem, not just the mail. It is what a homeowners insurance quote is priced against, what the Dallas Central Appraisal District uses to group comparable properties when a repaired foundation affects an appeal, and what a seller's disclosure form references when a buyer's lender asks whether a property sits in a known settlement area. Knowing your ZIP matters more at those moments than it does for finding a contractor.",
+      "For the repair itself, the soil is what matters, not the ZIP boundary: every home in 75115 sits on the same North Texas expansive clay that moves with the weather. Our service area is the same as this ZIP code, so any property in 75115 can be scheduled for an inspection.",
     ],
     localFactors: [
       {
+        title: "Insurance paperwork",
+        text: "Homeowners insurance applications and renewal quotes are priced in part by ZIP code, so 75115 is the number on file even though most policies exclude gradual foundation movement.",
+      },
+      {
+        title: "Appraisal district records",
+        text: "The Dallas Central Appraisal District groups comparable properties by area, including ZIP, which can matter if a documented foundation repair comes up in a value protest.",
+      },
+      {
+        title: "Seller's disclosure",
+        text: "A Texas seller's disclosure form asks about known foundation defects and repairs. Buyers and their lenders often cross-check that against the property's ZIP-level history.",
+      },
+      {
         title: "Citywide clay soil",
         text: "All of 75115 sits on expansive clay that swells in wet seasons and shrinks in drought, the root cause of most foundation movement here.",
-      },
-      {
-        title: "Range of housing ages",
-        text: "The ZIP includes late 1960s homes, 1980s-90s brick homes and 2000s subdivisions, so the likely causes differ by house.",
-      },
-      {
-        title: "Creek and low areas",
-        text: "Ten Mile Creek and other low areas collect runoff during storms, so drainage is a bigger factor on some lots than others.",
-      },
-      {
-        title: "Under-slab plumbing",
-        text: "Slab homes throughout 75115 have plumbing under the foundation, and leaks there are a common trigger for movement.",
       },
     ],
     landmarks: ["Hampton Rd", "Belt Line Rd", "Pleasant Run Rd", "I-35E", "Westmoreland Rd", "Ten Mile Creek"],
@@ -676,9 +676,14 @@ export const locationContent: LocationContent[] = [
           "If you have a DeSoto street address, it is very likely 75115. That ZIP covers essentially all residential and business street addresses in the city. You can confirm on a utility bill or tax statement. Either way, if the property is in DeSoto, it is in our service area.",
       },
       {
-        question: "What foundation problems are most common in 75115?",
+        question: "Does homeowners insurance cover foundation repair in 75115?",
         answer:
-          "Cracks in brick and drywall, sticking doors, uneven floors and under-slab plumbing leaks are the most common. Nearly all of them trace back to clay soil moving with the weather, made worse by poor drainage, nearby trees or a leak keeping one area of soil wet.",
+          "Usually not for gradual settlement from clay soil, which most policies treat as normal wear rather than a covered event. Sudden damage from a specific cause, like a burst pipe, is more often covered. Check your own policy's wording, since terms vary by insurer, and ask your adjuster directly if you are unsure.",
+      },
+      {
+        question: "Will a foundation repair show up on my appraisal district or disclosure records?",
+        answer:
+          "A documented repair can come up when you sell, since Texas seller's disclosure forms ask about known foundation issues and repairs. Keeping the inspection findings and repair paperwork in writing makes that disclosure straightforward and can also support a value protest with the Dallas Central Appraisal District if one is ever needed.",
       },
       {
         question: "Do you cover the whole 75115 ZIP code?",
@@ -860,7 +865,7 @@ export const locationContent: LocationContent[] = [
       {
         question: "How much does foundation leak repair cost in Silver Creek Crossing?",
         answer:
-          "It depends on where the leak is, how it is repaired and whether the foundation needs work afterward. Our foundation leak repair cost calculator gives a rough range to start with. An inspection and leak test are needed to give an actual estimate for your home.",
+          "It depends on where the leak is, how it is repaired and whether the foundation needs work afterward. Our foundation leak repair cost calculator gives a rough range to start with. An inspection and leak test are needed to give an actual estimate for your home, and you can ask about financing when that written estimate is delivered.",
       },
     ],
   },
@@ -1091,7 +1096,7 @@ export const locationContent: LocationContent[] = [
       {
         question: "What does foundation repair cost in Creek Tree Estates?",
         answer:
-          "Cost depends on the cause and the repair. Drainage fixes and leak repairs are usually less expensive than piers or leveling. Our DeSoto foundation repair cost guide explains the typical ranges and what affects price. An inspection is needed for a real estimate on your home.",
+          "Cost depends on the cause and the repair. Drainage fixes and leak repairs are usually less expensive than piers or leveling. Our DeSoto foundation repair cost guide explains the typical ranges and what affects price. An inspection is needed for a real estimate on your home, and financing is available if you'd rather spread out the cost of a bigger repair.",
       },
     ],
   },
@@ -1281,7 +1286,7 @@ export const locationContent: LocationContent[] = [
     summary:
       "Foundation leak repair and drainage work for homes on the west side of DeSoto, toward Westmoreland Rd and Cockrell Hill Rd.",
     intro: [
-      "West DeSoto covers the part of the city toward Westmoreland Rd and Cockrell Hill Rd. Housing on this side of town ranges from established subdivisions to newer neighborhoods and some larger lots. That variety means foundation questions here range from aging plumbing to drainage on newer, builder-graded lots.",
+      "Westmoreland Rd and Cockrell Hill Rd mark the west side of DeSoto, taking in subdivisions like Candle Meadow and Frost Farms, where established homes with decades-old plumbing sit a few streets from newer lots still running on the builder's original grading. That mix means foundation calls here range from an aging pipe under an older slab to drainage that quit keeping up once the soil settled.",
       "Like the rest of DeSoto, the west side sits on expansive clay. Open areas and larger lots can see more wind and sun exposure, which dries soil faster in summer. When heavy storms follow, the clay swells quickly. Homes with poor grading or downspouts that empty at the slab feel that swing the most.",
       "For West DeSoto homeowners, the most common requests involve leaks under the slab and water collecting around the house. Both are worth addressing before they lead to larger structural repairs.",
     ],
@@ -1339,8 +1344,8 @@ export const locationContent: LocationContent[] = [
     summary:
       "Slab foundation repair and crack repair for homes on the east side of DeSoto, toward I-35E.",
     intro: [
-      "East DeSoto covers the side of the city toward I-35E, which runs along DeSoto's eastern edge. Neighborhoods on this side include a range of brick-on-slab homes, many from the 1970s through the 1990s, along with newer construction in some areas.",
-      "Slab homes on the east side face the same clay soil challenges as the rest of DeSoto. Cracks in brick, drywall and tile are the most common signs homeowners report, usually after a hot summer or the first heavy rain that follows one. Where homes have had additions or patios poured later, cracks at the joints are common too.",
+      "I-35E runs along DeSoto's eastern edge, past brick-on-slab homes built mostly from the 1970s through the 1990s, with newer construction filling in the gaps near subdivisions like Silver Creek Crossing. Cracks in brick, drywall and tile are the complaint we hear most from this side of town, usually right after a hot summer or the first hard rain that follows one.",
+      "Two things set the east side apart from the rest of DeSoto: how much of the ground near a slab is paved, and how many homes have had something added onto them. Driveways, patios and parking pads run water toward the foundation faster on lots with little natural slope, and a lot of east-side houses have had a room, porch or patio poured years after the original slab, so those additions move independently and crack right at the seam.",
       "For slab homes in East DeSoto, the first step is finding out whether movement is ongoing and what is driving it, whether that is soil moisture, drainage or a leak. That determines whether the answer is a crack repair, leveling or a fix to the water source.",
     ],
     localFactors: [
@@ -1396,7 +1401,7 @@ export const locationContent: LocationContent[] = [
     summary:
       "Foundation inspections and house foundation repair for homes in the northern part of DeSoto, around Pleasant Run Rd and Belt Line Rd.",
     intro: [
-      "North DeSoto covers the northern part of the city, including areas around Pleasant Run Rd and Belt Line Rd. Much of the housing here is established, with many brick homes that have been in place for decades. Homeowners on this side of town often have lived in their homes a long time, or are buying an older house and want to know what they are getting.",
+      "Pleasant Run Rd and Belt Line Rd run through North DeSoto, past brick homes in neighborhoods like Hampton Place and the blocks around DeSoto Town Center that have stood on this clay for decades. The question for most of these houses isn't whether the soil has moved the slab. It's whether that movement is still active. Homeowners on this side of town often have lived in their homes a long time, or are buying an older house and want to know what they are getting.",
       "For established homes, the questions usually center on how much the house has moved over the years and whether it is still moving. Cracks that have been there for a while may be stable. New cracks, doors that recently started sticking and floors that feel different than they used to are signs worth a closer look.",
       "An inspection is the best starting point for North DeSoto homes. It gives a baseline of floor levels, notes existing cracks and checks drainage and possible leaks, which makes it easier to see changes over time.",
     ],
@@ -1442,7 +1447,7 @@ export const locationContent: LocationContent[] = [
       {
         question: "What does house foundation repair cost on the north side?",
         answer:
-          "Cost depends on the cause and the repair method, not the part of town. Drainage fixes cost less than leveling or piers. Our foundation repair cost calculator gives a starting range, and an inspection provides a real estimate based on your home.",
+          "Cost depends on the cause and the repair method, not the part of town. Drainage fixes cost less than leveling or piers. Our foundation repair cost calculator gives a starting range, and an inspection provides a real estimate based on your home. Financing is available, so ask about it when you get that written estimate.",
       },
     ],
   },
@@ -1454,7 +1459,7 @@ export const locationContent: LocationContent[] = [
     summary:
       "Foundation leveling and leak detection for homes in the southern part of DeSoto, toward Parkerville Rd and Wintergreen Rd.",
     intro: [
-      "South DeSoto covers the southern part of the city, toward Parkerville Rd and Wintergreen Rd. This side of town includes a mix of established neighborhoods and newer development, so housing ranges from 1980s and 1990s brick homes to 2000s construction on post-tension slabs.",
+      "Parkerville Rd and Wintergreen Rd cut through South DeSoto, linking 1980s and 1990s brick subdivisions like Elerson Ranch to newer construction near Thorntree built on post-tension slabs. That age gap changes the diagnosis: established homes here tend to settle slowly, while newer ones lean on drainage that hasn't been tested by enough seasons yet.",
       "Settlement and leaks are two of the most common concerns here. In older homes, years of clay movement can leave floors sloping toward one corner. In newer homes, early settlement is often tied to drainage. In both, an under-slab leak can soften soil in one area and cause that part of the house to drop or lift.",
       "If a floor feels uneven or doors have started to drift, finding the cause first matters. Leveling a slab without fixing a leak or drainage problem underneath it can mean doing the work twice.",
     ],

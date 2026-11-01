@@ -19,17 +19,6 @@ export const mainNav: NavGroup[] = [
     ],
   },
   {
-    label: "Calculators",
-    href: "/calculators/",
-    children: [
-      link("/foundation-repair-cost-calculator/", "Foundation Repair Cost Calculator"),
-      link("/foundation-leak-repair-cost-calculator/", "Foundation Leak Repair Cost Calculator"),
-      link("/foundation-crack-repair-cost-calculator/", "Foundation Crack Repair Cost Calculator"),
-      link("/slab-leak-repair-cost-calculator/", "Slab Leak Repair Cost Calculator"),
-      link("/foundation-inspection-checklist/", "Foundation Inspection Checklist"),
-    ],
-  },
-  {
     label: "Problems",
     href: "/resources/#problems",
     children: [
@@ -75,12 +64,9 @@ export const footerLocations: NavLink[] = [
   .map((href) => link(href));
 
 export const footerTools: NavLink[] = [
-  link("/foundation-repair-cost-calculator/"),
-  link("/foundation-leak-repair-cost-calculator/"),
-  link("/foundation-inspection-checklist/"),
-  // Its short name ("Foundation Repair Cost") reads like a duplicate of the calculator above.
-  link("/foundation-repair-cost-desoto-tx/", "Foundation Repair Cost Guide"),
   link("/signs-of-foundation-leak/"),
+  link("/slab-leak-vs-foundation-leak/"),
+  link("/foundation-repair-vs-replacement/"),
 ];
 
 export const footerCompany: NavLink[] = [
@@ -88,7 +74,6 @@ export const footerCompany: NavLink[] = [
   { label: "Contact", href: "/contact/" },
   { label: "Service Areas", href: "/service-area/" },
   { label: "Resources", href: "/resources/" },
-  { label: "Calculators", href: "/calculators/" },
   { label: "Privacy Policy", href: "/privacy-policy/" },
   { label: "Terms and Conditions", href: "/terms-and-conditions/" },
 ];

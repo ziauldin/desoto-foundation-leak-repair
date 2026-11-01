@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { generalFaqs } from "@/data/faqs";
-import { calculatorPaths } from "@/data/pages";
 import { buildMetadata } from "@/lib/seo";
 import { faqSchema, localBusinessSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -9,7 +8,6 @@ import { Hero } from "@/components/home/Hero";
 import { ServiceShowcase } from "@/components/home/ServiceShowcase";
 import { ServiceIndex } from "@/components/home/ServiceIndex";
 import { ProblemTiles } from "@/components/home/ProblemTiles";
-import { ToolsBand } from "@/components/home/ToolsBand";
 import { AreasBand } from "@/components/home/AreasBand";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { ProcessSection } from "@/components/home/ProcessSection";
@@ -85,7 +83,6 @@ export default function HomePage() {
         intro="Start with the symptom. Each guide explains the likely causes and when it's worth calling."
         guides={problems}
       />
-      <ToolsBand tools={calculatorPaths.slice(0, 4)} />
       <CtaSection type="leak-estimate" />
       <ProcessSection />
       <AreasBand />

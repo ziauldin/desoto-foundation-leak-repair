@@ -7,7 +7,6 @@ import {
   MethodsTable,
   ProcessTimeline,
   ServiceCtaBand,
-  ServiceEstimator,
   ServiceFaq,
   ServiceHero,
   ServiceOverview,
@@ -40,7 +39,7 @@ export function ServicePageTemplate({ page, content }: { page: PageRecord; conte
         urgent={content.urgent}
         formTitle={`Request ${name.toLowerCase()} help`}
       />
-      <QuickFacts path={page.path} />
+      <QuickFacts />
       <ServiceOverview
         title={`${name} for DeSoto homes`}
         paragraphs={content.intro}
@@ -50,7 +49,6 @@ export function ServicePageTemplate({ page, content }: { page: PageRecord; conte
       <SignsChecklist title={`Signs you may need ${name.toLowerCase()}`} signs={content.signs} />
       <SoilExplainer paragraphs={content.whyItMatters} />
       <MethodsTable items={content.included} />
-      <ServiceEstimator path={page.path} name={name} />
       <ServiceCtaBand type={content.ctaType} />
       <ProcessTimeline title={`How ${name.toLowerCase()} works`} steps={content.process} />
       <ServiceRelated services={page.relatedServices} supporting={page.relatedPages} />

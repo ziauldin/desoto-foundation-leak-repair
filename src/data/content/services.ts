@@ -10,11 +10,11 @@ export const serviceContent: ServiceContent[] = [
     path: "/foundation-leak-repair-desoto/",
     shortName: "Foundation Leak Repair",
     summary:
-      "Water under or around your slab, from a broken pipe or from runoff, can move a DeSoto foundation fast. We find the source, stop it, and repair the damage it caused.",
+      "A leak under your DeSoto slab gets more expensive every week it runs. We find the source, stop it, and document the foundation damage before anything else.",
     intro: [
-      "A foundation leak is any steady source of water that ends up under or against your foundation. In DeSoto that usually means one of two things: a pressurized supply line or a drain line leaking beneath the slab, or surface water from roofs, gutters and poor grading soaking the soil along one side of the house. Either way, the clay under the home takes on water unevenly, swells in one area, and pushes or drops part of the slab out of level.",
-      "Foundation leak repair is two jobs done in the right order. First the water source has to be found and stopped, whether that is a cracked cast-iron drain, a pinhole in a copper line, or a downspout dumping against the slab. Then the structure is checked for movement and repaired if needed. Leveling a foundation while a leak is still feeding the soil underneath is wasted money, because the soil keeps moving after the crew leaves.",
-      "If you are seeing water where it should not be, a jump in your water bill, or cracks that appeared quickly, call us before the problem spreads. We will tell you what we think the source is, what testing is needed to confirm it, and what the repair options look like, in writing, before any work starts.",
+      "Every week a slab leak runs, more clay around your foundation swells. That is the whole problem in one sentence. A foundation leak is any steady source of water reaching the soil under or against your home, whether it is a pressurized supply line, a cracked drain, or a downspout dumping against the slab for three years straight. The clay does not wait for you to notice the water bill.",
+      "Foundation leak repair only works in one order: find the source, stop it, then check the structure. Piering or leveling a foundation while a leak is still feeding the soil underneath is money spent twice, because the ground keeps moving after the crew packs up. The first job is figuring out which kind of leak you have. A leak inside a supply or drain pipe under the slab is a slab leak, and we cover the repair methods for that in detail on our slab leak repair page. A leak outside the plumbing, meaning water from grading, downspouts or a failed waterproofing layer that is soaking the soil against the foundation, is what this page focuses on.",
+      "If your water bill jumped or you heard running water with everything off, that points to plumbing and the slab leak repair page is the faster read. If instead you are seeing wet soil along the foundation after rain, a damp patch that will not dry even with no plumbing leak confirmed, or staining where a crawl space or basement wall meets the slab, that is usually an exterior water source, and that is what we sort out here: regrading, downspout correction, exterior waterproofing and drainage work, so the fix matches the actual source instead of guessing at it.",
     ],
     signs: [
       {
@@ -49,24 +49,20 @@ export const serviceContent: ServiceContent[] = [
     ],
     included: [
       {
-        title: "Leak source testing",
-        text: "Water meter checks, static pressure tests on supply lines and hydrostatic tests on drain lines to confirm whether a leak is under the slab.",
+        title: "Source diagnosis",
+        text: "Water meter checks and a walkaround to determine whether the water reaching the soil is from plumbing (handled on our slab leak repair page) or from outside the house.",
       },
       {
-        title: "Electronic leak location",
-        text: "Acoustic listening equipment and line tracing to pinpoint where the leak is so the repair opening is as small as possible.",
+        title: "Grading and downspout correction",
+        text: "Regrading low spots and extending or redirecting downspouts so roof and yard runoff stops collecting against the foundation.",
       },
       {
-        title: "Line repair or reroute",
-        text: "Spot repair through the slab, rerouting the line through the attic or walls, or tunneling under the slab, depending on the location and condition of the pipe.",
+        title: "Exterior waterproofing",
+        text: "Sealing or correcting failed waterproofing at exterior walls and below-grade areas where water is tracking in against the slab.",
       },
       {
-        title: "Foundation evaluation after the leak is stopped",
+        title: "Foundation evaluation after the water is stopped",
         text: "An elevation survey and crack review to see if the slab moved, followed by pier work only if the readings show it is needed.",
-      },
-      {
-        title: "Exterior water control",
-        text: "Downspout extensions, regrading or drainage work where surface water is part of the problem.",
       },
     ],
     process: [
@@ -75,12 +71,12 @@ export const serviceContent: ServiceContent[] = [
         text: "Tell us about the water bill, wet spots, sounds or cracks. We will help you decide if you should shut off the water before we arrive.",
       },
       {
-        title: "Test and locate the leak",
-        text: "We run pressure or hydrostatic tests to confirm the leak, then use electronic location to find it under the slab.",
+        title: "Confirm whether it is plumbing or exterior water",
+        text: "A meter check rules plumbing in or out fast. If it is a slab leak, we move to the repair methods on our slab leak repair page. If it is grading, downspouts or a waterproofing failure, we keep going here.",
       },
       {
-        title: "Stop the water",
-        text: "We review spot repair, reroute and tunneling options with you, with pricing in writing, and repair the line you choose.",
+        title: "Stop the water at the source",
+        text: "Regrading, downspout correction or exterior waterproofing, with pricing in writing before anything starts.",
       },
       {
         title: "Check the foundation and plan next steps",
@@ -96,7 +92,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How much does foundation leak repair cost in DeSoto?",
         answer:
-          "It depends on what is leaking and where. Typical North Texas ranges are $250 to $600 for leak detection, $1,500 to $4,000 for a slab leak spot repair, and $2,000 to $6,000 for a partial reroute. If the slab has moved, pier work is priced separately. Final pricing is set after testing and inspection.",
+          "It depends on what is leaking and where. Leak detection, a spot repair through the slab, and a partial reroute each carry different costs, and the location of the leak and how hard it is to reach make the biggest difference. If the slab has moved, pier work is priced separately. We test first, then give you a written price before anything is cut into.",
       },
       {
         question: "Should I shut off my water if I suspect a leak under the slab?",
@@ -107,6 +103,11 @@ export const serviceContent: ServiceContent[] = [
         question: "Will fixing the leak also fix my foundation?",
         answer:
           "Sometimes the soil dries out and the slab settles back close to where it was, especially if the leak is caught early. In other cases the movement is permanent and piers are needed. We recommend waiting until the leak is repaired and the soil has had time to stabilize, then taking new elevation readings before deciding on structural work.",
+      },
+      {
+        question: "Is financing available for leak and foundation repair?",
+        answer:
+          "Yes. If the combined cost of leak detection, line repair and any structural work is more than you want to pay up front, ask about financing when we deliver your written estimate. We will walk through the options before you commit to a repair plan.",
       },
     ],
     ctaType: "leak-estimate",
@@ -120,11 +121,11 @@ export const serviceContent: ServiceContent[] = [
     path: "/foundation-repair-desoto-tx/",
     shortName: "Foundation Repair",
     summary:
-      "Slab and pier and beam foundation repair for DeSoto homes, from minor crack work to full pier installation, based on measured readings and a clear written plan.",
+      "Slab and pier and beam foundation repair for DeSoto homes, priced from measured readings, not a walk-around guess, with financing available on larger jobs.",
     intro: [
-      "Foundation repair covers a wide range of work, and the right fix depends on what is actually moving under your home. Some DeSoto houses need a few exterior piers along one corner that dropped after a dry summer. Others need interior piers where the center of the slab heaved, a plumbing leak fixed first, or simply better drainage and a crack sealed. The goal of a good repair is to stabilize the foundation, not to sell the most piers possible.",
-      "We work on both slab-on-grade foundations, which most homes in DeSoto have, and older pier and beam foundations with a crawl space. Every job starts with an elevation survey of the floors, a look at the exterior grading and drainage, and a check for signs of plumbing leaks. That information tells us whether the slab is settling, heaving, or both, and which areas actually need support.",
-      "After the inspection you get a written explanation of what we found, what we recommend, and why. If the problem is minor, we will tell you that too, and explain what to watch for so you know when it is time to call back.",
+      "The right foundation repair depends on what is actually moving under your home, not on how many piers a salesperson thinks you should buy. Some DeSoto houses need three exterior piers along one corner that dropped after a dry summer. Others need interior piers where the center of the slab heaved, a plumbing leak fixed first, or just better drainage and a sealed crack. Our job is to stabilize the foundation for the least work that actually does it.",
+      "We repair both slab-on-grade foundations, which most DeSoto homes have, and older pier and beam foundations with a crawl space. Every job starts with a floor elevation survey, a look at exterior grading and drainage, and a check for plumbing leaks, because treating the symptom while a leak keeps feeding the soil wastes your money. That data tells us whether the slab is settling, heaving, or both, and exactly which corners need support.",
+      "After the inspection, which is free and in person, you get a written scope: what we found, what we recommend, the method, and the price, before anything is cut into. Financing is available if the full repair is more than you want to pay at once. If the movement is minor and does not need piers, we will tell you that too.",
     ],
     signs: [
       {
@@ -197,7 +198,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How much does foundation repair cost in DeSoto, TX?",
         answer:
-          "Typical North Texas foundation repair runs about $4,000 to $15,000. Minor jobs can start around $1,800, and large jobs with many interior piers can reach $25,000 or more. Exterior piers usually run about $400 to $1,000 each, and interior piers cost more because the slab has to be opened. Final pricing comes after inspection.",
+          "It depends mostly on how many piers are needed and where. Exterior piers are generally less costly than interior piers, since interior work means opening and patching the slab. A small crack or drainage fix costs far less than a job needing piers across several walls. We give you an itemized written price after the inspection, before anything starts.",
       },
       {
         question: "How long does foundation repair take?",
@@ -212,7 +213,12 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "Do I need an engineer's report?",
         answer:
-          "Not always. For straightforward repairs many homeowners proceed on the contractor's inspection. An independent engineer's report, typically $400 to $800, is useful if you are buying or selling, if the damage is severe, or if you want a second opinion on the repair plan. We are happy to work from an engineer's recommendations.",
+          "Not always. For straightforward repairs many homeowners proceed on the contractor's inspection. An independent engineer's report is useful if you are buying or selling, if the damage is severe, or if you want a second opinion on the repair plan. We are happy to work from an engineer's recommendations, and can tell you what a report would cost before you commit to one.",
+      },
+      {
+        question: "Can I finance foundation repair in DeSoto?",
+        answer:
+          "Yes. Financing is available for most jobs, and we go over the options alongside the written estimate so you can compare monthly payments against a cash price before deciding.",
       },
     ],
     ctaType: "inspection",
@@ -225,11 +231,11 @@ export const serviceContent: ServiceContent[] = [
     path: "/foundation-repair-company-desoto-tx/",
     shortName: "Foundation Repair Company",
     summary:
-      "How to compare foundation repair companies in DeSoto, what to ask before you sign, and how we handle inspections, pricing and repair plans.",
+      "Three DeSoto bids, three different pier counts. Here is exactly what to ask a foundation repair company before you sign anything, and how we answer each question.",
     intro: [
-      "If you are comparing foundation repair companies, you probably already know something is wrong and want to get it fixed by someone you can trust. The hard part is that foundation bids can look very different. One company recommends 8 piers, another recommends 22, and a third says you need drainage work instead. Knowing what to ask makes it much easier to see which plan actually fits your house.",
-      "A good contractor should be able to explain why they recommend each pier, show you the elevation readings that support it, and tell you whether a plumbing leak or drainage problem needs to be handled first. They should also tell you what the repair will not fix. Leveling rarely gets a house back to perfectly flat, and cosmetic cracks often need separate repair.",
-      "We focus only on DeSoto, TX. That means we see the same soil, the same housing eras and the same drainage patterns over and over, and we can be on site without a long drive. We put our findings and pricing in writing, explain the options rather than pushing one, and are fine with you getting other opinions before deciding.",
+      "One company says 8 piers. Another says 22. A third skips piers and says you need drainage work instead. If you have gotten more than one quote, you already know foundation bids do not look anything alike, and nobody hands you a translation guide. The questions below are the ones that actually separate a measured plan from a guess.",
+      "A contractor worth hiring will show you the elevation readings behind every pier, tell you whether a plumbing leak or drainage problem needs fixing before or alongside the structural work, and say plainly what the repair will not fix. Leveling rarely gets a slab back to perfectly flat, and cosmetic cracks are usually a separate line item. If a company will not show you the numbers behind their number, that is the answer.",
+      "We work only in DeSoto, TX, so we see the same clay, the same 1970s-to-1990s slabs, and the same drainage patterns over and over instead of guessing at conditions from across the metro. Every finding and every price goes to you in writing, free, before any work starts. We expect you to get a second opinion, and we are glad to walk you through why our plan differs from someone else's if it does.",
     ],
     signs: [
       {
@@ -307,12 +313,17 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "Do you charge for an inspection?",
         answer:
-          "You can request a free inspection through our site. For some situations, such as a detailed report for a real estate transaction, a typical North Texas range is free to about $400 for an inspection and elevation survey, and $400 to $800 for an engineer's report. We will tell you any cost before the visit.",
+          "You can request a free inspection through our site. For some situations, such as a detailed report for a real estate transaction, an elevation survey or an independent engineer's report may carry a fee. We will tell you any cost before the visit, with no obligation to proceed.",
       },
       {
         question: "Do you only work in DeSoto?",
         answer:
           "Yes. We focus on homes and buildings in DeSoto, TX, including ZIP code 75115 and the neighborhoods throughout the city. Staying in one city lets us respond quickly and learn the local soil and drainage patterns well, rather than spreading our crews across the region.",
+      },
+      {
+        question: "Does a foundation repair company have to offer financing?",
+        answer:
+          "No, but it is worth asking before you compare prices, since a cash-only quote and a financed quote are not apples to apples. We offer financing, so ask us to break out the cash price and the financed monthly payment side by side.",
       },
     ],
     ctaType: "inspection",
@@ -325,9 +336,9 @@ export const serviceContent: ServiceContent[] = [
     path: "/house-foundation-repair-desoto-tx/",
     shortName: "House Foundation Repair",
     summary:
-      "Foundation repair matched to how your house is built: brick-veneer slab homes, older pier and beam houses, two-story plans and additions.",
+      "A one-story brick ranch, a two-story plan and a pier-and-beam house all fail differently. House foundation repair starts with your structure, not a generic pier count.",
     intro: [
-      "The right foundation repair depends a lot on what kind of house is sitting on it. A one-story brick ranch on a slab, a two-story home with heavy point loads, an older frame house on pier and beam, and a house with a slab addition tied onto an original foundation all move differently and fail in different places. House foundation repair starts with understanding the structure, not just the cracks.",
+      "A crack in a brick ranch and a crack in a two-story house are not the same problem, even if they look alike. A one-story slab home, a two-story with heavy point loads, an older frame house on pier and beam, and a house with an addition tied onto the original foundation all move differently and fail in different spots. House foundation repair starts with understanding which one yours is, not with counting cracks.",
       "Most DeSoto houses built from the 1970s through the 1990s are brick veneer over wood framing on a post-tensioned or conventionally reinforced slab. Brick shows movement quickly, so stair-step cracks and gaps at windows are common. Older pier and beam houses tend to show sagging floors and bouncy spots instead. Houses with additions often crack right at the joint where the new foundation meets the old one.",
       "We look at the house as a whole: where the load-bearing walls are, where the roof drains, where the plumbing runs under the slab, and how the lot drains. That tells us where support is needed and which method fits the structure, whether that is exterior piers, interior piers, shimming, or a drainage fix.",
     ],
@@ -397,7 +408,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "Does a two-story house need more piers than a one-story?",
         answer:
-          "Not always more, but the layout is different. Two-story houses carry more weight on certain walls and corners, so piers need to be placed under those loads. Total pier count depends on how much of the foundation has moved. Typical exterior piers run about $400 to $1,000 each in North Texas, with final pricing after inspection.",
+          "Not always more, but the layout is different. Two-story houses carry more weight on certain walls and corners, so piers need to be placed under those loads. Total pier count depends on how much of the foundation has moved, and that count is the main driver of price. Final pricing follows the inspection.",
       },
       {
         question: "My house has an addition and there is a crack at the joint. Is that a foundation problem?",
@@ -412,7 +423,12 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "Is pier and beam or slab easier to repair?",
         answer:
-          "Pier and beam houses are usually easier and less expensive to adjust because the crew can work in the crawl space and re-shim. Typical shimming and adjustment runs about $1,000 to $5,000. Slab houses need piers driven under the beam, and interior piers require breaking through the floor, which adds cost.",
+          "Pier and beam houses are usually easier and less expensive to adjust because the crew can work in the crawl space and re-shim. Slab houses need piers driven under the beam, and interior piers require breaking through the floor, which adds cost. We can give you a written price for either once we see the access and the readings.",
+      },
+      {
+        question: "Can I finance repair across multiple sections of the house?",
+        answer:
+          "Yes. If the addition joint, the garage slab and the main foundation all need work, financing covers the combined scope rather than forcing you to split it into separate jobs.",
       },
     ],
     ctaType: "inspection",
@@ -425,9 +441,9 @@ export const serviceContent: ServiceContent[] = [
     path: "/home-foundation-repair-desoto-tx/",
     shortName: "Home Foundation Repair",
     summary:
-      "What foundation repair is like as a homeowner: living at home during the work, what gets disturbed, what it costs, and how it affects selling your home.",
+      "Can you stay home during the work, what will it cost, and will it hurt resale? The honest answers, plus financing if the number is bigger than you planned for.",
     intro: [
-      "Finding out your home needs foundation repair raises a lot of practical questions. Can you stay in the house during the work? Will the crew tear up your floors? What happens to the landscaping? Will this hurt your home's value when you sell? This page is about what the process is actually like for a DeSoto homeowner, from the first inspection to the day the crew leaves.",
+      "Can you stay in the house during the work. Will the crew tear up your floors. What happens to the landscaping. Will this hurt your home's value when you sell. Those are the four questions almost every DeSoto homeowner asks first, and they deserve straight answers before you even talk about piers. This page is what the process is actually like, from the first inspection to the day the crew leaves.",
       "For most homes, you can stay put. Exterior pier work happens outside along the foundation, with digging next to the beam and some noise from hydraulic equipment. Interior piers are more disruptive, because the crew has to cut through flooring and concrete in specific rooms, but we plan those openings with you ahead of time and tell you which furniture to move.",
       "We also talk through the money side honestly. Repair is a real expense, but a documented, completed repair is usually much easier to explain to a buyer than an unrepaired problem. Whether you plan to stay for years or sell next spring, we help you choose a repair that fits your plans and your budget.",
     ],
@@ -512,7 +528,12 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "What does home foundation repair usually cost?",
         answer:
-          "Most North Texas home foundation repairs fall between about $4,000 and $15,000. Smaller jobs can start near $1,800, and homes needing many interior piers can exceed $25,000. The number of piers, interior access, and any plumbing or drainage work drive the price. Final pricing is set after inspection.",
+          "The number of piers, interior access, and any plumbing or drainage work needed drive the price far more than the general size of the job. A small stabilization costs much less than a repair spanning many interior piers. Final pricing is set after inspection, in writing, before work starts.",
+      },
+      {
+        question: "What if the repair costs more than I budgeted?",
+        answer:
+          "Ask about financing when we deliver the written estimate. Spreading a larger repair over monthly payments is often the difference between fixing it now and letting the movement get worse while you save up.",
       },
     ],
     ctaType: "inspection",
@@ -527,7 +548,7 @@ export const serviceContent: ServiceContent[] = [
     summary:
       "Crack evaluation and repair for slabs, brick and walls in DeSoto, from simple injection on stable cracks to piers when a crack is a sign of ongoing movement.",
     intro: [
-      "Not every foundation crack is a structural problem. Concrete shrinks as it cures, and most slabs develop hairline cracks within the first few years. What matters is the width of the crack, whether one side is higher than the other, whether it lets water in, and whether it is still growing. Those details decide whether the right fix is a sealant, an injection, or support under the foundation.",
+      "A quarter-inch crack and a hairline crack are two different problems, not two sizes of the same one. Concrete shrinks as it cures, and most slabs develop hairline cracks within the first few years, which is normal and rarely worth a repair bid. What matters is the width of the crack, whether one side is higher than the other, whether it lets water in, and whether it is still growing. Those details decide whether the right fix is a sealant, an injection, or support under the foundation, not a guess made from the driveway.",
       "We see a lot of visible damage in DeSoto: stair-step cracks in brick, diagonal cracks above doors, cracks in garage floors, and cracks at the corners of the slab where the beam meets the soil. Each type tells a different story about what the foundation is doing. A vertical hairline in the slab is usually cosmetic. A crack wider than about a quarter inch, or one with offset, deserves a closer look.",
       "Our crack repair visits include measuring the crack, taking floor elevations to see if the slab has moved, and checking nearby drainage and plumbing. If the crack is stable, we seal or inject it so water and pests stay out. If it is moving, we explain the structural repair needed first.",
     ],
@@ -601,12 +622,12 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How do I know if a foundation crack is serious?",
         answer:
-          "Warning signs include cracks wider than about 1/4 inch, cracks with one side higher than the other, stair-step cracks in brick, cracks that keep growing, and cracks along with sticking doors or sloping floors. Hairline vertical cracks in a slab are usually shrinkage. Our crack width calculator can help you sort them before an inspection.",
+          "Warning signs include cracks wider than about 1/4 inch, cracks with one side higher than the other, stair-step cracks in brick, cracks that keep growing, and cracks along with sticking doors or sloping floors. Hairline vertical cracks in a slab are usually shrinkage. An on-site inspection can tell you quickly which kind you're looking at.",
       },
       {
         question: "How much does foundation crack repair cost?",
         answer:
-          "Typical North Texas pricing for epoxy or polyurethane crack injection is about $300 to $800 per crack, depending on length and access. If the crack is caused by settlement and needs piers, the cost moves into general foundation repair ranges, often $4,000 to $15,000. Final pricing comes after inspection.",
+          "Epoxy or polyurethane crack injection is priced per crack, depending on length and access. If the crack is caused by settlement and needs piers, the cost moves into general foundation repair territory instead. Final pricing comes after inspection, and you can ask about financing when we deliver the written estimate.",
       },
       {
         question: "Can I just fill the crack myself?",
@@ -617,6 +638,11 @@ export const serviceContent: ServiceContent[] = [
         question: "Why do my foundation cracks get worse in summer?",
         answer:
           "During long, hot, dry stretches, DeSoto's clay soil shrinks and pulls away from the foundation, so the slab loses support at the edges and cracks open. When fall rain returns, the soil swells and cracks may partly close. Consistent soil moisture and good drainage can reduce this seasonal cycle.",
+      },
+      {
+        question: "Do you repair cracks in garage floors and driveways too?",
+        answer:
+          "Yes, when the crack is connected to foundation movement. A crack running from the garage slab into the house foundation gets evaluated as one problem. A driveway or garage crack with no connection to the house structure is more of a concrete repair than a foundation one, and we will tell you which kind you have before recommending a fix.",
       },
     ],
     ctaType: "inspection",
@@ -631,7 +657,7 @@ export const serviceContent: ServiceContent[] = [
     summary:
       "Pier-based repair for slab-on-grade homes in DeSoto, including exterior and interior piers, plumbing checks and drainage fixes that keep the slab stable.",
     intro: [
-      "Most homes in DeSoto sit on a concrete slab poured directly on the ground. A slab foundation is strong and practical, but it depends completely on the soil beneath it. When the clay under one part of the slab dries out and shrinks, that part drops. When the clay under another part gets wet and swells, that part rises. The slab is stiff, so instead of flexing evenly, it cracks and tilts.",
+      "A slab is only as stable as the dirt underneath it, and most of DeSoto sits on dirt that moves. Most homes here were built on a concrete slab poured directly on the ground, which is strong and practical as long as the soil beneath it stays put. When the clay under one part of the slab dries out and shrinks, that part drops. When the clay under another part gets wet and swells, that part rises. The slab itself is stiff, so instead of flexing evenly like a board, it cracks and tilts.",
       "Slab foundation repair usually means driving piers beneath the perimeter beam and any interior beams that have moved, then lifting the slab back toward its original elevation. In DeSoto we also have to think about what runs under the slab. Many 1970s to 1990s homes have cast-iron drain lines and copper supply lines embedded below the concrete, and lifting can stress older pipes.",
       "That is why our slab repairs include a look at the plumbing before and after lifting, and why we pay attention to whether the slab is settling at the edges, heaving in the middle, or doing both. The answer changes where piers go and how much lift is safe.",
     ],
@@ -711,7 +737,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How much does slab foundation repair cost?",
         answer:
-          "Typical exterior piers in North Texas run about $400 to $1,000 each, and interior piers cost more because the slab must be opened and patched. Most slab repairs fall in the $4,000 to $15,000 range, with larger jobs above $25,000. Final pricing comes after an inspection and elevation survey.",
+          "Exterior piers generally cost less than interior piers, since interior work means opening and patching the slab. The number of piers needed, set by your elevation readings, is what moves the price the most. Final pricing comes after an inspection and elevation survey, and we can talk through financing when we hand you that written number.",
       },
       {
         question: "Can lifting my slab break pipes underneath?",
@@ -736,7 +762,7 @@ export const serviceContent: ServiceContent[] = [
     summary:
       "Locate and repair leaking pipes under your slab, then check whether the water has moved the foundation. Spot repair, reroute and tunneling options explained.",
     intro: [
-      "A slab leak is a leak in a water supply or drain line that runs beneath or inside your concrete foundation. Because the pipe is buried, the first signs are often indirect: a higher water bill, a warm spot on the floor, the sound of water when nothing is on, or a crack that showed up out of nowhere. It is both a plumbing problem and a potential foundation problem, and it should be treated as both.",
+      "A slab leak is a leak in a water supply or drain line that runs beneath or inside your concrete foundation. Because the pipe is buried, the first signs are often indirect: a higher water bill, a warm spot on the floor, the sound of water when nothing is on, or a crack that showed up out of nowhere. Most slab leak calls in DeSoto go to a plumber, and a plumber can absolutely stop the water. What a plumbing-only call usually skips is the other half of the question: whether the water that already got into the clay moved your foundation, and whether it will keep moving after the pipe is fixed.",
       "Supply line leaks are under constant pressure, so they can push a lot of water into the soil quickly. Drain line leaks are slower and only leak when you use water, but they can run for months before anyone notices, often from cracked or separated cast-iron pipe in older homes. Either kind can soften or swell the clay under part of the slab.",
       "Our slab leak repair starts with confirming the leak and finding its exact location, then choosing the least disruptive way to fix it. After the repair, we look at the foundation to see whether the leak caused movement, so you are not left with a fixed pipe and a slab that is still shifting.",
     ],
@@ -814,7 +840,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How much does slab leak repair cost in DeSoto?",
         answer:
-          "Typical North Texas ranges are $250 to $600 for leak detection, $1,500 to $4,000 for a spot repair through the slab, $2,000 to $6,000 for a partial reroute, and about $150 to $350 per linear foot for tunneling. The location of the leak and the condition of the pipe drive the final price, which is set after testing.",
+          "Leak detection, a spot repair through the slab, a partial reroute, and tunneling are priced differently, and the location of the leak and the condition of the pipe drive which method makes sense and what it costs. The final price is set after testing. Ask about financing when we deliver that written estimate.",
       },
       {
         question: "Is it better to spot repair or reroute a slab leak?",
@@ -831,6 +857,11 @@ export const serviceContent: ServiceContent[] = [
         answer:
           "Yes. Water from the leak soaks the clay under the slab, which can swell and lift part of the foundation or wash out support. Small leaks caught early often cause little movement. Leaks that run for months can lead to cracks and uneven floors. That is why we check the foundation after the plumbing repair.",
       },
+      {
+        question: "Should I call a plumber or a foundation company for a slab leak?",
+        answer:
+          "Either one can test, locate and stop the leak. The difference is what happens after the pipe is fixed. A plumbing-only visit typically ends there. We stop the water the same way a plumber would, then take elevation readings on the slab so you know whether the leak moved your foundation and whether anything else needs attention, instead of finding that out later from a new crack.",
+      },
     ],
     ctaType: "leak-estimate",
     urgent: true,
@@ -845,7 +876,7 @@ export const serviceContent: ServiceContent[] = [
     summary:
       "Not sure if you have a leak? Testing that tells you whether water is getting under your DeSoto foundation, where it is coming from, and what to do next.",
     intro: [
-      "Many homeowners call us with a hunch rather than a clear problem. The water bill seems high, a crack looks new, or a corner of the yard stays wet. Foundation leak detection is for that stage: before you commit to any repair, find out whether there is actually a leak, which system it is in, and whether it is affecting the foundation.",
+      "Most homeowners who call us are not sure they have a leak at all, just a hunch. The water bill seems high, a crack looks new, or a corner of the yard stays wet longer than it should. Foundation leak detection is for that stage: before you commit to any repair, find out whether there is actually a leak, which system it is in, and whether it is affecting the foundation. Testing is non-invasive. Nothing gets cut or dug up until a leak is confirmed and pinpointed.",
       "Testing follows a logical order. We start with the water meter to see if supply lines are losing water, pressure-test individual lines if needed, and run a hydrostatic test on the drain system to check for leaks in the sewer lines under the slab. If outside water is the suspect, we look at grading, downspouts and sprinklers. Then we use electronic equipment to pinpoint any leak found.",
       "At the end you get a straight answer. Sometimes the answer is no leak, and the problem is drainage or normal seasonal movement. Sometimes it is a specific pipe at a specific location. Either way you will know what you are dealing with before spending money on repairs.",
     ],
@@ -915,7 +946,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How much does foundation leak detection cost?",
         answer:
-          "Typical North Texas leak detection runs about $250 to $600, depending on how many systems need testing and whether electronic location is needed. A hydrostatic drain test on a larger home may be at the higher end. We will tell you what testing we recommend and its cost before we start.",
+          "Leak detection cost depends on how many systems need testing and whether electronic location is needed. A hydrostatic drain test on a larger home takes more time than a single-fixture check. We will tell you what testing we recommend and its cost before we start, and if the repair that follows is a bigger job, ask about financing when we write up that estimate.",
       },
       {
         question: "How do I check for a leak myself?",
@@ -945,7 +976,7 @@ export const serviceContent: ServiceContent[] = [
     summary:
       "Find hidden leaks in buried water service lines, irrigation lines and yard plumbing on DeSoto properties before they soak the soil around your foundation.",
     intro: [
-      "Not every hidden leak is under the house. The water service line running from the meter at the street to your home, irrigation lines, and buried lines to pools or outbuildings can all leak underground for a long time without obvious signs. Underground leak detection covers the whole property, not just the slab.",
+      "Not every hidden leak is under the house. The water service line running from the meter at the street to your home, irrigation lines, and buried lines to pools or outbuildings can all leak underground for months without obvious signs on the surface. Underground leak detection covers the whole property, not just the slab, using the same ground microphones and line tracing a dedicated leak-locate crew would use, aimed specifically at anything close enough to affect your foundation.",
       "These leaks matter for the foundation when they are close to the house. A service line leak near where the pipe enters the slab, or a broken sprinkler line along the foundation, can keep the clay on that side wet and swollen. Further out in the yard, they mainly waste water and money, but they can still create soft spots, sinkholes in the lawn, and unusually green patches.",
       "We trace buried lines, use acoustic equipment to listen for escaping water, and check the meter and sprinkler zones separately. The goal is to find the leak with as little digging as possible, then explain how far it is from the foundation and whether it is likely affecting it.",
     ],
@@ -1020,7 +1051,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How much does underground leak detection cost?",
         answer:
-          "Typical North Texas leak detection runs about $250 to $600, depending on the length of the lines, the number of irrigation zones and how hard the leak is to pinpoint. We give you the cost up front. Repair is priced separately once the leak is found.",
+          "Leak detection cost depends on the length of the lines, the number of irrigation zones and how hard the leak is to pinpoint. We give you the cost up front. Repair is priced separately once the leak is found, and you can ask about financing when that written estimate is ready.",
       },
       {
         question: "Can a sprinkler leak really affect my foundation?",
@@ -1046,7 +1077,7 @@ export const serviceContent: ServiceContent[] = [
       "Repair or replace leaking water service and supply lines in DeSoto, with attention to how close the leak is to your foundation and how much soil it has soaked.",
     intro: [
       "Water line leaks are pressurized, which means they push water into the ground constantly, day and night. A small pinhole can release a surprising amount over a month. When the leak is in the service line near the house or in a supply line under the slab, all of that water ends up in the clay that supports your foundation.",
-      "Water line leak repair focuses on the supply side: the main service line from the meter, the lines that branch under the slab to kitchens and bathrooms, and the hot water lines that run from the water heater. Depending on the material and age of the pipe, we may repair a single section, replace the service line, or reroute supply lines overhead so they no longer run under the slab at all.",
+      "Water line leak repair focuses on the supply side: the main service line from the meter, the lines that branch under the slab to kitchens and bathrooms, and the hot water lines that run from the water heater. Depending on the material and age of the pipe, we may repair a single section, replace the service line using a trenchless method that avoids digging up the whole yard, or reroute supply lines overhead so they no longer run under the slab at all.",
       "Because these leaks can move a foundation, we look at both sides of the problem. We stop the water first, then check the area around the leak for soil saturation and signs of slab movement, and tell you whether any foundation follow-up is needed.",
     ],
     signs: [
@@ -1078,7 +1109,7 @@ export const serviceContent: ServiceContent[] = [
     included: [
       {
         title: "Service line repair or replacement",
-        text: "Repairing a damaged section or replacing the line from the meter to the house.",
+        text: "Repairing a damaged section or replacing the line from the meter to the house, including trenchless replacement where the yard conditions allow it.",
       },
       {
         title: "Under-slab supply repair",
@@ -1115,7 +1146,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How much does water line leak repair cost?",
         answer:
-          "It depends on where the leak is. In North Texas, a spot repair under the slab typically runs $1,500 to $4,000, and a partial supply reroute $2,000 to $6,000. Yard service line repairs are often less if the leak is easy to reach. Leak detection, typically $250 to $600, is usually needed first. Final pricing follows testing.",
+          "It depends on where the leak is. A spot repair under the slab costs more than a partial supply reroute in some cases and less in others, depending on access. Yard service line repairs are often less if the leak is easy to reach. Leak detection is usually needed first to settle on the right method. Final pricing follows testing, and financing is available if you ask about it when we deliver the written estimate.",
       },
       {
         question: "Should I repair the section or replace the whole line?",
@@ -1132,6 +1163,11 @@ export const serviceContent: ServiceContent[] = [
         answer:
           "Clay soil that has been soaked for weeks may have swollen and lifted part of the slab. As it dries, the slab can settle back unevenly. A quick look, and an elevation survey if there are new cracks, tells you whether the leak left any lasting movement.",
       },
+      {
+        question: "What is trenchless water line replacement?",
+        answer:
+          "It is a way to replace a failing service line by pulling new pipe through the old path, or a path next to it, from two small access points instead of trenching the full run. It is not an option for every line or every soil condition, but where it works it leaves far less yard to repair afterward. We will tell you whether your line is a candidate when we locate it.",
+      },
     ],
     ctaType: "leak-estimate",
     urgent: true,
@@ -1146,7 +1182,7 @@ export const serviceContent: ServiceContent[] = [
     summary:
       "A measured, no-pressure look at your foundation: elevation survey, crack review and drainage check, with a written summary of what we found.",
     intro: [
-      "You do not need to be sure you have a foundation problem to ask for an inspection. Many DeSoto homeowners call because a crack caught their eye, a door started sticking, they are buying or selling, or they simply want a baseline on an older home. An inspection gives you facts so you can decide what, if anything, to do.",
+      "You do not need to be sure you have a foundation problem to ask for an inspection, and you do not need to be sure it is serious enough to bother anyone. Many DeSoto homeowners call because a crack caught their eye, a door started sticking, they are buying or selling, or they simply want a baseline reading on an older home before anything looks wrong. An inspection gives you measurements and facts instead of a guess, so you can decide what, if anything, to do next.",
       "Our inspection includes an elevation survey with a digital level throughout the main floor, a walk around the exterior to check the slab edge, brick, grading and downspouts, and a review of cracks inside and out. We look for signs of plumbing leaks and note trees close to the house. For pier and beam homes, we look in the crawl space if it is accessible.",
       "You get a plain-language summary of what we found. If the foundation is within a normal range, we will say so and explain what to watch. If repair makes sense, we explain the options and pricing in writing, and there is no obligation to book anything that day.",
     ],
@@ -1220,7 +1256,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How much does a foundation inspection cost in DeSoto?",
         answer:
-          "You can request a free inspection through our site. Across North Texas, foundation inspections with an elevation survey typically range from free to about $400, and an independent structural engineer's report is usually $400 to $800. We tell you about any fee before scheduling.",
+          "You can request a free inspection through our site. A detailed elevation survey or an independent structural engineer's report may carry a separate fee for some situations. We tell you about any fee before scheduling, and if a repair is recommended afterward, ask about financing when we hand you that written estimate.",
       },
       {
         question: "What is the difference between your inspection and an engineer's report?",
@@ -1250,7 +1286,7 @@ export const serviceContent: ServiceContent[] = [
     summary:
       "Elevation-survey-driven leveling for settled slabs and pier and beam foundations in DeSoto, using pressed concrete piers, steel piers and shimming.",
     intro: [
-      "Foundation leveling is the process of lifting settled sections of a foundation back toward a consistent elevation and holding them there with permanent support. It is not the same as stabilizing. Stabilizing stops further settlement. Leveling also recovers some of the movement that has already happened, which is what closes gaps, frees doors and reduces floor slope.",
+      "A corner that has dropped an inch or more will not settle back into place on its own, no matter how much rain falls on it. Foundation leveling lifts settled sections of a foundation back toward a consistent elevation and holds them there with permanent support. It is not the same thing as stabilizing. Stabilizing stops further settlement where it is. Leveling goes further and recovers some of the movement that already happened, which is what closes gaps, frees doors and reduces floor slope.",
       "The work is driven by the elevation survey. We take readings across the floor with a digital level, establish a reference point, and produce a map showing how far each area has dropped or risen. That map determines pier placement, the sequence of lifting, and the realistic target elevation. On slabs, hydraulic jacks lift the beam off newly installed piers. On pier and beam homes, the beams are jacked and shimmed on new or existing supports.",
       "Leveling has limits. A slab that has been settled for many years may crack if it is forced back too quickly or too far. Our goal is a stable, measurably improved foundation without creating new damage, and we tell you before work starts what change in elevation we expect to achieve.",
     ],
@@ -1324,7 +1360,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How much does foundation leveling cost?",
         answer:
-          "Leveling cost depends mostly on the number and type of piers. In North Texas, exterior piers typically run $400 to $1,000 each, with interior piers costing more. Many leveling jobs fall between $4,000 and $15,000, and large homes needing many interior piers can exceed $25,000. Final pricing follows an elevation survey.",
+          "Leveling cost depends mostly on the number and type of piers. Exterior piers typically cost less than interior piers, since interior piers require opening the slab. A home needing many interior piers naturally costs more than one needing a handful of exterior piers. Final pricing follows an elevation survey, and you can ask about financing when we deliver that written number.",
       },
       {
         question: "How close to level can you get my foundation?",
@@ -1354,7 +1390,7 @@ export const serviceContent: ServiceContent[] = [
     summary:
       "If your floors slope, doors stick and cracks keep coming back, house leveling can bring your home back closer to even. Here is how it works in plain terms.",
     intro: [
-      "If you can feel the floor tilt when you walk down the hall, your doors will not close right, and a ball on the kitchen floor rolls to one side, your house has probably settled unevenly. House leveling is the fix: we put new supports under the low spots and gently raise those areas back up so the house sits more evenly again.",
+      "Set a marble on the kitchen floor and watch which way it rolls. If you can feel the floor tilt when you walk down the hall, your doors will not close right, and that marble heads straight for one corner, your house has probably settled unevenly. House leveling is the fix: we put new supports under the low spots and gently raise those areas back up so the house sits more evenly again.",
       "You do not need to know the technical terms to get this done. What matters is that the supports go deep enough to stay put, that the house is raised slowly so nothing breaks, and that you know ahead of time what to expect. Most homeowners notice the difference right away in how doors and windows work.",
       "We explain everything in everyday language. We will show you on a simple floor map where your house is low, tell you how many supports it needs and why, and give you a written price. If your house does not need leveling, we will tell you that too.",
     ],
@@ -1401,6 +1437,10 @@ export const serviceContent: ServiceContent[] = [
         title: "Shimming for raised-floor homes",
         text: "For homes with a crawl space, adding or adjusting supports and shims under the floor beams.",
       },
+      {
+        title: "A plan for living through it",
+        text: "What to expect day to day: where the crew parks and works, how to handle pets during the day, and which rooms stay fully usable while the rest of the house is leveled.",
+      },
     ],
     process: [
       {
@@ -1424,7 +1464,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How much does it cost to level a house?",
         answer:
-          "For most North Texas homes, leveling falls somewhere between $4,000 and $15,000. Small jobs can start around $1,800, and larger homes with supports needed inside can go over $25,000. Raised-floor homes that only need shimming are often $1,000 to $5,000. You get a firm price after we measure.",
+          "Leveling cost varies a lot by scope. A raised-floor home that only needs shimming costs much less than a slab home needing supports placed inside. You get a firm price after we measure, and we can go over financing options at that point if you want to spread out the cost.",
       },
       {
         question: "Will my doors work normally after leveling?",
@@ -1441,6 +1481,11 @@ export const serviceContent: ServiceContent[] = [
         answer:
           "The supports we install go deep into the ground, below the soil that swells and shrinks the most, so the leveled areas should stay put. Other parts of the house that did not get supports can still move with the seasons, which is why good drainage and steady soil moisture around the house matter after leveling.",
       },
+      {
+        question: "Can I stay in my house while it is being leveled?",
+        answer:
+          "Most homeowners stay home for the whole job. There is noise and some vibration while piers go in and the house is raised, and dust around the work areas, so it helps to keep pets in a closed room away from the crew that day. Water and power usually stay on. We will tell you in advance if any part of the work needs you out of a specific room for a few hours.",
+      },
     ],
     ctaType: "inspection",
   },
@@ -1454,7 +1499,7 @@ export const serviceContent: ServiceContent[] = [
     summary:
       "Repair for older DeSoto homes built on piers and beams: shimming, pier replacement, beam and joist support, and moisture fixes in the crawl space.",
     intro: [
-      "A pier and beam foundation holds the house up off the ground on a grid of piers, with wood beams running across them and floor joists on top. There is a crawl space underneath instead of a slab. You find this type in some of DeSoto's older homes, and it behaves differently from a slab when the soil moves.",
+      "A pier and beam foundation, sometimes called block and base, is the one foundation type in DeSoto where you can crawl underneath and see exactly what has moved, instead of guessing from cracks upstairs. It holds the house up off the ground on a grid of piers, with wood beams running across them and floor joists on top. There is a crawl space underneath instead of a slab. You find this type in some of DeSoto's older homes, and it behaves differently from a slab when the soil moves.",
       "Common problems include piers that have sunk or tilted, shims that have dried out, crushed or slipped, wood beams that have sagged or rotted, and floor joists spaced too far apart for the load. Because everything is accessible from the crawl space, many repairs can be done without touching the inside of the house, which often makes pier and beam work faster and less disruptive than slab repair.",
       "We go into the crawl space, measure the floors, and check every pier, beam and joist we can reach. Then we recommend the specific fixes needed, from re-shimming a few spots to adding new piers and beams under a sagging section, and explain each one in writing.",
     ],
@@ -1528,7 +1573,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How much does pier and beam foundation repair cost?",
         answer:
-          "Shimming and adjustment on a North Texas pier and beam home typically runs $1,000 to $5,000. Adding or replacing piers, repairing rotted beams or supporting a settled perimeter beam increases the cost, and larger jobs can reach general foundation repair ranges of $4,000 to $15,000. Final pricing follows a crawl space inspection.",
+          "Simple shimming and adjustment on a pier and beam home costs less than jobs involving more work. Adding or replacing piers, repairing rotted beams or supporting a settled perimeter beam increases the cost, and larger jobs can reach general foundation repair territory. Final pricing follows a crawl space inspection, and financing is available if you ask when we write up that estimate.",
       },
       {
         question: "How often does a pier and beam house need adjustment?",
@@ -1560,7 +1605,7 @@ export const serviceContent: ServiceContent[] = [
     intro: [
       "The crawl space is where the structural problems in a raised-floor home actually happen. Standing water, damp soil, rotted wood, sagging joists, and supports that have shifted all start under the house, long before you see a crack or feel a soft spot in the floor above. Crawl space foundation repair focuses on fixing that environment and the framing in it.",
       "In many DeSoto crawl spaces, the main issue is water. Rain runs under the house because the grade slopes toward it, downspouts drain into the crawl space vents, or a plumbing line under the floor is leaking. Constant moisture softens the clay the piers sit on and feeds wood rot and mold in sill plates, beams and joists.",
-      "We address both sides: the water getting in and the damage it caused. That can mean drainage corrections, a vapor barrier, better ventilation, and then structural repairs such as replacing rotted framing, adding support posts or setting new piers on firm footings.",
+      "We address both sides: the water getting in and the damage it caused. That can mean drainage corrections, a vapor barrier, better ventilation, and then structural repairs such as replacing rotted framing, adding support posts or setting new piers on firm footings. Some crawl spaces need more than that and are better candidates for full encapsulation, where the ground and walls are sealed and humidity is controlled year-round. We will tell you which level of work your crawl space actually needs instead of selling you the bigger job by default.",
     ],
     signs: [
       {
@@ -1633,7 +1678,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "What does crawl space foundation repair cost?",
         answer:
-          "It varies widely by what is needed. Typical North Texas shimming and support adjustment runs about $1,000 to $5,000. Framing repairs, new supports and drainage work add to that, and bigger jobs can fall into the $4,000 to $15,000 range. Final pricing follows an inspection of the crawl space.",
+          "It varies widely by what is needed. Simple shimming and support adjustment costs the least. Framing repairs, new supports and drainage work add to that, and bigger jobs can move into general foundation repair territory. Final pricing follows an inspection of the crawl space, and you can ask about financing when that written estimate is ready.",
       },
       {
         question: "Should I seal my crawl space vents?",
@@ -1658,7 +1703,7 @@ export const serviceContent: ServiceContent[] = [
     summary:
       "Grading, gutter, downspout and drain fixes that keep water from soaking the clay around your foundation, often the cheapest way to prevent bigger repairs.",
     intro: [
-      "Most foundation problems in DeSoto trace back to water: too much in one place, too little in another, or big swings between the two. Drainage repair controls how water moves around your house so the soil under the foundation stays at a more even moisture level. It is often the first repair we recommend, and sometimes the only one needed.",
+      "Most foundation problems in DeSoto trace back to water: too much in one place, too little in another, or big swings between the two within the same year. Drainage repair controls how water moves around your house so the soil under the foundation stays at a more even moisture level. It is often the first repair we recommend, and sometimes the only one needed, because piers cannot fix a foundation that is still being fed uneven water on one side.",
       "The usual problems are simple. Downspouts dump roof water right at the slab. Flower beds are built up higher than the lawn so they trap water against the foundation. The yard was graded years ago and has since settled so it slopes toward the house. Sprinklers spray the slab edge. Each of these keeps one side of the house wetter than the others.",
       "We walk the property after looking at the foundation, check slope with a level, and find where water collects and where it should go instead. Then we recommend practical fixes, from extending downspouts to regrading or installing a drain, and explain how each one ties to the movement we measured.",
     ],
@@ -1737,7 +1782,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How much does foundation drainage repair cost?",
         answer:
-          "It depends on the fix. Downspout extensions can be fairly inexpensive. French drains typically run $25 to $60 per linear foot in North Texas, and regrading depends on the area and soil needed. We price the options separately so you can start with the most effective one. Final pricing follows a site visit.",
+          "It depends on the fix. Downspout extensions are generally the least expensive option. French drain cost scales with linear footage and depth, and regrading depends on the area and soil needed. We price the options separately so you can start with the most effective one. Final pricing follows a site visit, and financing is available on larger drainage projects if you ask about it then.",
       },
       {
         question: "How far should downspouts discharge from my foundation?",
@@ -1762,9 +1807,9 @@ export const serviceContent: ServiceContent[] = [
     summary:
       "French drains that collect water before it reaches your DeSoto foundation and carry it to a safe outlet, sized and routed for clay soil.",
     intro: [
-      "A French drain is a trench lined with fabric, filled with gravel, with a perforated pipe in the bottom. Water from the surrounding soil and surface flows into the gravel, enters the pipe, and is carried by gravity to an outlet away from the house. Installed along the side of a foundation that stays wet, it intercepts water before it saturates the clay under the slab.",
+      "A French drain is a trench lined with fabric, filled with gravel, with a perforated pipe in the bottom, nothing more exotic than that. Water from the surrounding soil and surface flows into the gravel, enters the pipe, and is carried by gravity to an outlet away from the house. Installed along the side of a foundation that stays wet, it intercepts water before it saturates the clay under the slab, instead of waiting for the water to show up as a crack or a heaved floor.",
       "French drains work best when the problem is water moving across or through the soil toward the house, such as runoff from a neighbor's yard, a slope that drains toward the foundation, or a low side yard that holds water. They are not the right fix for every drainage issue. If the problem is just downspouts, extending them may be enough.",
-      "In clay soil, design matters. The trench depth, fabric, gravel and outlet all need to suit how slowly clay drains, and the pipe needs a steady fall to an outlet where water can actually leave the property. We size and route each drain for your lot and show you where the water will go.",
+      "In clay soil, design matters. Most residential runs use 4-inch perforated pipe, deep enough to sit below the zone that freezes and dries out fastest, typically 18 to 24 inches, with a minimum fall of about 1 inch of drop for every 8 feet of pipe so water keeps moving instead of sitting in the trench. Washed gravel sized around 3/4 inch keeps clay fines from packing in around the pipe, and the fabric wrap is what keeps the gravel itself from silting up over time. We size and route each drain for your lot and show you where the water will go.",
     ],
     signs: [
       {
@@ -1832,7 +1877,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How much does a French drain cost in DeSoto?",
         answer:
-          "Typical North Texas pricing for a French drain is about $25 to $60 per linear foot, depending on depth, access, outlet type and how much surface restoration is needed. A short run along one side of a house may be a few hundred to a few thousand dollars. Final pricing follows a site visit.",
+          "French drain cost scales with linear footage, and depends on depth, access, outlet type and how much surface restoration is needed. A short run along one side of a house costs far less than a drain system around the full perimeter. Final pricing follows a site visit, and you can ask about financing when we deliver that written estimate.",
       },
       {
         question: "Do French drains work in clay soil?",
@@ -1862,7 +1907,7 @@ export const serviceContent: ServiceContent[] = [
     summary:
       "Foundation evaluation and repair for small commercial buildings, retail, offices and multifamily properties in DeSoto, planned around tenants and operations.",
     intro: [
-      "Commercial foundations face the same expansive clay as homes, but the stakes and logistics are different. Retail storefronts, small office buildings, churches, multifamily properties and light industrial spaces in DeSoto often have larger slabs, heavier loads, and tenants or customers who need the building open while the work is done.",
+      "A cracked slab in a house is a problem for one family. The same crack in a retail storefront is a problem for every tenant, every customer who trips on the transition, and every lease that mentions the condition of the space. Commercial foundations face the same expansive clay as homes, but the stakes and logistics are different. Retail storefronts, small office buildings, churches, multifamily properties and light industrial spaces in DeSoto often have larger slabs, heavier loads, and tenants or customers who need the building open while the work is done.",
       "Common commercial issues include cracked slabs in retail and warehouse floors, separation at storefront glass and door frames, settlement at building corners, and movement at joints between building sections. Parking lot and sidewalk drainage often contributes, sending water toward the building or ponding against the slab.",
       "We start with a site evaluation and elevation survey, review any existing drawings or engineering reports, and coordinate with your structural engineer when the project calls for it. Repair plans are written with phasing in mind so the work can be scheduled around business hours and occupied spaces where possible.",
     ],
@@ -1936,7 +1981,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "Do commercial foundation repairs require an engineer?",
         answer:
-          "Many commercial projects do, because of building size, loads, permits or lender and insurer requirements. A structural engineer's report in North Texas is often $400 to $800 for simpler buildings and more for larger ones. We can work from an existing engineering design or coordinate with your engineer.",
+          "Many commercial projects do, because of building size, loads, permits or lender and insurer requirements. A structural engineer's report costs more for larger, more complex buildings than for simple ones. We can work from an existing engineering design or coordinate with your engineer.",
       },
       {
         question: "Can the business stay open during repairs?",
@@ -1946,7 +1991,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "How is commercial foundation repair priced?",
         answer:
-          "Pricing depends on the number and type of piers, building loads, interior access, and any drainage or crack work. Commercial jobs vary widely, so we give a written scope and price after the site evaluation rather than a general range. Engineering, permits and after-hours work are listed separately.",
+          "Pricing depends on the number and type of piers, building loads, interior access, and any drainage or crack work. Commercial jobs vary widely, so we give a written scope and price after the site evaluation rather than a general range. Engineering, permits and after-hours work are listed separately, and financing is available if you ask about it when we deliver that scope.",
       },
       {
         question: "What types of commercial properties do you work on?",
@@ -1966,7 +2011,7 @@ export const serviceContent: ServiceContent[] = [
     summary:
       "Water coming up through the floor or a leak you cannot stop? Call now. We help you shut it down, find the source and plan the repair fast.",
     intro: [
-      "Some foundation leaks cannot wait. Water coming up through the slab or flooring, a burst line flooding the yard next to the house, a sudden loud hiss under the floor, or a meter spinning fast with everything off all mean water is pouring into the soil under or around your home right now. The first goal is to stop the water. The second is to find out exactly where it is coming from.",
+      "Water coming up through your floor does not wait for business hours, and neither should the call you make. Some foundation leaks cannot wait: a burst line flooding the yard next to the house, a sudden loud hiss under the floor, or a meter spinning fast with everything off all mean water is pouring into the soil under or around your home right now. The first goal is to stop the water. The second is to find out exactly where it is coming from.",
       "When you call, we will help you shut off the main water valve if you have not already, and tell you what to do about the water heater if a hot line is involved. We prioritize active leaks and get someone out to test and locate the problem as soon as we can.",
       "Once the source is confirmed, we explain the quickest safe repair, whether that is a spot repair, a temporary bypass to restore water, or a reroute, and give you written pricing. After the emergency is handled, we check whether the leak affected the foundation.",
     ],
@@ -2051,7 +2096,7 @@ export const serviceContent: ServiceContent[] = [
       {
         question: "Is an emergency leak repair more expensive?",
         answer:
-          "Emergency and after-hours work can carry additional charges, and we will tell you about any before work starts. The repair itself usually falls in typical North Texas ranges: $250 to $600 for detection, $1,500 to $4,000 for a spot repair, or $2,000 to $6,000 for a partial reroute. Final pricing follows testing.",
+          "Emergency and after-hours work can carry additional charges, and we will tell you about any before work starts. The repair itself is priced the same way as a scheduled job: detection, a spot repair, or a partial reroute, depending on what testing finds. Final pricing follows testing, and you can ask about financing when we hand you that written estimate.",
       },
     ],
     ctaType: "emergency",

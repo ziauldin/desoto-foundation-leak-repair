@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { site } from "@/config/site";
-import { DropletIcon, HouseIcon, CalcIcon, PhoneIcon } from "@/components/ui/Icons";
+import { DropletIcon, HouseIcon, BookIcon, PhoneIcon } from "@/components/ui/Icons";
 
 const options = [
   {
@@ -14,8 +14,8 @@ const options = [
   {
     title: "New cracks, sticking doors or sloping floors",
     text: "Signs the foundation may be moving. See how serious it is.",
-    href: "/foundation-inspection-checklist/",
-    cta: "Take the 15-minute checklist",
+    href: "/foundation-inspection-desoto-tx/",
+    cta: "Request a foundation inspection",
     icon: HouseIcon,
   },
   {
@@ -27,10 +27,10 @@ const options = [
   },
   {
     title: "I just want to know what repair costs",
-    text: "Typical North Texas price ranges, before anyone visits.",
-    href: "/foundation-repair-cost-calculator/",
-    cta: "Open the cost calculator",
-    icon: CalcIcon,
+    text: "Pricing depends on your house. Get a free, written estimate with no obligation.",
+    href: "/contact/",
+    cta: "Request a free estimate",
+    icon: BookIcon,
   },
 ];
 

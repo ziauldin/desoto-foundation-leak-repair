@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { calculatorPaths, linkLabel, linkSummary, resourcePaths, resourcesByPath } from "@/data/pages";
+import { linkLabel, linkSummary, resourcePaths, resourcesByPath } from "@/data/pages";
 import { breadcrumbSchema } from "@/lib/schema";
 import type { ResourceCategory } from "@/types/content";
 import { imageForPath } from "@/data/images";
@@ -68,17 +68,9 @@ export function ResourcesMagazine({ page }: { page: PageRecord }) {
         </div>
         <aside aria-labelledby="tools-h" className="self-start rounded-lg bg-surface-alt p-6">
           <h2 id="tools-h" className="text-xl!">
-            Free tools
+            Request help
           </h2>
-          <ul className="mt-4 space-y-2.5">
-            {calculatorPaths.map((p) => (
-              <li key={p}>
-                <Link href={p} className="text-primary hover:underline">
-                  {linkLabel(p)}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <p className="mt-2 text-sm text-muted">Tell us what you&apos;re seeing and we&apos;ll set up a free inspection.</p>
           <Link href="/contact/" data-contact-popup className="mt-6 block rounded-md bg-primary px-4 py-3 text-center font-display font-semibold text-white hover:bg-primary-dark">
             Request an inspection
           </Link>

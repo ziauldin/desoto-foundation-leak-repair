@@ -30,8 +30,13 @@ export const calculatorPaths = pathsOfType("calculator");
 export const resourcePaths = pathsOfType("blog");
 export const locationPaths = pathsOfType("location");
 
+/** Individually hidden pages (404) that are not an entire pageType. Keep in sync with the switch in app/[slug]/page.tsx. */
+export const hiddenPaths = ["/foundation-repair-cost-desoto-tx/", "/foundation-leak-repair-cost-desoto-tx/"];
+
 const isService = (p: string) => servicePaths.includes(p);
-const isSupporting = (p: string) => calculatorPaths.includes(p) || resourcePaths.includes(p);
+// Calculators are hidden site-wide, and the two cost-guide pages are individually hidden, so
+// "supporting" links only ever point to live resource guides.
+const isSupporting = (p: string) => resourcePaths.includes(p) && !hiddenPaths.includes(p);
 
 // ---- Internal links ----------------------------------------------------------
 
@@ -60,29 +65,21 @@ const unique = (paths: string[], exclude: string) =>
     (p) => p !== exclude && (rowsByPath.has(p) || STATIC_PATHS.includes(p)),
   );
 
-/** Fallback related guides/tools per silo, so every page has 2-4 supporting links. */
+// Calculators are hidden site-wide and the two cost-guide pages are individually hidden (404),
+// so this fallback list only ever points to live resource guides.
+/** Fallback related guides per silo, so every page has 2-4 supporting links. */
 const siloSupport: Record<string, string[]> = {
   "Leak Repair": [
-    "/foundation-leak-repair-cost-calculator/",
     "/signs-of-foundation-leak/",
     "/slab-leak-vs-foundation-leak/",
-    "/slab-leak-repair-cost-calculator/",
-  ],
-  "Foundation Problems": [
-    "/foundation-drainage-slope-calculator/",
     "/water-pooling-near-foundation/",
-    "/foundation-cracks-after-rain/",
   ],
-  Calculators: ["/foundation-repair-cost-desoto-tx/", "/foundation-inspection-checklist/", "/signs-of-foundation-leak/"],
-  "Cost & Pricing": ["/foundation-repair-cost-calculator/", "/foundation-leak-repair-cost-calculator/", "/foundation-repair-vs-replacement/"],
-  "Problems & Use Cases": ["/foundation-inspection-checklist/", "/foundation-crack-width-calculator/", "/signs-of-foundation-leak/"],
-  Comparisons: ["/foundation-repair-cost-calculator/", "/foundation-inspection-checklist/", "/foundation-repair-cost-desoto-tx/"],
-  default: [
-    "/foundation-repair-cost-calculator/",
-    "/foundation-repair-cost-desoto-tx/",
-    "/foundation-inspection-checklist/",
-    "/signs-of-foundation-leak/",
-  ],
+  "Foundation Problems": ["/water-pooling-near-foundation/", "/foundation-cracks-after-rain/"],
+  Calculators: ["/signs-of-foundation-leak/", "/foundation-repair-vs-replacement/"],
+  "Cost & Pricing": ["/signs-of-foundation-leak/", "/foundation-repair-vs-replacement/", "/diy-foundation-crack-repair-vs-professional/"],
+  "Problems & Use Cases": ["/signs-of-foundation-leak/", "/uneven-floors-foundation-problem/"],
+  Comparisons: ["/foundation-repair-vs-replacement/", "/diy-foundation-crack-repair-vs-professional/"],
+  default: ["/signs-of-foundation-leak/", "/foundation-cracks-after-rain/"],
 };
 
 const siloServices: Record<string, string[]> = {
@@ -135,7 +132,11 @@ function defaultCta(row: TopicalMapRow): CtaType {
 // ---- Registry ---------------------------------------------------------------
 
 function buildPage(row: TopicalMapRow): PageRecord {
-  const internalLinks = unique(parseLinkSuggestions(row.internalLinkingSuggestions), row.path);
+  // Calculators and the two cost-guide pages are hidden (404), so they're dropped here before
+  // anything downstream can link to them.
+  const internalLinks = unique(parseLinkSuggestions(row.internalLinkingSuggestions), row.path).filter(
+    (p) => !calculatorPaths.includes(p) && !hiddenPaths.includes(p),
+  );
   const service = servicesByPath.get(row.path);
   const resource = resourcesByPath.get(row.path);
   const location = locationsByPath.get(row.path);
@@ -146,7 +147,8 @@ function buildPage(row: TopicalMapRow): PageRecord {
     calculator?.primaryService,
     ...(location?.serviceFocus ?? []),
   ].filter((p): p is string => Boolean(p));
-  const contentSupport = [resource?.primaryCalculator].filter((p): p is string => Boolean(p));
+  // Calculators are hidden site-wide, so resource?.primaryCalculator is intentionally not surfaced here.
+  const contentSupport: string[] = [];
 
   const relatedServices = unique(
     [
@@ -217,9 +219,13 @@ export function linkSummary(path: string): string {
   );
 }
 
-/** Root-level slugs served by app/[slug] (services, calculators, resources, legal pages). */
+/** Root-level slugs served by app/[slug] (services, resources, legal pages). Calculators and the two cost-guide pages are hidden site-wide. */
 export const rootSlugPages = pages.filter(
-  (p) => p.pageType !== "location" && !STATIC_PATHS.includes(p.path),
+  (p) =>
+    p.pageType !== "location" &&
+    p.pageType !== "calculator" &&
+    !hiddenPaths.includes(p.path) &&
+    !STATIC_PATHS.includes(p.path),
 );
 
 export const slugFromPath = (path: string) => path.split("/").filter(Boolean).pop() ?? "";

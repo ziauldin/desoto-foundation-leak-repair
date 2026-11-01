@@ -11,7 +11,7 @@ import type { PageRecord } from "@/types/content";
 
 const faqs = generalFaqs.slice(1, 4);
 const linkGroups = [
-  { paths: ["/foundation-inspection-checklist/", "/foundation-repair-cost-calculator/", "/signs-of-foundation-leak/"] },
+  { paths: ["/foundation-inspection-desoto-tx/", "/signs-of-foundation-leak/", "/foundation-repair-vs-replacement/"] },
   { paths: ["/foundation-leak-repair-desoto/", "/emergency-foundation-leak-repair-desoto-tx/", "/service-area/"] },
 ];
 
