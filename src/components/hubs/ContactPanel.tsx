@@ -45,6 +45,14 @@ export function ContactPanel({ page }: { page: PageRecord }) {
                 <dd>DeSoto, TX 75115 ({site.county}) only</dd>
               </div>
               <div>
+                <dt className="font-semibold text-white">Address</dt>
+                <dd>
+                  <address className="not-italic">
+                    {site.address.street}, {site.address.city}, {site.address.state} {site.address.zip}
+                  </address>
+                </dd>
+              </div>
+              <div>
                 <dt className="font-semibold text-white">Email</dt>
                 <dd>
                   <a href={`mailto:${site.email}`} className="underline">

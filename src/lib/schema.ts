@@ -16,11 +16,7 @@ const areaServed = [
   },
 ];
 
-/**
- * Service-area business: no street address is published (rank-and-rent),
- * so the business is described by its service area instead.
- * No ratings or reviews are emitted until real ones exist.
- */
+/** Local business with its street address and DeSoto service area. No ratings or reviews until real ones exist. */
 export function localBusinessSchema(): Json {
   return {
     "@context": "https://schema.org",
@@ -30,6 +26,15 @@ export function localBusinessSchema(): Json {
     url: site.url,
     telephone: site.phoneHref.replace("tel:", ""),
     email: site.email,
+    sameAs: site.social.map((s) => s.href),
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: site.address.street,
+      addressLocality: site.address.city,
+      addressRegion: site.address.state,
+      postalCode: site.address.zip,
+      addressCountry: "US",
+    },
     description: `${site.tagline}.`,
     areaServed,
     geo: { "@type": "GeoCoordinates", ...site.geo },

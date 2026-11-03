@@ -10,8 +10,15 @@ export const site = {
   // From desotofoundationrepairpros.com, the business renting the site.
   phoneDisplay: "(469) 625-0726",
   phoneHref: "tel:+14696250726",
-  // PLACEHOLDER inbox: the renting business doesn't publish an email address.
-  email: "info@desotofoundationleakrepair.com",
+  email: "desotofoundationleakrepair@gmail.com",
+
+  social: [
+    { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61595882681302" },
+    { name: "Instagram", href: "https://www.instagram.com/desotofoundationleakrepair/" },
+  ],
+
+  // Street address of Star Foundation Repair LLC, confirmed by the site owner.
+  address: { street: "305 Executive Way, Suite E", city: "DeSoto", state: "TX", zip: "75115" },
 
   city: "DeSoto",
   state: "TX",

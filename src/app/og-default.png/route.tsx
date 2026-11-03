@@ -1,10 +1,13 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { site } from "@/config/site";
 
 // Default Open Graph image (1200x630), generated at build time. Replace with a real photo later if desired.
 export const dynamic = "force-static";
 
 export function GET() {
+  const icon = `data:image/svg+xml;base64,${readFileSync(join(process.cwd(), "src/app/icon.svg")).toString("base64")}`;
   return new ImageResponse(
     (
       <div
@@ -20,8 +23,10 @@ export function GET() {
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", fontSize: 30, color: "#d9922e", letterSpacing: 4, textTransform: "uppercase" }}>
-          DeSoto, TX 75115
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ display: "flex", fontSize: 30, color: "#d9922e", letterSpacing: 4, textTransform: "uppercase" }}>DeSoto, TX 75115</div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={icon} width={120} height={120} alt="" />
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 76, fontWeight: 700, lineHeight: 1.05 }}>{site.name}</div>
