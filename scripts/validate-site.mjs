@@ -68,6 +68,11 @@ for (const [route, html] of pages) {
   const h1 = decode((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1] ?? "").replace(/<[^>]+>/g, "").trim());
 
   if (!title) errors.push(`${route}: missing <title>`);
+  // Static output check. The runtime equivalent (any user agent) is: curl -A "Mozilla/5.0" URL | grep -c "<title"
+  const titleTags = (html.match(/<title[\s>]/g) ?? []).length;
+  const headEnd = html.indexOf("</head>");
+  if (titleTags > 1) errors.push(`${route}: ${titleTags} <title> tags (expected 1)`);
+  if (titleTags && (headEnd === -1 || html.indexOf("<title") > headEnd)) errors.push(`${route}: <title> is outside <head>`);
   if (title.length > MAX_TITLE_CHARS) errors.push(`${route}: title is ${title.length} chars (max ${MAX_TITLE_CHARS}): "${title}"`);
   const px = titlePixelWidth(title);
   if (px > MAX_TITLE_PX) errors.push(`${route}: title is ~${px}px wide (max ${MAX_TITLE_PX}px, Arial 20px estimate): "${title}"`);

@@ -19,8 +19,8 @@ export function DeSotoMap({ highlight, label }: { highlight: Highlight; label: s
   } as const;
   const z = highlight in zone ? zone[highlight as keyof typeof zone] : null;
   return (
-    <svg viewBox="0 0 400 300" className="w-full" role="img" aria-labelledby="map-title">
-      <title id="map-title">{`Schematic map of DeSoto, TX highlighting ${label}`}</title>
+    // aria-label, not an SVG <title>: crawlers count any <title> in the body as a second page title.
+    <svg viewBox="0 0 400 300" className="w-full" role="img" aria-label={`Schematic map of DeSoto, TX highlighting ${label}`}>
       <rect x="30" y="30" width="340" height="240" rx="18" className={highlight === "all" ? "fill-accent/25 stroke-accent-dark" : "fill-surface stroke-border"} strokeWidth="2" />
       {z && <rect x={z.x} y={z.y} width={z.w} height={z.h} rx="18" className="fill-accent/35" />}
       {/* East-west roads */}
