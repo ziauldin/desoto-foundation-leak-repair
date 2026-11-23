@@ -57,7 +57,7 @@ const descs = new Map();
 const h1s = new Map();
 const firstH2s = new Map();
 const stripTags = (s) => s.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
-const STATIC_FILES = new Set(["/sitemap.xml", "/robots.txt", "/og-default.png", "/favicon.ico"]);
+const STATIC_FILES = new Set(["/sitemap.xml", "/robots.txt", "/og-default.png", "/favicon.ico", "/feed.xml", "/logo.png"]);
 
 const decode = (s) => s.replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 
