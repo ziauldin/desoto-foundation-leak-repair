@@ -77,4 +77,5 @@ export const footerCompany: NavLink[] = [
   { label: "Resources", href: "/resources/" },
   { label: "Privacy Policy", href: "/privacy-policy/" },
   { label: "Terms and Conditions", href: "/terms-and-conditions/" },
+  { label: "Site Map", href: "/sitemap/" },
 ];

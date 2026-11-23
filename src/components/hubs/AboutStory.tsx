@@ -104,6 +104,10 @@ export function AboutStory({ page }: { page: PageRecord }) {
             <Link href="/service-area/" className="font-semibold text-primary underline">
               DeSoto service area
             </Link>
+            . Every page is listed on the{" "}
+            <Link href="/sitemap/" className="font-semibold text-primary underline">
+              site map
+            </Link>
             .
           </p>
           <ButtonLink href="/contact/" variant="primary">

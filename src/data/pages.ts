@@ -18,7 +18,7 @@ export const locationsByPath = byPath(locationContent);
 export const calculatorsByPath = byPath(calculatorContent);
 
 /** Hub pages built as their own routes (not from a topical map row, or with custom layouts). */
-export const STATIC_PATHS = ["/", "/calculators/", "/resources/", "/service-area/", "/about/", "/contact/"];
+export const STATIC_PATHS = ["/", "/calculators/", "/resources/", "/service-area/", "/about/", "/contact/", "/sitemap/"];
 
 const rowsByPath = new Map(topicalMap.map((row) => [row.path, row]));
 

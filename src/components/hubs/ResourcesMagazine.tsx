@@ -79,6 +79,13 @@ export function ResourcesMagazine({ page }: { page: PageRecord }) {
           <Link href="/contact/" data-contact-popup className="mt-6 block rounded-md bg-primary px-4 py-3 text-center font-display font-semibold text-white hover:bg-primary-dark">
             Request an inspection
           </Link>
+          <p className="mt-4 text-sm text-muted">
+            Looking for a service or neighborhood instead? See the{" "}
+            <Link href="/sitemap/" className="font-semibold text-primary underline">
+              full site map
+            </Link>
+            .
+          </p>
         </aside>
       </div>
     </>

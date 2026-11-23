@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { absoluteUrl, site } from "@/config/site";
 import type { PageRecord } from "@/types/content";
 
+/** RSS feed of the guides. Every page sets its own alternates (canonical), so the feed link goes here too. */
+export const feedAlternates = { "application/rss+xml": [{ url: "/feed.xml", title: `${site.name} guides` }] };
+
 interface MetaInput {
   title: string;
   description: string;
@@ -17,7 +20,7 @@ export function buildMetadata({ title, description, path, type = "website", noIn
     // absolute: skip the root layout's title template; map titles already include the brand angle.
     title: { absolute: title },
     description,
-    alternates: { canonical: url },
+    alternates: { canonical: url, types: feedAlternates },
     openGraph: {
       type,
       url,

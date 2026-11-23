@@ -10,6 +10,7 @@ import { RevealObserver } from "@/components/motion/RevealObserver";
 import { BackToTop } from "@/components/motion/BackToTop";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { graphSchema, organizationSchema, websiteSchema } from "@/lib/schema";
+import { feedAlternates } from "@/lib/seo";
 import "./globals.css";
 
 // Display: sturdy semi-condensed sans common on contractor signage. Body: highly readable humanist sans.
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
   description: site.tagline,
   applicationName: site.name,
   formatDetection: { telephone: true },
+  alternates: { types: feedAlternates },
 };
 
 export const viewport: Viewport = {
