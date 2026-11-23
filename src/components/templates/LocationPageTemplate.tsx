@@ -23,6 +23,15 @@ export function LocationPageTemplate({ page, content }: { page: PageRecord; cont
   const rotated = [...areas.slice(start), ...areas.slice(0, start)].filter((p) => p !== page.path);
   const siblings = [...(page.path === cityHub ? [] : [cityHub]), ...rotated].slice(0, 8);
 
+  const area = content.areaName;
+  const h = {
+    overview: content.headings?.overview ?? `Foundation and leak repair in ${area}`,
+    conditions: content.headings?.conditions ?? `What affects foundations in ${area}`,
+    services: content.headings?.services ?? `Services in ${area}`,
+    booking: content.headings?.booking ?? `Book an inspection in ${area}`,
+    faq: content.headings?.faq ?? `${area} foundation questions`,
+  };
+
   return (
     <>
       <JsonLd
@@ -34,18 +43,18 @@ export function LocationPageTemplate({ page, content }: { page: PageRecord; cont
         ]}
       />
       <LocationHero h1={page.h1} crumbs={page.breadcrumbs} content={content} />
-      <AreaFactSheet content={content} image={imageForPath(page.path)} />
-      <ConditionsReport areaName={content.areaName} factors={content.localFactors} />
+      <AreaFactSheet content={content} image={imageForPath(page.path)} heading={h.overview} />
+      <ConditionsReport heading={h.conditions} factors={content.localFactors} />
       <ServiceChips
-        areaName={content.areaName}
+        heading={h.services}
         focus={content.serviceFocus}
         more={[...new Set([...page.internalLinks, ...page.relatedServices])]
           .filter((p) => !content.serviceFocus.includes(p))
           .slice(0, 5)}
       />
-      <BookingBand areaName={content.areaName} tools={page.relatedPages} />
+      <BookingBand areaName={area} heading={h.booking} tools={page.relatedPages} />
       <AreaCloud areas={siblings} />
-      <LocationFaq areaName={content.areaName} faqs={content.faqs} />
+      <LocationFaq heading={h.faq} faqs={content.faqs} />
     </>
   );
 }

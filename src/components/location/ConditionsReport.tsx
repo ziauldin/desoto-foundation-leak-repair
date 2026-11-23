@@ -1,13 +1,13 @@
 import type { TitledText } from "@/types/content";
 
 /** "Conditions report": indexed rows with a left marker. */
-export function ConditionsReport({ areaName, factors }: { areaName: string; factors: TitledText[] }) {
+export function ConditionsReport({ heading, factors }: { heading: string; factors: TitledText[] }) {
   return (
     <section aria-labelledby="conditions-heading" className="bg-primary-dark py-14 text-white sm:py-20">
       <div className="container-site">
         <p className="font-display text-sm font-semibold uppercase tracking-widest text-accent">Local conditions report</p>
         <h2 id="conditions-heading" className="mt-2 text-white!">
-          What affects foundations in {areaName}
+          {heading}
         </h2>
         <ul className="mt-10 grid gap-px overflow-hidden rounded-lg bg-white/10 md:grid-cols-2">
           {factors.map((f, i) => (
