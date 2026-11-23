@@ -1,6 +1,6 @@
 import type { LocationContent, PageRecord } from "@/types/content";
 import { breadcrumbSchema, faqSchema, localBusinessSchema, serviceSchema } from "@/lib/schema";
-import { locationPaths } from "@/data/pages";
+import { coverageLinksFor, locationPaths } from "@/data/pages";
 import { imageForPath } from "@/data/images";
 import { JsonLd } from "@/components/ui/JsonLd";
 import {
@@ -8,6 +8,7 @@ import {
   AreaFactSheet,
   BookingBand,
   ConditionsReport,
+  CoverageLinks,
   LocationFaq,
   LocationHero,
   ServiceChips,
@@ -31,6 +32,12 @@ export function LocationPageTemplate({ page, content }: { page: PageRecord; cont
     booking: content.headings?.booking ?? `Book an inspection in ${area}`,
     faq: content.headings?.faq ?? `${area} foundation questions`,
   };
+  const coverageHeading =
+    content.kind === "city-service"
+      ? "More DeSoto TX coverage pages"
+      : content.kind === "city"
+        ? "DeSoto TX services by type"
+        : `DeSoto TX services available in ${area}`;
 
   return (
     <>
@@ -53,6 +60,7 @@ export function LocationPageTemplate({ page, content }: { page: PageRecord; cont
           .slice(0, 5)}
       />
       <BookingBand areaName={area} heading={h.booking} tools={page.relatedPages} />
+      <CoverageLinks heading={coverageHeading} paths={coverageLinksFor(page.path)} />
       <AreaCloud areas={siblings} />
       <LocationFaq heading={h.faq} faqs={content.faqs} />
     </>

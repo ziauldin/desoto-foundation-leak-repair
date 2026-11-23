@@ -96,6 +96,12 @@ const siloSupport: Record<string, string[]> = {
     "/water-pooling-near-foundation/",
   ],
   "Foundation Problems": ["/water-pooling-near-foundation/", "/foundation-cracks-after-rain/"],
+  "Foundation Repair": [
+    "/uneven-floors-foundation-problem/",
+    "/sticking-doors-foundation-problem/",
+    "/foundation-settlement-repair/",
+    "/foundation-cracks-after-rain/",
+  ],
   Calculators: ["/signs-of-foundation-leak/", "/foundation-repair-vs-replacement/"],
   "Cost & Pricing": ["/signs-of-foundation-leak/", "/foundation-repair-vs-replacement/", "/diy-foundation-crack-repair-vs-professional/"],
   "Problems & Use Cases": ["/signs-of-foundation-leak/", "/uneven-floors-foundation-problem/"],
@@ -117,12 +123,20 @@ const siloServices: Record<string, string[]> = {
     "/foundation-leak-repair-desoto/",
     "/foundation-inspection-desoto-tx/",
   ],
+  "Foundation Repair": [
+    "/foundation-repair-desoto-tx/",
+    "/foundation-inspection-desoto-tx/",
+    "/crawl-space-foundation-repair-desoto-tx/",
+    "/commercial-foundation-repair-desoto-tx/",
+    "/foundation-leveling-desoto-tx/",
+  ],
   default: [
     "/foundation-leak-repair-desoto/",
     "/foundation-repair-desoto-tx/",
     "/foundation-crack-repair-desoto-tx/",
     "/slab-leak-repair-desoto-tx/",
     "/foundation-inspection-desoto-tx/",
+    "/foundation-repair-company-desoto-tx/",
     "/foundation-leveling-desoto-tx/",
   ],
 };
@@ -211,6 +225,73 @@ export const getPageOrThrow = (path: string) => {
   if (!page) throw new Error(`No topical map row for ${path}`);
   return page;
 };
+
+// ---- Service <-> DeSoto coverage pages ----------------------------------------
+// Each service page links to its matching /service-area/desoto-tx-* page, and location pages link to
+// the whole set, so the city x service pages aren't orphaned behind the /service-area/ directory.
+
+/** Anchor text for each city x service coverage page. */
+export const coverageAnchors: Record<string, string> = {
+  "/service-area/desoto-tx-foundation-repair/": "Foundation repair coverage across DeSoto TX",
+  "/service-area/desoto-tx-foundation-leak-repair/": "Foundation leak repair coverage across DeSoto TX",
+  "/service-area/desoto-tx-foundation-crack-repair/": "Foundation crack repair across DeSoto TX neighborhoods",
+  "/service-area/desoto-tx-house-foundation-repair/": "House foundation repair for DeSoto TX homes by era",
+  "/service-area/desoto-tx-foundation-repair-company/": "Choosing a foundation repair company in DeSoto TX",
+  "/service-area/desoto-tx-slab-leak-repair/": "Slab leak repair coverage across DeSoto TX",
+  "/service-area/desoto-tx-foundation-inspection/": "Foundation inspections anywhere in DeSoto TX",
+  "/service-area/desoto-tx-foundation-leveling/": "Foundation leveling for settling DeSoto TX homes",
+  "/service-area/desoto-tx-foundation-drainage-repair/": "Foundation drainage fixes for DeSoto TX yards",
+  "/service-area/desoto-tx-pier-and-beam-foundation-repair/": "Pier and beam repair for older DeSoto TX homes",
+};
+
+/** Service page -> its matching DeSoto coverage page. */
+const serviceCoverage: Record<string, string> = {
+  "/foundation-leak-repair-desoto/": "/service-area/desoto-tx-foundation-leak-repair/",
+  "/foundation-repair-desoto-tx/": "/service-area/desoto-tx-foundation-repair/",
+  "/foundation-repair-company-desoto-tx/": "/service-area/desoto-tx-foundation-repair-company/",
+  "/house-foundation-repair-desoto-tx/": "/service-area/desoto-tx-house-foundation-repair/",
+  "/home-foundation-repair-desoto-tx/": "/service-area/desoto-tx-house-foundation-repair/",
+  "/foundation-crack-repair-desoto-tx/": "/service-area/desoto-tx-foundation-crack-repair/",
+  "/slab-foundation-repair-desoto-tx/": "/service-area/desoto-tx-foundation-leveling/",
+  "/slab-leak-repair-desoto-tx/": "/service-area/desoto-tx-slab-leak-repair/",
+  "/foundation-leak-detection-desoto-tx/": "/service-area/desoto-tx-foundation-leak-repair/",
+  "/underground-leak-detection-desoto-tx/": "/service-area/desoto-tx-slab-leak-repair/",
+  "/water-line-leak-repair-desoto-tx/": "/service-area/desoto-tx-slab-leak-repair/",
+  "/foundation-inspection-desoto-tx/": "/service-area/desoto-tx-foundation-inspection/",
+  "/foundation-leveling-desoto-tx/": "/service-area/desoto-tx-foundation-leveling/",
+  "/house-leveling-desoto-tx/": "/service-area/desoto-tx-foundation-leveling/",
+  "/pier-and-beam-foundation-repair-desoto-tx/": "/service-area/desoto-tx-pier-and-beam-foundation-repair/",
+  "/crawl-space-foundation-repair-desoto-tx/": "/service-area/desoto-tx-pier-and-beam-foundation-repair/",
+  "/foundation-drainage-repair-desoto-tx/": "/service-area/desoto-tx-foundation-drainage-repair/",
+  "/french-drain-foundation-desoto-tx/": "/service-area/desoto-tx-foundation-drainage-repair/",
+  "/commercial-foundation-repair-desoto-tx/": "/service-area/desoto-tx-foundation-repair/",
+  "/emergency-foundation-leak-repair-desoto-tx/": "/service-area/desoto-tx-foundation-leak-repair/",
+};
+
+/** The coverage page a service page should link to, with its anchor text. */
+export function coverageForService(path: string): { path: string; label: string } | undefined {
+  const target = serviceCoverage[path];
+  if (!target || !isLivePath(target)) return undefined;
+  return { path: target, label: coverageAnchors[target] ?? linkLabel(target) };
+}
+
+/** The city hub plus every city x service page, in topical-map order. */
+export const cityServicePaths = locationPaths.filter((p) => {
+  const kind = locationsByPath.get(p)?.kind;
+  return (kind === "city" || kind === "city-service") && isLivePath(p);
+});
+
+/**
+ * Coverage links for a location page: ZIP, neighborhood and directional pages (and the city hub) get the
+ * whole city x service set; each city x service page gets 4 rotating siblings.
+ */
+export function coverageLinksFor(path: string): string[] {
+  const others = cityServicePaths.filter((p) => p !== path);
+  if (locationsByPath.get(path)?.kind !== "city-service") return others;
+  const start = Math.max(0, cityServicePaths.indexOf(path));
+  const rotated = [...cityServicePaths.slice(start + 1), ...cityServicePaths.slice(0, start)];
+  return rotated.slice(0, 4);
+}
 
 /** Short label for a link card: menu item name or the content shortName. */
 export function linkLabel(path: string): string {

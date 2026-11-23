@@ -42,6 +42,7 @@ export const mainNav: NavGroup[] = [
 export const footerServices: NavLink[] = live([
   "/foundation-leak-repair-desoto/",
   "/foundation-repair-desoto-tx/",
+  "/foundation-repair-company-desoto-tx/",
   "/foundation-crack-repair-desoto-tx/",
   "/slab-leak-repair-desoto-tx/",
   "/foundation-leak-detection-desoto-tx/",

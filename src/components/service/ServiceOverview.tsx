@@ -10,11 +10,14 @@ export function ServiceOverview({
   paragraphs,
   nextSteps,
   image,
+  coverage,
 }: {
   title: string;
   paragraphs: string[];
   nextSteps: string[];
   image: SiteImageData;
+  /** Matching DeSoto coverage page (coverageForService in data/pages.ts). */
+  coverage?: { path: string; label: string };
 }) {
   return (
     <section aria-labelledby="overview-heading" className="py-14 sm:py-20">
@@ -27,6 +30,15 @@ export function ServiceOverview({
                 {p}
               </p>
             ))}
+            {coverage && (
+              <p>
+                We work anywhere inside DeSoto city limits. See{" "}
+                <Link href={coverage.path} className="font-semibold text-primary underline decoration-accent decoration-2 underline-offset-4">
+                  {coverage.label.charAt(0).toLowerCase() + coverage.label.slice(1)}
+                </Link>{" "}
+                for neighborhood notes and local conditions.
+              </p>
+            )}
           </div>
         </div>
         <div className="space-y-5 self-start lg:sticky lg:top-28">

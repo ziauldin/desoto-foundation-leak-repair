@@ -46,6 +46,10 @@ for (const file of walk(root)) {
 // Element ids per page, for #anchor checks (same-page and cross-page).
 const idsByRoute = new Map([...pages].map(([route, html]) => [route, new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]))]));
 
+// Incoming internal links per page, counted from links inside <main> only (header/footer links excluded).
+const MIN_INCOMING = 3;
+const incoming = new Map([...pages.keys()].map((r) => [r, new Set()]));
+
 const errors = [];
 const warn = [];
 const titles = new Map();
@@ -79,6 +83,9 @@ for (const [route, html] of pages) {
   // First H2 inside <main> (the footer's column headings are H2s too, so they're excluded).
   const main = html.match(/<main[\s\S]*?<\/main>/)?.[0] ?? html;
   const firstH2 = decode(stripTags(main.match(/<h2[^>]*>([\s\S]*?)<\/h2>/)?.[1] ?? ""));
+  for (const [, href] of main.matchAll(/<a[^>]+href="(\/[^"#?]*)/g)) {
+    if (href !== route && incoming.has(href)) incoming.get(href).add(route);
+  }
   if (firstH2) (firstH2s.get(firstH2) ?? firstH2s.set(firstH2, []).get(firstH2)).push(route);
 
   (titles.get(title) ?? titles.set(title, []).get(title)).push(route);
@@ -124,6 +131,9 @@ for (const [label, map] of [["title", titles], ["meta description", descs], ["h1
   for (const [value, routes] of map) if (value && routes.length > 1) errors.push(`duplicate ${label} "${value}" on ${routes.join(", ")}`);
 }
 
+for (const [route, sources] of incoming) {
+  if (route !== "/" && sources.size < MIN_INCOMING) warn.push(`${route}: only ${sources.size} page(s) link to it from body content (want ${MIN_INCOMING}+)`);
+}
 for (const [value, routes] of firstH2s) if (routes.length > 1) warn.push(`same first H2 "${value}" on ${routes.join(", ")}`);
 
 console.log(`Checked ${pages.size} pages.`);
