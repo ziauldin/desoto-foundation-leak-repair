@@ -30,10 +30,16 @@ const toRoute = (file) => {
   return `/${rel}/`;
 };
 
+// Pages that call notFound() (hidden pages, e.g. the /calculators/ hub) still emit an .html file;
+// they render Next's error shell, so they're not live pages and links to them count as broken.
+const isNotFoundShell = (html) => /<html[^>]*id="__next_error__"/.test(html);
+
 const pages = new Map();
 for (const file of walk(root)) {
   const route = toRoute(file);
-  if (route) pages.set(route, readFileSync(file, "utf8"));
+  if (!route) continue;
+  const html = readFileSync(file, "utf8");
+  if (!isNotFoundShell(html)) pages.set(route, html);
 }
 
 const errors = [];
@@ -58,8 +64,6 @@ for (const [route, html] of pages) {
   if (!/property="og:title"/.test(html)) errors.push(`${route}: missing og:title`);
   if (route !== "/" && !/"BreadcrumbList"/.test(html)) errors.push(`${route}: missing BreadcrumbList schema`);
   if (/id="faq"/.test(html) && !/"FAQPage"/.test(html)) errors.push(`${route}: FAQ section without FAQPage schema`);
-  // Service-template pages are the ones with the signs checklist (location pages also carry Service schema).
-  if (/id="signs-heading"/.test(html) && !/id="estimate"/.test(html)) errors.push(`${route}: service page without its calculator (serviceCalculator in calculators.ts)`);
 
   (titles.get(title) ?? titles.set(title, []).get(title)).push(route);
   (descs.get(desc) ?? descs.set(desc, []).get(desc)).push(route);

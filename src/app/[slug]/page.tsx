@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
+  calculatorsByPath,
   getPage,
-  hiddenPaths,
+  isHidden,
   resourcesByPath,
   rootSlugPages,
   servicesByPath,
@@ -12,6 +13,7 @@ import { legalContent } from "@/data/content/legal";
 import { metadataForPage } from "@/lib/seo";
 import { ServicePageTemplate } from "@/components/templates/ServicePageTemplate";
 import { ProblemPageTemplate } from "@/components/templates/ProblemPageTemplate";
+import { CalculatorPageTemplate } from "@/components/templates/CalculatorPageTemplate";
 import { BasicPageTemplate } from "@/components/templates/BasicPageTemplate";
 
 // Every root-level page in the topical map (services, calculators, resources, legal) is
@@ -26,15 +28,17 @@ const pathFor = (slug: string) => `/${slug}/`;
 
 export async function generateMetadata({ params }: PageProps<"/[slug]">): Promise<Metadata> {
   const { slug } = await params;
-  const page = getPage(pathFor(slug));
-  return page ? metadataForPage(page) : {};
+  const path = pathFor(slug);
+  const page = getPage(path);
+  return page && !isHidden(path) ? metadataForPage(page) : {};
 }
 
 export default async function Page({ params }: PageProps<"/[slug]">) {
   const { slug } = await params;
   const path = pathFor(slug);
   const page = getPage(path);
-  if (!page) notFound();
+  // Hidden pages (see isHidden in data/pages.ts) 404 even if a stale link or crawler asks for them.
+  if (!page || isHidden(path)) notFound();
 
   switch (page.pageType) {
     case "core":
@@ -43,12 +47,12 @@ export default async function Page({ params }: PageProps<"/[slug]">) {
       if (!content) notFound();
       return <ServicePageTemplate page={page} content={content} />;
     }
-    case "calculator":
-      // Calculators are hidden site-wide until their content pass is finished.
-      notFound();
+    case "calculator": {
+      const content = calculatorsByPath.get(path);
+      if (!content) notFound();
+      return <CalculatorPageTemplate page={page} content={content} />;
+    }
     case "blog": {
-      // The two dedicated cost-guide pages are individually hidden until their content is ready to publish.
-      if (hiddenPaths.includes(path)) notFound();
       const content = resourcesByPath.get(path);
       if (!content) notFound();
       return <ProblemPageTemplate page={page} content={content} />;

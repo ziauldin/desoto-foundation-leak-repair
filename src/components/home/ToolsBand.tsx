@@ -1,10 +1,13 @@
 import Link from "next/link";
-import { linkLabel, linkSummary } from "@/data/pages";
+import { isLivePath, linkLabel, linkSummary } from "@/data/pages";
 import { ButtonLink } from "@/components/ui/Button";
 import { ArrowIcon, CalcIcon } from "@/components/ui/Icons";
 
 /** Split band: pitch on the left, compact tool launcher rows on the right. */
 export function ToolsBand({ tools }: { tools: string[] }) {
+  // Calculators can be hidden site-wide (isHidden in data/pages.ts); render nothing rather than dead links.
+  const live = tools.filter(isLivePath);
+  if (!live.length) return null;
   return (
     <section id="calculators" aria-labelledby="calculators-heading" className="bg-accent-soft py-14 sm:py-20">
       <div className="container-site grid items-center gap-10 lg:grid-cols-[1fr_1.4fr]">
@@ -14,14 +17,16 @@ export function ToolsBand({ tools }: { tools: string[] }) {
           <p className="mt-3 text-lg text-text/80">
             Typical North Texas price ranges and quick checks for how urgent your signs are. No sign-up, no phone number needed.
           </p>
-          <div className="mt-6">
-            <ButtonLink href="/calculators/" variant="primary">
-              See all calculators
-            </ButtonLink>
-          </div>
+          {isLivePath("/calculators/") && (
+            <div className="mt-6">
+              <ButtonLink href="/calculators/" variant="primary">
+                See all calculators
+              </ButtonLink>
+            </div>
+          )}
         </div>
         <ul className="grid gap-3 sm:grid-cols-2">
-          {tools.map((path, i) => (
+          {live.map((path, i) => (
             <li key={path} data-reveal="right" style={{ "--i": i } as React.CSSProperties}>
               <Link href={path} className="group flex h-full flex-col rounded-xl bg-surface p-5 shadow-[var(--shadow-card)] transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]">
                 <span className="flex items-center gap-3">

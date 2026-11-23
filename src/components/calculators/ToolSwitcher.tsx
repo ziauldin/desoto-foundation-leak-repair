@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { calculatorPaths, linkLabel } from "@/data/pages";
+import { calculatorPaths, isLivePath, linkLabel } from "@/data/pages";
 
 /** Tab-style switcher across every calculator, current one highlighted. */
 export function ToolSwitcher({ current, guides }: { current: string; guides: string[] }) {
@@ -10,7 +10,7 @@ export function ToolSwitcher({ current, guides }: { current: string; guides: str
           Other free tools
         </h2>
         <ul className="mt-5 flex gap-2 overflow-x-auto pb-2" role="list">
-          {calculatorPaths.map((p) => (
+          {calculatorPaths.filter(isLivePath).map((p) => (
             <li key={p} className="shrink-0">
               {p === current ? (
                 <span aria-current="page" className="block rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white">
