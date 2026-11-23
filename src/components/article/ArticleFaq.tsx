@@ -1,9 +1,11 @@
 import type { FAQ } from "@/types/content";
+import { ARTICLE_IDS } from "./utils";
 
 /** All-open Q&A list (no accordion) for articles. */
 export function ArticleFaq({ faqs }: { faqs: FAQ[] }) {
+  if (!faqs.length) return null;
   return (
-    <section id="faq" aria-labelledby="faq-h" className="scroll-mt-28">
+    <section id={ARTICLE_IDS.faq} aria-labelledby="faq-h" className="scroll-mt-28">
       <h2 id="faq-h" className="text-center">
         Questions homeowners ask
       </h2>

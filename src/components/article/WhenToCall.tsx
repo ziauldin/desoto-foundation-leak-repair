@@ -1,11 +1,12 @@
 import { DashList } from "./DashList";
 import Link from "next/link";
 import { linkLabel } from "@/data/pages";
+import { ARTICLE_IDS } from "./utils";
 
 /** Warning-style callout for "when to call a pro". */
 export function WhenToCall({ items, service }: { items: string[]; service: string }) {
   return (
-    <section id="when-to-call" aria-labelledby="when-h" data-reveal="scale" className="scroll-mt-28 rounded-lg border border-warning/40 bg-accent-soft p-6 shadow-[var(--shadow-card)] sm:p-8">
+    <section id={ARTICLE_IDS.whenToCall} aria-labelledby="when-h" data-reveal="scale" className="scroll-mt-28 rounded-lg border border-warning/40 bg-accent-soft p-6 shadow-[var(--shadow-card)] sm:p-8">
       <h2 id="when-h" className="text-2xl!">
         When to call a professional
       </h2>

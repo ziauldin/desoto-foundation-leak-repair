@@ -42,6 +42,9 @@ for (const file of walk(root)) {
   if (!isNotFoundShell(html)) pages.set(route, html);
 }
 
+// Element ids per page, for #anchor checks (same-page and cross-page).
+const idsByRoute = new Map([...pages].map(([route, html]) => [route, new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]))]));
+
 const errors = [];
 const warn = [];
 const titles = new Map();
@@ -71,10 +74,20 @@ for (const [route, html] of pages) {
 
   // Internal links
   for (const [, href] of html.matchAll(/<a[^>]+href="([^"]+)"/g)) {
+    if (href.startsWith("#")) {
+      const id = decodeURIComponent(href.slice(1));
+      if (id && !idsByRoute.get(route).has(id)) errors.push(`${route}: in-page link ${href} has no matching id`);
+      continue;
+    }
     if (!href.startsWith("/") || href.startsWith("//")) continue;
-    const path = href.split("#")[0].split("?")[0];
+    const [beforeHash, hash] = href.split("#");
+    const path = beforeHash.split("?")[0];
     if (!path || STATIC_FILES.has(path)) continue;
-    if (!pages.has(path)) errors.push(`${route}: broken link -> ${href}`);
+    if (!pages.has(path)) {
+      errors.push(`${route}: broken link -> ${href}`);
+      continue;
+    }
+    if (hash && !idsByRoute.get(path).has(decodeURIComponent(hash))) errors.push(`${route}: link ${href} points to a missing id on ${path}`);
   }
 
   // Every local image must exist in /public and have alt text

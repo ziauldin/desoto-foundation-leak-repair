@@ -1,8 +1,9 @@
 import type { ResourceContent } from "@/types/content";
+import { ARTICLE_IDS } from "./utils";
 
 export function ComparisonTable({ comparison }: { comparison: NonNullable<ResourceContent["comparison"]> }) {
   return (
-    <section data-reveal aria-labelledby="comparison-heading">
+    <section data-reveal id={ARTICLE_IDS.comparison} aria-labelledby="comparison-heading" className="scroll-mt-28">
       <h2 id="comparison-heading">At a glance</h2>
       <div className="mt-5 overflow-x-auto">
         <table className="w-full min-w-[34rem] border-collapse text-left">
