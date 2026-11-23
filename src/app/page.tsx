@@ -18,7 +18,7 @@ import { ContactForm } from "@/components/forms/ContactForm";
 import { TriagePicker } from "@/components/home/TriagePicker";
 
 export const metadata: Metadata = buildMetadata({
-  title: "DeSoto Foundation Leak Repair | Slab Leak & Foundation Repair in DeSoto TX",
+  title: "Foundation Leak Repair DeSoto TX | Slab & Foundation Help",
   description:
     "Foundation leak detection, slab leak repair, crack repair and foundation leveling for DeSoto TX homes. Free tools, local guides and inspection requests.",
   path: "/",

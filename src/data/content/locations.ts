@@ -93,7 +93,7 @@ export const locationContent: LocationContent[] = [
     kind: "city-service",
     areaName: "DeSoto TX",
     shortName: "Leak Repair Coverage",
-    seoTitleOverride: "DeSoto TX Foundation Leak Repair Service Area | Local Crews",
+    seoTitleOverride: "DeSoto TX Foundation Leak Repair Service Area",
     h1Override: "Foundation Leak Repair Coverage Across DeSoto TX",
     summary:
       "Where foundation leaks tend to show up in DeSoto, which homes are most exposed and how leak calls are handled anywhere in the city.",
@@ -153,7 +153,7 @@ export const locationContent: LocationContent[] = [
     kind: "city-service",
     areaName: "DeSoto TX",
     shortName: "Crack Repair Coverage",
-    seoTitleOverride: "DeSoto TX Foundation Crack Repair Service Area | Local Crews",
+    seoTitleOverride: "DeSoto TX Foundation Crack Repair Service Area",
     h1Override: "Foundation Crack Repair Across DeSoto TX Neighborhoods",
     summary:
       "How foundation cracks show up in different DeSoto neighborhoods and housing types, and how crack inspections are handled across the city.",
@@ -213,7 +213,7 @@ export const locationContent: LocationContent[] = [
     kind: "city-service",
     areaName: "DeSoto TX",
     shortName: "House Repair Coverage",
-    seoTitleOverride: "DeSoto TX House Foundation Repair Service Area | Home Help",
+    seoTitleOverride: "DeSoto TX House Foundation Repair Service Area",
     h1Override: "House Foundation Repair for DeSoto TX Homes by Era",
     summary:
       "A local look at house foundation repair in DeSoto: which home styles and building eras see which problems, and how residential repairs are covered citywide.",
