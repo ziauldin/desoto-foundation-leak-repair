@@ -30,13 +30,39 @@ export const calculatorPaths = pathsOfType("calculator");
 export const resourcePaths = pathsOfType("blog");
 export const locationPaths = pathsOfType("location");
 
-/** Individually hidden pages (404) that are not an entire pageType. Keep in sync with the switch in app/[slug]/page.tsx. */
-export const hiddenPaths = ["/foundation-repair-cost-desoto-tx/", "/foundation-leak-repair-cost-desoto-tx/"];
+// ---- Hidden pages (single source of truth) ----------------------------------
+// Hidden pages return 404, are left out of the sitemap, and are never linked. Every route, the
+// sitemap and every component that picks a link target goes through isHidden() / isLivePath().
+//
+// To un-hide a page: remove it from hiddenPaths. To un-hide calculators: set CALCULATORS_LIVE = true
+// (that also brings back the /calculators/ hub).
+
+/** Individually hidden pages that are not an entire page type. */
+export const hiddenPaths: readonly string[] = ["/foundation-repair-cost-desoto-tx/", "/foundation-leak-repair-cost-desoto-tx/"];
+
+/** Calculators (and their /calculators/ hub) are hidden site-wide until their content pass is finished. */
+export const CALCULATORS_LIVE = false;
+const CALCULATOR_HUB = "/calculators/";
+
+const stripHash = (path: string) => path.split("#")[0].split("?")[0];
+
+/** True when a page exists in the map but must not be served or linked. */
+export function isHidden(path: string): boolean {
+  const p = stripHash(path);
+  if (hiddenPaths.includes(p)) return true;
+  if (!CALCULATORS_LIVE && (p === CALCULATOR_HUB || calculatorPaths.includes(p))) return true;
+  return false;
+}
+
+/** True when a link target is a real, served page (hash/query ignored). Use it wherever a link target is chosen. */
+export function isLivePath(path: string): boolean {
+  const p = stripHash(path);
+  return (rowsByPath.has(p) || STATIC_PATHS.includes(p)) && !isHidden(p);
+}
 
 const isService = (p: string) => servicePaths.includes(p);
-// Calculators are hidden site-wide, and the two cost-guide pages are individually hidden, so
-// "supporting" links only ever point to live resource guides.
-const isSupporting = (p: string) => resourcePaths.includes(p) && !hiddenPaths.includes(p);
+// Supporting links: live guides, plus calculators once CALCULATORS_LIVE is on.
+const isSupporting = (p: string) => (resourcePaths.includes(p) || calculatorPaths.includes(p)) && isLivePath(p);
 
 // ---- Internal links ----------------------------------------------------------
 
@@ -59,14 +85,9 @@ export function unresolvedLinkNames(row: TopicalMapRow): string[] {
     .filter((n) => n && !resolveAlias(n));
 }
 
-/** De-duplicates, drops self-links and drops anything that isn't a real page. */
-const unique = (paths: string[], exclude: string) =>
-  [...new Set(paths)].filter(
-    (p) => p !== exclude && (rowsByPath.has(p) || STATIC_PATHS.includes(p)),
-  );
+/** De-duplicates, drops self-links and drops anything that isn't a live page. */
+const unique = (paths: string[], exclude: string) => [...new Set(paths)].filter((p) => p !== exclude && isLivePath(p));
 
-// Calculators are hidden site-wide and the two cost-guide pages are individually hidden (404),
-// so this fallback list only ever points to live resource guides.
 /** Fallback related guides per silo, so every page has 2-4 supporting links. */
 const siloSupport: Record<string, string[]> = {
   "Leak Repair": [
@@ -115,7 +136,7 @@ function buildBreadcrumbs(row: TopicalMapRow): Crumb[] {
     // "Foundation Problems" has no hub page; it sits under Foundation Repair.
     const label = name === "Foundation Problems" ? "Foundation Repair" : name;
     const path = resolveAlias(label);
-    if (path && path !== row.path && !crumbs.some((c) => c.path === path)) crumbs.push({ name: label, path });
+    if (path && isLivePath(path) && path !== row.path && !crumbs.some((c) => c.path === path)) crumbs.push({ name: label, path });
   });
   crumbs.push({ name: names[names.length - 1] ?? row.h1, path: row.path });
   return crumbs;
@@ -132,11 +153,8 @@ function defaultCta(row: TopicalMapRow): CtaType {
 // ---- Registry ---------------------------------------------------------------
 
 function buildPage(row: TopicalMapRow): PageRecord {
-  // Calculators and the two cost-guide pages are hidden (404), so they're dropped here before
-  // anything downstream can link to them.
-  const internalLinks = unique(parseLinkSuggestions(row.internalLinkingSuggestions), row.path).filter(
-    (p) => !calculatorPaths.includes(p) && !hiddenPaths.includes(p),
-  );
+  // unique() drops hidden pages, so nothing downstream can link to them.
+  const internalLinks = unique(parseLinkSuggestions(row.internalLinkingSuggestions), row.path);
   const service = servicesByPath.get(row.path);
   const resource = resourcesByPath.get(row.path);
   const location = locationsByPath.get(row.path);
@@ -147,8 +165,7 @@ function buildPage(row: TopicalMapRow): PageRecord {
     calculator?.primaryService,
     ...(location?.serviceFocus ?? []),
   ].filter((p): p is string => Boolean(p));
-  // Calculators are hidden site-wide, so resource?.primaryCalculator is intentionally not surfaced here.
-  const contentSupport: string[] = [];
+  const contentSupport = [resource?.primaryCalculator].filter((p): p is string => Boolean(p));
 
   const relatedServices = unique(
     [
@@ -219,13 +236,10 @@ export function linkSummary(path: string): string {
   );
 }
 
-/** Root-level slugs served by app/[slug] (services, resources, legal pages). Calculators and the two cost-guide pages are hidden site-wide. */
-export const rootSlugPages = pages.filter(
-  (p) =>
-    p.pageType !== "location" &&
-    p.pageType !== "calculator" &&
-    !hiddenPaths.includes(p.path) &&
-    !STATIC_PATHS.includes(p.path),
-);
+/** Every live page in the topical map (hidden pages excluded). */
+export const livePages = pages.filter((p) => isLivePath(p.path));
+
+/** Root-level slugs served by app/[slug] (services, resources, legal pages, live calculators). */
+export const rootSlugPages = livePages.filter((p) => p.pageType !== "location" && !STATIC_PATHS.includes(p.path));
 
 export const slugFromPath = (path: string) => path.split("/").filter(Boolean).pop() ?? "";
