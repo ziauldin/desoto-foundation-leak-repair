@@ -38,6 +38,12 @@ export const images = {
   brickHome: ill("brick-home", "Single-story brick ranch home with a garage and lawn, sitting on a concrete slab foundation"),
 } satisfies Record<string, SiteImage>;
 
+/**
+ * Real job-site photos for the About page "Our team at work" section. The section stays hidden while
+ * this is empty. Use only photos of the business's own DeSoto jobs, with accurate alt text.
+ */
+export const jobSitePhotos: SiteImage[] = [];
+
 type ImageKey = keyof typeof images;
 
 /** Explicit image per page path. Anything not listed falls back by page type (see imageForPath). */

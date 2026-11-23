@@ -7,12 +7,21 @@ import { CheckIcon, ClipboardIcon, ClockIcon, DropletIcon, HandshakeIcon, PinIco
 const icons: ReactNode[] = [<DropletIcon key="d" />, <RulerIcon key="r" />, <ClipboardIcon key="c" />, <HandshakeIcon key="h" />, <PinIcon key="p" />, <ClockIcon key="t" />];
 
 /** Icon list beside an "us vs. a typical bid" comparison. Shared by home, service pages and About. */
-export function WhyChooseUs({ tone = "surface" }: { tone?: "default" | "surface" | "alt" }) {
+export function WhyChooseUs({
+  tone = "surface",
+  title = "Why choose us?",
+  extra,
+}: {
+  tone?: "default" | "surface" | "alt";
+  title?: string;
+  /** Rendered under the grid (the About page passes its credential badges). */
+  extra?: ReactNode;
+}) {
   return (
     <Section
       id="why-us"
       eyebrow="Why choose us"
-      title="Why choose us?"
+      title={title}
       intro="Foundation work is expensive and hard to undo. Here's how we make sure you only pay for the repair your house actually needs."
       tone={tone}
     >
@@ -52,6 +61,7 @@ export function WhyChooseUs({ tone = "surface" }: { tone?: "default" | "surface"
           </ul>
         </div>
       </div>
+      {extra}
     </Section>
   );
 }
