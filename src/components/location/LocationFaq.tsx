@@ -1,12 +1,12 @@
 import type { FAQ } from "@/types/content";
 
 /** Numbered two-column FAQ. */
-export function LocationFaq({ areaName, faqs }: { areaName: string; faqs: FAQ[] }) {
+export function LocationFaq({ heading, faqs }: { heading: string; faqs: FAQ[] }) {
   return (
     <section id="faq" aria-labelledby="faq-heading" className="border-t border-border bg-surface py-14 sm:py-20">
       <div className="container-site">
         <h2 id="faq-heading" className="text-center">
-          {areaName} foundation questions
+          {heading}
         </h2>
         <ol className="mx-auto mt-8 grid max-w-5xl gap-x-12 gap-y-8 md:grid-cols-2">
           {faqs.map((f, i) => (

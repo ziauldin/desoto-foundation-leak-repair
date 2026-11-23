@@ -51,6 +51,8 @@ const warn = [];
 const titles = new Map();
 const descs = new Map();
 const h1s = new Map();
+const firstH2s = new Map();
+const stripTags = (s) => s.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
 const STATIC_FILES = new Set(["/sitemap.xml", "/robots.txt", "/og-default.png", "/favicon.ico"]);
 
 const decode = (s) => s.replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">");
@@ -73,6 +75,11 @@ for (const [route, html] of pages) {
   if (!/property="og:title"/.test(html)) errors.push(`${route}: missing og:title`);
   if (route !== "/" && !/"BreadcrumbList"/.test(html)) errors.push(`${route}: missing BreadcrumbList schema`);
   if (/id="faq"/.test(html) && !/"FAQPage"/.test(html)) errors.push(`${route}: FAQ section without FAQPage schema`);
+
+  // First H2 inside <main> (the footer's column headings are H2s too, so they're excluded).
+  const main = html.match(/<main[\s\S]*?<\/main>/)?.[0] ?? html;
+  const firstH2 = decode(stripTags(main.match(/<h2[^>]*>([\s\S]*?)<\/h2>/)?.[1] ?? ""));
+  if (firstH2) (firstH2s.get(firstH2) ?? firstH2s.set(firstH2, []).get(firstH2)).push(route);
 
   (titles.get(title) ?? titles.set(title, []).get(title)).push(route);
   (descs.get(desc) ?? descs.set(desc, []).get(desc)).push(route);
@@ -116,6 +123,8 @@ for (const [route, html] of pages) {
 for (const [label, map] of [["title", titles], ["meta description", descs], ["h1", h1s]]) {
   for (const [value, routes] of map) if (value && routes.length > 1) errors.push(`duplicate ${label} "${value}" on ${routes.join(", ")}`);
 }
+
+for (const [value, routes] of firstH2s) if (routes.length > 1) warn.push(`same first H2 "${value}" on ${routes.join(", ")}`);
 
 console.log(`Checked ${pages.size} pages.`);
 warn.forEach((w) => console.warn(`warn: ${w}`));

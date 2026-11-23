@@ -95,6 +95,13 @@ export const locationContent: LocationContent[] = [
     shortName: "Leak Repair Coverage",
     seoTitleOverride: "DeSoto TX Foundation Leak Repair Service Area",
     h1Override: "Foundation Leak Repair Coverage Across DeSoto TX",
+    headings: {
+      overview: "Stopping foundation leaks in DeSoto TX homes",
+      conditions: "Why DeSoto TX slabs are prone to leaks",
+      services: "Leak repair services in DeSoto TX",
+      booking: "Book a foundation leak check in DeSoto TX",
+      faq: "DeSoto TX foundation leak questions",
+    },
     summary:
       "Where foundation leaks tend to show up in DeSoto, which homes are most exposed and how leak calls are handled anywhere in the city.",
     intro: [
@@ -155,6 +162,13 @@ export const locationContent: LocationContent[] = [
     shortName: "Crack Repair Coverage",
     seoTitleOverride: "DeSoto TX Foundation Crack Repair Service Area",
     h1Override: "Foundation Crack Repair Across DeSoto TX Neighborhoods",
+    headings: {
+      overview: "Repairing foundation cracks in DeSoto TX",
+      conditions: "What cracks DeSoto TX foundations",
+      services: "Crack repair and related services in DeSoto TX",
+      booking: "Book a crack inspection in DeSoto TX",
+      faq: "DeSoto TX foundation crack questions",
+    },
     summary:
       "How foundation cracks show up in different DeSoto neighborhoods and housing types, and how crack inspections are handled across the city.",
     intro: [
@@ -215,6 +229,13 @@ export const locationContent: LocationContent[] = [
     shortName: "House Repair Coverage",
     seoTitleOverride: "DeSoto TX House Foundation Repair Service Area",
     h1Override: "House Foundation Repair for DeSoto TX Homes by Era",
+    headings: {
+      overview: "House foundation repair across DeSoto TX",
+      conditions: "What wears on house foundations in DeSoto TX",
+      services: "House foundation services in DeSoto TX",
+      booking: "Book a house foundation inspection in DeSoto TX",
+      faq: "DeSoto TX house foundation questions",
+    },
     summary:
       "A local look at house foundation repair in DeSoto: which home styles and building eras see which problems, and how residential repairs are covered citywide.",
     intro: [
@@ -275,6 +296,13 @@ export const locationContent: LocationContent[] = [
     shortName: "Local Company",
     seoTitleOverride: "Local DeSoto TX Foundation Repair Company | Service Area",
     h1Override: "Choosing a Local Foundation Repair Company in DeSoto TX",
+    headings: {
+      overview: "How DeSoto TX homeowners pick a foundation repair company",
+      conditions: "Local conditions a DeSoto TX company should know",
+      services: "What a DeSoto TX foundation company should offer",
+      booking: "Get a written inspection in DeSoto TX",
+      faq: "Questions about hiring a DeSoto TX foundation company",
+    },
     summary:
       "What it means to hire a foundation repair company that works only in DeSoto, and the questions DeSoto homeowners should ask before signing anything.",
     intro: [
@@ -334,6 +362,13 @@ export const locationContent: LocationContent[] = [
     shortName: "Slab Leak Coverage",
     seoTitleOverride: "DeSoto TX Slab Leak Repair Service Area | Local Leak Crews",
     h1Override: "Slab Leak Repair Coverage for DeSoto TX Homes",
+    headings: {
+      overview: "Slab leak repair across DeSoto TX",
+      conditions: "What causes slab leaks in DeSoto TX",
+      services: "Slab leak and plumbing services in DeSoto TX",
+      booking: "Book a slab leak check in DeSoto TX",
+      faq: "DeSoto TX slab leak questions",
+    },
     summary:
       "Where slab leaks show up across DeSoto, what local conditions make them worse and how slab leak calls are covered citywide.",
     intro: [
@@ -394,6 +429,13 @@ export const locationContent: LocationContent[] = [
     shortName: "Inspection Coverage",
     seoTitleOverride: "DeSoto TX Foundation Inspection Service Area | Local Checks",
     h1Override: "Foundation Inspections Anywhere in DeSoto TX",
+    headings: {
+      overview: "What a DeSoto TX foundation inspection covers",
+      conditions: "What inspectors look for in DeSoto TX",
+      services: "Services that can follow a DeSoto TX inspection",
+      booking: "Schedule a foundation inspection in DeSoto TX",
+      faq: "DeSoto TX foundation inspection questions",
+    },
     summary:
       "Who in DeSoto typically asks for a foundation inspection, what local conditions an inspection looks for and how inspections are scheduled across the city.",
     intro: [
@@ -453,6 +495,13 @@ export const locationContent: LocationContent[] = [
     shortName: "Leveling Coverage",
     seoTitleOverride: "DeSoto TX Foundation Leveling Service Area | Settling Repair",
     h1Override: "Foundation Leveling for Settling Homes in DeSoto TX",
+    headings: {
+      overview: "Leveling settled foundations in DeSoto TX",
+      conditions: "Why DeSoto TX foundations settle",
+      services: "Leveling and related services in DeSoto TX",
+      booking: "Book a leveling assessment in DeSoto TX",
+      faq: "DeSoto TX foundation leveling questions",
+    },
     summary:
       "Where settlement shows up in DeSoto homes, what drives it locally and how leveling work is covered across the city.",
     intro: [
@@ -513,6 +562,13 @@ export const locationContent: LocationContent[] = [
     shortName: "Drainage Coverage",
     seoTitleOverride: "DeSoto TX Foundation Drainage Service Area | Water Control",
     h1Override: "Foundation Drainage Fixes for DeSoto TX Yards and Lots",
+    headings: {
+      overview: "Drainage repair for DeSoto TX foundations",
+      conditions: "How water moves around DeSoto TX lots",
+      services: "Drainage and foundation services in DeSoto TX",
+      booking: "Book a drainage check in DeSoto TX",
+      faq: "DeSoto TX foundation drainage questions",
+    },
     summary:
       "Common drainage problems on DeSoto lots, how they lead to foundation movement and how drainage repair is covered across the city.",
     intro: [
@@ -572,6 +628,13 @@ export const locationContent: LocationContent[] = [
     shortName: "Pier & Beam Coverage",
     seoTitleOverride: "DeSoto TX Pier and Beam Repair Service Area | Older Homes",
     h1Override: "Pier and Beam Repair for Older DeSoto TX Homes",
+    headings: {
+      overview: "Pier and beam repair in DeSoto TX",
+      conditions: "What wears out pier and beam homes in DeSoto TX",
+      services: "Pier and beam and crawl space services in DeSoto TX",
+      booking: "Book a crawl space inspection in DeSoto TX",
+      faq: "DeSoto TX pier and beam questions",
+    },
     summary:
       "Where pier-and-beam homes are found in DeSoto, the local conditions that affect crawl spaces and how pier-and-beam work is covered citywide.",
     intro: [
