@@ -8,6 +8,8 @@ import { StickyCtaBar } from "@/components/layout/StickyCtaBar";
 import { ContactModal } from "@/components/forms/ContactModal";
 import { RevealObserver } from "@/components/motion/RevealObserver";
 import { BackToTop } from "@/components/motion/BackToTop";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { graphSchema, organizationSchema, websiteSchema } from "@/lib/schema";
 import "./globals.css";
 
 // Display: sturdy semi-condensed sans common on contractor signage. Body: highly readable humanist sans.
@@ -39,6 +41,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en-US" data-scroll-behavior="smooth" className={`${display.variable} ${body.variable}`}>
       <body className="flex min-h-screen flex-col">
+        {/* Organization + WebSite once per page; page templates add LocalBusiness, Service, Article etc. */}
+        <JsonLd data={[graphSchema([organizationSchema(), websiteSchema()])]} />
         <a
           href="#main"
           className="sr-only z-50 rounded-md bg-accent px-4 py-2 font-semibold text-primary-dark focus:not-sr-only focus:fixed focus:left-4 focus:top-4"

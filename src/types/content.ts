@@ -112,6 +112,10 @@ export interface ResourceContent {
   primaryCalculator: string;
   faqs: FAQ[];
   ctaType: CtaType;
+  /** ISO date first published. Defaults to RESOURCES_PUBLISHED in content/resources.ts. */
+  datePublished?: string;
+  /** ISO date of the last meaningful content change. Defaults to RESOURCES_UPDATED. */
+  dateModified?: string;
 }
 
 export type LocationKind = "city" | "city-service" | "zip" | "neighborhood" | "direction";

@@ -3,6 +3,17 @@ import type { ResourceContent } from "@/types/content";
 // Starter copy for the 11 Blog pages (cost guides, problem guides, comparisons).
 // DeSoto, TX only. Prices are typical North Texas ranges, not quotes.
 
+// Dates come from git history, not guesses: the guides were first committed on 2026-10-12 and last
+// rewritten on 2026-11-01. Set datePublished / dateModified on an entry when that guide changes.
+export const RESOURCES_PUBLISHED = "2026-10-12";
+export const RESOURCES_UPDATED = "2026-11-01";
+
+/** Published and modified dates for a guide (Article schema, RSS, byline). */
+export const resourceDates = (c: Pick<ResourceContent, "datePublished" | "dateModified">) => ({
+  published: c.datePublished ?? RESOURCES_PUBLISHED,
+  modified: c.dateModified ?? c.datePublished ?? RESOURCES_UPDATED,
+});
+
 export const resourceContent: ResourceContent[] = [
   // ---------------------------------------------------------------------------
   // COST
