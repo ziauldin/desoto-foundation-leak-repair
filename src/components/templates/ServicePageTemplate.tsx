@@ -1,6 +1,7 @@
 import type { PageRecord, ServiceContent } from "@/types/content";
 import { breadcrumbSchema, faqSchema, localBusinessSchema, serviceSchema } from "@/lib/schema";
 import { imageForPath } from "@/data/images";
+import { coverageForService } from "@/data/pages";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import {
@@ -45,6 +46,7 @@ export function ServicePageTemplate({ page, content }: { page: PageRecord; conte
         paragraphs={content.intro}
         nextSteps={page.internalLinks}
         image={imageForPath(page.path)}
+        coverage={coverageForService(page.path)}
       />
       <SignsChecklist title={`Signs you may need ${name.toLowerCase()}`} signs={content.signs} />
       <SoilExplainer paragraphs={content.whyItMatters} />

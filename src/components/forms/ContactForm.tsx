@@ -181,6 +181,10 @@ export function ContactForm({
         By submitting, you agree to be contacted about your request. See our{" "}
         <Link href="/privacy-policy/" className="underline">
           privacy policy
+        </Link>{" "}
+        and{" "}
+        <Link href="/terms-and-conditions/" className="underline">
+          terms
         </Link>
         .
       </p>
