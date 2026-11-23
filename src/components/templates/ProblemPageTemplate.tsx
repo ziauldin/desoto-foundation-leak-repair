@@ -4,6 +4,7 @@ import { imageForPath } from "@/data/images";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import {
+  ARTICLE_IDS,
   ArticleClosingCta,
   ArticleFaq,
   ArticleHeader,
@@ -13,7 +14,9 @@ import {
   DashList,
   NumberedSection,
   QuickAnswer,
+  sectionId,
   TocPills,
+  type TocItem,
   WhenToCall,
 } from "@/components/article";
 
@@ -21,6 +24,13 @@ import {
 export function ProblemPageTemplate({ page, content }: { page: PageRecord; content: ResourceContent }) {
   const [lead, ...restIntro] = content.intro;
   const midpoint = Math.ceil(content.sections.length / 2);
+  // Every TOC id comes from the same source as the rendered section's id, in page order.
+  const toc: TocItem[] = [
+    ...content.sections.map((s) => ({ label: s.heading, id: sectionId(s.heading) })),
+    ...(content.comparison ? [{ label: "At a glance", id: ARTICLE_IDS.comparison }] : []),
+    { label: "When to call a professional", id: ARTICLE_IDS.whenToCall },
+    ...(content.faqs.length ? [{ label: "Questions homeowners ask", id: ARTICLE_IDS.faq }] : []),
+  ];
   return (
     <>
       <JsonLd
@@ -44,7 +54,7 @@ export function ProblemPageTemplate({ page, content }: { page: PageRecord; conte
                 ))}
               </div>
             )}
-            <TocPills headings={[...content.sections.map((s) => s.heading), "When to call a professional"]} />
+            <TocPills items={toc} />
 
             {content.sections.map((section, i) => (
               <div key={section.heading} className="space-y-12">

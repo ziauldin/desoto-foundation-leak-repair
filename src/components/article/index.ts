@@ -1,6 +1,7 @@
 export { ArticleHeader } from "./ArticleHeader";
 export { QuickAnswer } from "./QuickAnswer";
-export { TocPills } from "./TocPills";
+export { TocPills, type TocItem } from "./TocPills";
+export { ARTICLE_IDS, sectionId } from "./utils";
 export { NumberedSection } from "./NumberedSection";
 export { DashList } from "./DashList";
 export { ComparisonTable } from "./ComparisonTable";
