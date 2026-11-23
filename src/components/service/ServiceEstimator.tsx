@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { calculatorForService } from "@/data/content/calculators";
+import { isLivePath } from "@/data/pages";
 import { CalculatorTool } from "@/components/calculators/CalculatorTool";
 import { ArrowIcon } from "@/components/ui/Icons";
 
@@ -23,9 +24,11 @@ export function ServiceEstimator({ path, name }: { path: string; name: string })
             <h2 id="estimate-heading">{heading[calculator.tool.kind](name)}</h2>
             <p className="mt-3 text-lg text-muted">{calculator.summary}</p>
           </div>
-          <Link href={calculator.path} className="inline-flex shrink-0 items-center gap-1 font-semibold text-primary underline decoration-accent decoration-2 underline-offset-4">
-            How this calculator works <ArrowIcon />
-          </Link>
+          {isLivePath(calculator.path) && (
+            <Link href={calculator.path} className="inline-flex shrink-0 items-center gap-1 font-semibold text-primary underline decoration-accent decoration-2 underline-offset-4">
+              How this calculator works <ArrowIcon />
+            </Link>
+          )}
         </div>
         <CalculatorTool calculator={calculator} nested />
       </div>

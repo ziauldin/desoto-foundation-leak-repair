@@ -6,6 +6,63 @@ import type { Crumb, FAQ } from "@/types/content";
 type Json = Record<string, unknown>;
 
 const businessId = absoluteUrl("/#business");
+const organizationId = absoluteUrl("/#organization");
+const websiteId = absoluteUrl("/#website");
+
+const postalAddress = {
+  "@type": "PostalAddress",
+  streetAddress: site.address.street,
+  addressLocality: site.address.city,
+  addressRegion: site.address.state,
+  postalCode: site.address.zip,
+  addressCountry: "US",
+};
+
+const parentOrganization = {
+  "@type": "Organization",
+  name: site.parentCompany.legalName,
+  url: site.parentCompany.url,
+};
+
+/** The brand behind the site. Rendered once, site-wide, from the root layout. */
+export function organizationSchema(): Json {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": organizationId,
+    name: site.name,
+    url: absoluteUrl("/"),
+    logo: { "@type": "ImageObject", url: absoluteUrl("/logo.png"), width: 512, height: 512 },
+    email: site.email,
+    telephone: site.phoneHref.replace("tel:", ""),
+    address: postalAddress,
+    sameAs: site.social.map((s) => s.href),
+    parentOrganization,
+  };
+}
+
+/** The website entity. No SearchAction: the site has no search results page. */
+export function websiteSchema(): Json {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": websiteId,
+    name: site.name,
+    url: absoluteUrl("/"),
+    publisher: { "@id": organizationId },
+    inLanguage: "en-US",
+  };
+}
+
+/** Combines several schema objects into one @graph block (one <script>, shared @context). */
+export function graphSchema(items: (Json | null)[]): Json {
+  return {
+    "@context": "https://schema.org",
+    "@graph": items
+      .filter((i): i is Json => Boolean(i))
+      .map((item) => Object.fromEntries(Object.entries(item).filter(([key]) => key !== "@context"))),
+  };
+}
 
 const areaServed = [
   {
@@ -27,14 +84,9 @@ export function localBusinessSchema(): Json {
     telephone: site.phoneHref.replace("tel:", ""),
     email: site.email,
     sameAs: site.social.map((s) => s.href),
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: site.address.street,
-      addressLocality: site.address.city,
-      addressRegion: site.address.state,
-      postalCode: site.address.zip,
-      addressCountry: "US",
-    },
+    address: postalAddress,
+    // The DeSoto service brand belongs to the site Organization, which is run by the parent company.
+    parentOrganization: { "@id": organizationId },
     description: `${site.tagline}.`,
     areaServed,
     geo: { "@type": "GeoCoordinates", ...site.geo },
@@ -88,15 +140,28 @@ export function faqSchema(faqs: FAQ[]): Json | null {
   };
 }
 
-export function articleSchema(input: { headline: string; description: string; path: string }): Json {
+export function articleSchema(input: {
+  headline: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  dateModified: string;
+  /** Site-relative image paths. */
+  images: string[];
+}): Json {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: input.headline,
     description: input.description,
-    mainEntityOfPage: absoluteUrl(input.path),
-    publisher: { "@id": businessId },
-    author: { "@type": "Organization", name: site.name, url: absoluteUrl("/about/") },
+    mainEntityOfPage: { "@type": "WebPage", "@id": absoluteUrl(input.path) },
+    image: input.images.map((src) => absoluteUrl(src)),
+    datePublished: input.datePublished,
+    dateModified: input.dateModified,
+    inLanguage: "en-US",
+    isPartOf: { "@id": websiteId },
+    publisher: { "@id": organizationId },
+    author: { "@type": "Organization", "@id": organizationId, name: site.name, url: absoluteUrl("/about/#team") },
   };
 }
 

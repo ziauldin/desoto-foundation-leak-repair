@@ -69,6 +69,11 @@ export function ServiceAreaDirectory({ page }: { page: PageRecord }) {
                 Services
               </a>
             </li>
+            <li>
+              <Link href="/sitemap/" className="block rounded-md px-3 py-2 text-sm font-semibold text-primary underline hover:bg-surface-alt">
+                Full site map
+              </Link>
+            </li>
           </ul>
         </nav>
 

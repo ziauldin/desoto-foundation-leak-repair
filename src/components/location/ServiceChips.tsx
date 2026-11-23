@@ -2,11 +2,11 @@ import Link from "next/link";
 import { linkLabel } from "@/data/pages";
 
 /** Services available here, as large chips. */
-export function ServiceChips({ areaName, focus, more }: { areaName: string; focus: string[]; more: string[] }) {
+export function ServiceChips({ heading, focus, more }: { heading: string; focus: string[]; more: string[] }) {
   return (
     <section aria-labelledby="services-heading" className="py-14 sm:py-20">
       <div className="container-site">
-        <h2 id="services-heading">Services in {areaName}</h2>
+        <h2 id="services-heading">{heading}</h2>
         <ul className="mt-8 flex flex-wrap gap-3">
           {focus.map((p, i) => (
             <li key={p} data-reveal="scale" style={{ "--i": i } as React.CSSProperties}>

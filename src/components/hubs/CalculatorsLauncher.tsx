@@ -1,10 +1,12 @@
 import Link from "next/link";
-import { calculatorPaths, calculatorsByPath, linkLabel } from "@/data/pages";
+import { calculatorPaths, calculatorsByPath, isLivePath, linkLabel } from "@/data/pages";
 import { breadcrumbSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { CalcIcon } from "@/components/ui/Icons";
 import type { Crumb } from "@/types/content";
+
+const COST_GUIDE = "/foundation-repair-cost-desoto-tx/";
 
 const kindLabel = { cost: "Cost estimate", checklist: "Checklist", "crack-width": "Measurement", "drainage-slope": "Measurement" } as const;
 
@@ -26,7 +28,7 @@ export function CalculatorsLauncher({ crumbs }: { crumbs: Crumb[] }) {
       </section>
       <section aria-label="Tools" className="container-site -mt-6 pb-16">
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {calculatorPaths.map((p, i) => {
+          {calculatorPaths.filter(isLivePath).map((p, i) => {
             const calc = calculatorsByPath.get(p);
             return (
               <li key={p} data-reveal style={{ "--i": i } as React.CSSProperties}>
@@ -46,11 +48,17 @@ export function CalculatorsLauncher({ crumbs }: { crumbs: Crumb[] }) {
           })}
         </ul>
         <p className="mt-10 text-center text-muted">
-          Want the numbers explained? Read the{" "}
-          <Link href="/foundation-repair-cost-desoto-tx/" className="font-semibold text-primary underline">
-            DeSoto foundation repair cost guide
-          </Link>{" "}
-          or{" "}
+          {isLivePath(COST_GUIDE) ? (
+            <>
+              Want the numbers explained? Read the{" "}
+              <Link href={COST_GUIDE} className="font-semibold text-primary underline">
+                DeSoto foundation repair cost guide
+              </Link>{" "}
+              or{" "}
+            </>
+          ) : (
+            "Questions about your results? You can "
+          )}
           <Link href="/contact/" className="font-semibold text-primary underline">
             request an inspection
           </Link>

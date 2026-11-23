@@ -4,7 +4,7 @@ import type { SiteImage as SiteImageData } from "@/data/images";
 import { SiteImage } from "@/components/ui/SiteImage";
 
 /** Intro copy + definition-list fact sheet. */
-export function AreaFactSheet({ content, image }: { content: LocationContent; image: SiteImageData }) {
+export function AreaFactSheet({ content, image, heading }: { content: LocationContent; image: SiteImageData; heading: string }) {
   const facts: [string, string][] = [
     ["Area", content.areaName],
     ["City", `${site.city}, ${site.state} (${site.county})`],
@@ -16,7 +16,7 @@ export function AreaFactSheet({ content, image }: { content: LocationContent; im
     <section aria-labelledby="overview-heading" className="py-14 sm:py-20">
       <div className="container-site grid gap-12 lg:grid-cols-[1.5fr_1fr]">
         <div data-reveal>
-          <h2 id="overview-heading">Foundation and leak repair in {content.areaName}</h2>
+          <h2 id="overview-heading">{heading}</h2>
           <div className="prose-site mt-5 space-y-4 text-lg">
             {content.intro.map((p, i) => (
               <p key={i}>{p}</p>

@@ -1,15 +1,16 @@
 import { site } from "@/config/site";
-import { generalFaqs } from "@/data/faqs";
+import { contactFaqs } from "@/data/faqs";
 import { breadcrumbSchema, faqSchema, localBusinessSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { PhoneIcon } from "@/components/ui/Icons";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { ContactGuide } from "@/components/hubs/ContactGuide";
 import Link from "next/link";
 import { linkLabel } from "@/data/pages";
 import type { PageRecord } from "@/types/content";
 
-const faqs = generalFaqs.slice(1, 4);
+const faqs = contactFaqs;
 const linkGroups = [
   { paths: ["/foundation-inspection-desoto-tx/", "/signs-of-foundation-leak/", "/foundation-repair-vs-replacement/"] },
   { paths: ["/foundation-leak-repair-desoto/", "/emergency-foundation-leak-repair-desoto-tx/", "/service-area/"] },
@@ -65,6 +66,7 @@ export function ContactPanel({ page }: { page: PageRecord }) {
           <ContactForm />
         </div>
       </section>
+      <ContactGuide />
       <section aria-label="Other ways to start" className="container-site grid gap-10 py-14 lg:grid-cols-[1fr_1.4fr]">
         <div>
           <h2 className="text-2xl!">Not ready to call?</h2>
@@ -79,7 +81,7 @@ export function ContactPanel({ page }: { page: PageRecord }) {
           </ul>
         </div>
         <div id="faq">
-          <h2 className="text-2xl!">Before you call</h2>
+          <h2 className="text-2xl!">Contact questions</h2>
           <div className="mt-4 space-y-4">
             {faqs.map((f) => (
               <div key={f.question} className="rounded-md bg-surface p-5 ring-1 ring-border">

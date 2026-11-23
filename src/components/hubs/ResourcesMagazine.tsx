@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { linkLabel, linkSummary, resourcePaths, resourcesByPath } from "@/data/pages";
+import { isLivePath, linkLabel, linkSummary, resourcePaths, resourcesByPath } from "@/data/pages";
 import { breadcrumbSchema } from "@/lib/schema";
 import type { ResourceCategory } from "@/types/content";
 import { imageForPath } from "@/data/images";
@@ -16,9 +16,16 @@ const categories: { id: ResourceCategory; title: string }[] = [
 
 const FEATURED = "/signs-of-foundation-leak/";
 
+// Tailwind needs literal class names, so the column count maps to a fixed class.
+const gridCols: Record<number, string> = { 1: "", 2: "md:grid-cols-2", 3: "md:grid-cols-3" };
+
 /** Magazine index: featured story, category columns and a tools rail. Used only by this hub. */
 export function ResourcesMagazine({ page }: { page: PageRecord }) {
-  const rest = resourcePaths.filter((p) => p !== FEATURED);
+  // Hidden guides (isHidden in data/pages.ts) are never listed; empty categories are dropped entirely.
+  const rest = resourcePaths.filter((p) => p !== FEATURED && isLivePath(p));
+  const columns = categories
+    .map((cat) => ({ ...cat, items: rest.filter((p) => resourcesByPath.get(p)?.category === cat.id) }))
+    .filter((cat) => cat.items.length > 0);
   return (
     <>
       <JsonLd data={[breadcrumbSchema(page.breadcrumbs)]} />
@@ -26,7 +33,7 @@ export function ResourcesMagazine({ page }: { page: PageRecord }) {
         <Breadcrumbs crumbs={page.breadcrumbs} />
         <div className="mt-6 flex flex-col justify-between gap-4 border-b-2 border-primary-dark pb-6 md:flex-row md:items-end">
           <h1 className="text-[clamp(2.4rem,1.6rem+3vw,4rem)]!">{page.h1}</h1>
-          <p className="max-w-sm text-muted">Plain-English guides to foundation leaks, cracks, drainage and repair costs on North Texas clay.</p>
+          <p className="max-w-sm text-muted">Plain-English guides to foundation leaks, cracks, drainage and repair choices on North Texas clay.</p>
         </div>
       </header>
 
@@ -45,23 +52,21 @@ export function ResourcesMagazine({ page }: { page: PageRecord }) {
       </section>
 
       <div className="container-site grid gap-12 pb-16 lg:grid-cols-[1fr_18rem]">
-        <div className="grid gap-10 md:grid-cols-3">
-          {categories.map((cat) => (
+        <div className={`grid gap-10 ${gridCols[columns.length] ?? "md:grid-cols-3"}`}>
+          {columns.map((cat) => (
             <section key={cat.id} data-reveal id={cat.id} aria-labelledby={`${cat.id}-h`} className="scroll-mt-28">
               <h2 id={`${cat.id}-h`} className="border-t-4 border-accent pt-3 text-xl!">
                 {cat.title}
               </h2>
               <ul className="mt-4 space-y-5">
-                {rest
-                  .filter((p) => resourcesByPath.get(p)?.category === cat.id)
-                  .map((p) => (
-                    <li key={p}>
-                      <Link href={p} className="font-display text-lg font-semibold leading-snug text-primary-dark hover:text-primary hover:underline">
-                        {linkLabel(p)}
-                      </Link>
-                      <p className="mt-1 line-clamp-3 text-sm text-muted">{linkSummary(p)}</p>
-                    </li>
-                  ))}
+                {cat.items.map((p) => (
+                  <li key={p}>
+                    <Link href={p} className="font-display text-lg font-semibold leading-snug text-primary-dark hover:text-primary hover:underline">
+                      {linkLabel(p)}
+                    </Link>
+                    <p className="mt-1 line-clamp-3 text-sm text-muted">{linkSummary(p)}</p>
+                  </li>
+                ))}
               </ul>
             </section>
           ))}
@@ -74,6 +79,13 @@ export function ResourcesMagazine({ page }: { page: PageRecord }) {
           <Link href="/contact/" data-contact-popup className="mt-6 block rounded-md bg-primary px-4 py-3 text-center font-display font-semibold text-white hover:bg-primary-dark">
             Request an inspection
           </Link>
+          <p className="mt-4 text-sm text-muted">
+            Looking for a service or neighborhood instead? See the{" "}
+            <Link href="/sitemap/" className="font-semibold text-primary underline">
+              full site map
+            </Link>
+            .
+          </p>
         </aside>
       </div>
     </>

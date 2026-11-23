@@ -112,9 +112,30 @@ export interface ResourceContent {
   primaryCalculator: string;
   faqs: FAQ[];
   ctaType: CtaType;
+  /** ISO date first published. Defaults to RESOURCES_PUBLISHED in content/resources.ts. */
+  datePublished?: string;
+  /** ISO date of the last meaningful content change. Defaults to RESOURCES_UPDATED. */
+  dateModified?: string;
 }
 
 export type LocationKind = "city" | "city-service" | "zip" | "neighborhood" | "direction";
+
+/**
+ * Optional H2 overrides for a location page. The ten city × service pages all have areaName "DeSoto TX",
+ * so without these every one of them would share the same section headings.
+ */
+export interface LocationHeadings {
+  /** Intro section. Default: "Foundation and leak repair in {areaName}". */
+  overview?: string;
+  /** Local factors. Default: "What affects foundations in {areaName}". */
+  conditions?: string;
+  /** Service chips. Default: "Services in {areaName}". */
+  services?: string;
+  /** Booking form. Default: "Book an inspection in {areaName}". */
+  booking?: string;
+  /** FAQ. Default: "{areaName} foundation questions". */
+  faq?: string;
+}
 
 /** Starter copy for DeSoto-only location pages, keyed by path. */
 export interface LocationContent {
@@ -137,6 +158,8 @@ export interface LocationContent {
   /** Optional overrides so location pages don't duplicate service-page titles/H1s. */
   seoTitleOverride?: string;
   h1Override?: string;
+  /** Optional section H2 overrides (see LocationHeadings). */
+  headings?: LocationHeadings;
 }
 
 // ---- Calculators -------------------------------------------------------------

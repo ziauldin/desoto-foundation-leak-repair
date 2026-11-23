@@ -8,16 +8,20 @@ import { SiteImage } from "@/components/ui/SiteImage";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { ButtonLink } from "@/components/ui/Button";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
+import { TestimonialSection } from "@/components/home/TestimonialSection";
 import { TeamSection } from "@/components/hubs/TeamSection";
+import { CredentialBadges, OurStory, TeamPhotos, WhatWeDo } from "@/components/about/AboutSections";
+import { AboutContact } from "@/components/about/AboutContact";
 import type { PageRecord } from "@/types/content";
 
+// Approach, not unverifiable claims. Confirmed history (site.foundedYear / site.aboutStory) is added above it.
 const story = [
-  `${site.name} exists for homeowners in DeSoto who want a straight answer about their foundation. Foundation work around here is mostly about water: expansive clay that swells after a storm and shrinks in August, plumbing lines under slabs, and yards that drain toward the house instead of away from it.`,
-  "Working in one city means we know how DeSoto homes were built, from the 1970s brick ranches near Hampton Rd to the newer subdivisions, and we can get to you without a long drive across the metroplex.",
+  "Foundation work around DeSoto is mostly about water: expansive clay that swells after a storm and shrinks in August, plumbing lines under slabs, and yards that drain toward the house instead of away from it.",
+  "Working in one city means we know how DeSoto homes were built, from the 1970s brick ranches near Hampton Rd to the newer subdivisions, and we can get to you without a long drive.",
   "Our approach is simple: check for leaks and drainage problems first, measure the slab instead of guessing, write down what we found, and recommend the smallest repair that actually solves the problem.",
 ];
 
-/** Long-form story layout with a pull quote and principles. Used only by this page. */
+/** About page: who we are, what we do, story, trust, team, contact details and outside profiles. */
 export function AboutStory({ page }: { page: PageRecord }) {
   return (
     <>
@@ -34,16 +38,41 @@ export function AboutStory({ page }: { page: PageRecord }) {
               <SiteImage image={images.brickHome} eager sizes="(min-width: 1024px) 40vw, 100vw" />
             </figure>
           </div>
-          <div className="space-y-5 text-lg leading-relaxed">
-            {story.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
+          <section id="who-we-are" aria-labelledby="who-we-are-h" className="space-y-5 text-lg leading-relaxed">
+            <h2 id="who-we-are-h">Who we are</h2>
+            <p>
+              {site.name} handles foundation leak repair and foundation repair for homes and small buildings in {site.city},{" "}
+              {site.state}, and nowhere else. Both of our ZIP codes, {site.zips.join(" and ")}, sit inside {site.county}.
+            </p>
+            <p>
+              The work booked through this site is carried out by{" "}
+              <a href={site.parentCompany.url} target="_blank" rel="noopener" className="font-semibold text-primary underline">
+                {site.parentCompany.legalName}
+              </a>
+              , a local foundation repair company based at {site.address.street} in {site.address.city}. Inspections, written
+              estimates and repairs all come from that one company.
+            </p>
+            <p>
+              Questions before you book? Call{" "}
+              <a href={site.phoneHref} className="font-semibold text-primary underline">
+                {site.phoneDisplay}
+              </a>{" "}
+              or see{" "}
+              <a href="#contact-details" className="font-semibold text-primary underline">
+                where to reach us
+              </a>
+              .
+            </p>
+          </section>
         </div>
       </div>
 
-      <WhyChooseUs />
+      <WhatWeDo />
+      <OurStory paragraphs={story} />
+      <WhyChooseUs title="Why homeowners trust us" extra={<CredentialBadges />} />
       <TeamSection />
+      <TeamPhotos />
+      <TestimonialSection />
 
       <section aria-labelledby="visit-h" className="py-14 sm:py-20">
         <div className="container-site grid gap-10 lg:grid-cols-2">
@@ -57,6 +86,8 @@ export function AboutStory({ page }: { page: PageRecord }) {
           </ol>
         </div>
       </section>
+
+      <AboutContact />
 
       <section aria-label="Next steps" className="border-t border-border bg-surface-alt py-12">
         <div className="container-site flex flex-col justify-between gap-6 md:flex-row md:items-center">
@@ -72,6 +103,10 @@ export function AboutStory({ page }: { page: PageRecord }) {
             pages, or see the{" "}
             <Link href="/service-area/" className="font-semibold text-primary underline">
               DeSoto service area
+            </Link>
+            . Every page is listed on the{" "}
+            <Link href="/sitemap/" className="font-semibold text-primary underline">
+              site map
             </Link>
             .
           </p>

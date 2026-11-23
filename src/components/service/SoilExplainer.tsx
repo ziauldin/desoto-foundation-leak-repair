@@ -5,8 +5,8 @@ export function SoilExplainer({ paragraphs }: { paragraphs: string[] }) {
     <section aria-labelledby="why-heading" className="py-14 sm:py-20">
       <div className="container-site grid items-center gap-12 lg:grid-cols-2">
         <figure data-reveal="left" className="order-last rounded-xl border border-border bg-surface p-6 shadow-[var(--shadow-card)] lg:order-first">
-          <svg viewBox="0 0 400 230" className="w-full" role="img" aria-labelledby="soil-title">
-            <title id="soil-title">Expansive clay swells when wet and shrinks when dry, moving the slab</title>
+          {/* aria-label, not an SVG <title>: crawlers count any <title> in the body as a second page title. */}
+          <svg viewBox="0 0 400 230" className="w-full" role="img" aria-label="Expansive clay swells when wet and shrinks when dry, moving the slab">
             <rect x="0" y="130" width="400" height="100" className="fill-surface-alt" />
             <path d="M0 130 Q100 115 200 130 T400 130" className="fill-none stroke-secondary" strokeWidth="2" strokeDasharray="6 5" />
             <rect x="70" y="92" width="260" height="30" rx="2" className="fill-primary" />

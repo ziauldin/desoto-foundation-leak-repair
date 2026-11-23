@@ -1,4 +1,5 @@
 import type { TitledText } from "@/types/content";
+import type { SiteImage } from "./images";
 
 /**
  * "Why choose us" cards. These describe how the service works, not unverifiable claims.
@@ -28,11 +29,34 @@ export const whyCompare: { us: string; typical: string }[] = [
   { us: "Smallest repair that solves the problem", typical: "The biggest job that can be sold" },
 ];
 
+/** A license, insurance policy, warranty or membership the business can document. */
+export interface Credential {
+  label: string;
+  /** e.g. policy carrier, license number or warranty term, exactly as documented. */
+  detail?: string;
+  /** Link to a verification page or the written terms. */
+  href?: string;
+}
+
+// Credentials shown as badges on the About page. Each list renders only when it has entries.
+// Add an entry only when the business can show the document. Never guess.
+export const licenses: Credential[] = [];
+export const insurance: Credential[] = [];
+export const warranty: Credential[] = [];
+export const memberships: Credential[] = [];
+
+export interface TeamMember extends TitledText {
+  /** Real name, once the person agrees to be named. */
+  name?: string;
+  /** Real photo of that person. */
+  photo?: SiteImage;
+}
+
 /**
  * Crew roles for the About page team section. Roles only, no names: add real names and photos
  * here once the business supplies them, never invented ones.
  */
-export const teamRoles: TitledText[] = [
+export const teamRoles: TeamMember[] = [
   { title: "Foundation inspector", text: "Walks the house inside and out, takes elevation readings and writes up the findings and repair plan." },
   { title: "Leak detection technician", text: "Pressure-tests supply and drain lines and pinpoints slab leaks with acoustic and thermal tools." },
   { title: "Repair crew", text: "Installs piers, repairs cracks and drainage, then cleans up and records final elevations." },
