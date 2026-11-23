@@ -17,6 +17,13 @@ export const site = {
     { name: "Instagram", href: "https://www.instagram.com/desotofoundationleakrepair/" },
   ],
 
+  // The business that performs the work booked through this site (legal entity). Used in schema,
+  // the footer and the About page. Keep the wording identical everywhere by reading it from here.
+  parentCompany: {
+    legalName: "Star Foundation Repair LLC",
+    url: "https://desotofoundationrepairpros.com",
+  },
+
   // Street address of Star Foundation Repair LLC, confirmed by the site owner.
   address: { street: "305 Executive Way, Suite E", city: "DeSoto", state: "TX", zip: "75115" },
 

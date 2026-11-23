@@ -83,6 +83,17 @@ for (const [route, html] of pages) {
   if (!/<link rel="canonical"/.test(html)) errors.push(`${route}: missing canonical`);
   if (!/property="og:title"/.test(html)) errors.push(`${route}: missing og:title`);
   if (route !== "/" && !/"BreadcrumbList"/.test(html)) errors.push(`${route}: missing BreadcrumbList schema`);
+  // Structured data: Organization + WebSite on home (rendered site-wide by the layout); Article on guides.
+  if (route === "/" && !(/"@type":"Organization"/.test(html) && /"@type":"WebSite"/.test(html))) errors.push(`/: missing Organization or WebSite JSON-LD`);
+  if (/aria-label="In this guide"/.test(html)) {
+    const article = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+      .map((m) => { try { return JSON.parse(m[1]); } catch { return null; } })
+      .find((j) => j?.["@type"] === "Article");
+    if (!article) errors.push(`${route}: guide without Article JSON-LD`);
+    else for (const key of ["publisher", "datePublished", "dateModified", "mainEntityOfPage", "image", "author"]) {
+      if (!article[key]) errors.push(`${route}: Article JSON-LD missing ${key}`);
+    }
+  }
   if (/id="faq"/.test(html) && !/"FAQPage"/.test(html)) errors.push(`${route}: FAQ section without FAQPage schema`);
 
   // First H2 inside <main> (the footer's column headings are H2s too, so they're excluded).

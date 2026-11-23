@@ -1,6 +1,7 @@
 import type { PageRecord, ResourceContent } from "@/types/content";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { imageForPath } from "@/data/images";
+import { resourceDates } from "@/data/content/resources";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import {
@@ -23,6 +24,8 @@ import {
 /** Problem, cost-guide and comparison articles (editorial layout). */
 export function ProblemPageTemplate({ page, content }: { page: PageRecord; content: ResourceContent }) {
   const [lead, ...restIntro] = content.intro;
+  const dates = resourceDates(content);
+  const image = imageForPath(page.path);
   const midpoint = Math.ceil(content.sections.length / 2);
   // Every TOC id comes from the same source as the rendered section's id, in page order.
   const toc: TocItem[] = [
@@ -35,13 +38,20 @@ export function ProblemPageTemplate({ page, content }: { page: PageRecord; conte
     <>
       <JsonLd
         data={[
-          articleSchema({ headline: page.h1, description: page.metaDescription, path: page.path }),
+          articleSchema({
+            headline: page.h1,
+            description: page.metaDescription,
+            path: page.path,
+            datePublished: dates.published,
+            dateModified: dates.modified,
+            images: [image.src, "/og-default.png"],
+          }),
           breadcrumbSchema(page.breadcrumbs),
           faqSchema(content.faqs),
         ]}
       />
       <ScrollProgress />
-      <ArticleHeader h1={page.h1} crumbs={page.breadcrumbs} content={content} image={imageForPath(page.path)} />
+      <ArticleHeader h1={page.h1} crumbs={page.breadcrumbs} content={content} image={image} />
 
       <article className="py-12 sm:py-16">
         <div className="container-site">
