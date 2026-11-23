@@ -6,6 +6,10 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import type { SiteImage as SiteImageData } from "@/data/images";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { categoryLabel, readingMinutes } from "./utils";
+import { resourceDates } from "@/data/content/resources";
+
+const formatDate = (iso: string) =>
+  new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
 
 export function ArticleHeader({
   h1,
@@ -18,6 +22,7 @@ export function ArticleHeader({
   content: ResourceContent;
   image: SiteImageData;
 }) {
+  const dates = resourceDates(content);
   return (
     <header className="relative overflow-hidden border-b border-border bg-surface">
       <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border-[28px] border-accent-soft" />
@@ -36,13 +41,24 @@ export function ArticleHeader({
             <LogoMark className="h-10 w-10 shrink-0" />
             <p className="leading-snug">
               <span className="block font-semibold text-primary-dark">
-                By the{" "}
+                Written by the{" "}
                 <Link href="/about/#team" rel="author" className="underline decoration-accent decoration-2 underline-offset-4 hover:text-primary">
                   {site.name} team
                 </Link>
+                {site.reviewer && (
+                  <>
+                    {" "}
+                    <span aria-hidden="true">·</span> Reviewed by{" "}
+                    <Link href="/about/#team" className="underline decoration-accent decoration-2 underline-offset-4 hover:text-primary">
+                      {site.reviewer.name}
+                    </Link>
+                    , {site.reviewer.role}
+                  </>
+                )}
               </span>
               <span className="text-muted">
-                DeSoto, TX homeowner guide <span aria-hidden="true">·</span> {readingMinutes(content)} min read
+                Updated <time dateTime={dates.modified}>{formatDate(dates.modified)}</time> <span aria-hidden="true">·</span>{" "}
+                {readingMinutes(content)} min read
               </span>
             </p>
           </div>
