@@ -11,6 +11,8 @@ import { join, relative, sep } from "node:path";
 import { MAX_TITLE_CHARS, MAX_TITLE_PX, titlePixelWidth } from "./title-width.mjs";
 
 const root = join(process.cwd(), ".next", "server", "app");
+// Canonicals always point at the production domain (the audit crawled the vercel.app preview, which is expected).
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://desotofoundationleakrepair.com").replace(/\/$/, "");
 const OTHER_CITIES = [
   "Dallas, TX", "Cedar Hill", "Lancaster", "Duncanville", "Glenn Heights", "Red Oak", "Ovilla",
   "Grand Prairie", "Arlington", "Mansfield", "Midlothian", "Waxahachie", "Fort Worth", "Irving",
@@ -80,7 +82,11 @@ for (const [route, html] of pages) {
   if (!desc) errors.push(`${route}: missing meta description`);
   else if (desc.length < 70 || desc.length > 155) warn.push(`${route}: meta description is ${desc.length} chars (aim for 70-155)`);
   if (h1Count !== 1) errors.push(`${route}: expected 1 <h1>, found ${h1Count}`);
-  if (!/<link rel="canonical"/.test(html)) errors.push(`${route}: missing canonical`);
+  const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+  if (!canonical) errors.push(`${route}: missing canonical`);
+  else if (canonical !== `${SITE_URL}${route}`) errors.push(`${route}: canonical ${canonical} should be ${SITE_URL}${route}`);
+  // The site has no paginated listings; flag anything a crawler would read as pagination.
+  if (/rel="(next|prev)"/.test(html)) errors.push(`${route}: unexpected rel="next"/"prev" pagination link`);
   if (!/property="og:title"/.test(html)) errors.push(`${route}: missing og:title`);
   if (route !== "/" && !/"BreadcrumbList"/.test(html)) errors.push(`${route}: missing BreadcrumbList schema`);
   // Structured data: Organization + WebSite on home (rendered site-wide by the layout); Article on guides.
