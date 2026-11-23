@@ -36,7 +36,18 @@ DeSoto, TX-only rank-and-rent site for foundation leak repair and foundation rep
 2. Environment variables:
    - `NEXT_PUBLIC_SITE_URL`: `https://desotofoundationleakrepair.com`
    - `LEAD_WEBHOOK_URL` (optional): Zapier/Make/CRM webhook that receives each form lead as JSON. Without it, leads are only written to the Vercel function logs.
-3. Add the domain in Vercel and submit `/sitemap.xml` in Search Console.
+3. Domains (Project → Settings → Domains). This is what clears the audit's "preferred version" check; it can't be fixed in code:
+   - Add `desotofoundationleakrepair.com` and `www.desotofoundationleakrepair.com`.
+   - Make the apex (`desotofoundationleakrepair.com`) the primary domain.
+   - Set `www` to redirect to the apex with a **308 permanent** redirect.
+4. Submit `https://desotofoundationleakrepair.com/sitemap.xml` in Search Console.
+
+### Indexing guard (`next.config.ts`)
+
+- Every response gets `X-Robots-Tag: noindex, nofollow` unless the build runs with `VERCEL_ENV=production`, so preview deployments and local builds are never indexed.
+- Even in production, requests to any `*.vercel.app` host get the same header, so only the real domain is indexed.
+- Vercel sets `VERCEL_ENV` automatically. Don't set it yourself.
+- `/index.php` and `/index.html` redirect (308) to `/`.
 
 ## Before launch
 
