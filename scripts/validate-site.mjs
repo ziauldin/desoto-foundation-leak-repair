@@ -8,6 +8,7 @@
 //   - every <img> has alt text and every /images/ file exists
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative, sep } from "node:path";
+import { MAX_TITLE_CHARS, MAX_TITLE_PX, titlePixelWidth } from "./title-width.mjs";
 
 const root = join(process.cwd(), ".next", "server", "app");
 const OTHER_CITIES = [
@@ -61,7 +62,12 @@ for (const [route, html] of pages) {
   const h1 = decode((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1] ?? "").replace(/<[^>]+>/g, "").trim());
 
   if (!title) errors.push(`${route}: missing <title>`);
+  if (title.length > MAX_TITLE_CHARS) errors.push(`${route}: title is ${title.length} chars (max ${MAX_TITLE_CHARS}): "${title}"`);
+  const px = titlePixelWidth(title);
+  if (px > MAX_TITLE_PX) errors.push(`${route}: title is ~${px}px wide (max ${MAX_TITLE_PX}px, Arial 20px estimate): "${title}"`);
+  if (title && h1 && title.toLowerCase() === h1.toLowerCase()) errors.push(`${route}: title is identical to the H1 ("${title}")`);
   if (!desc) errors.push(`${route}: missing meta description`);
+  else if (desc.length < 70 || desc.length > 155) warn.push(`${route}: meta description is ${desc.length} chars (aim for 70-155)`);
   if (h1Count !== 1) errors.push(`${route}: expected 1 <h1>, found ${h1Count}`);
   if (!/<link rel="canonical"/.test(html)) errors.push(`${route}: missing canonical`);
   if (!/property="og:title"/.test(html)) errors.push(`${route}: missing og:title`);
