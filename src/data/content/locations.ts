@@ -278,7 +278,7 @@ export const locationContent: LocationContent[] = [
     summary:
       "What it means to hire a foundation repair company that works only in DeSoto, and the questions DeSoto homeowners should ask before signing anything.",
     intro: [
-      "Get three foundation repair quotes in DeSoto and you can end up with three different diagnoses for the same crack, because most companies split their time across the whole Dallas-Fort Worth area instead of learning one city's soil. A crew that works only in DeSoto sees the same clay soil, the same drainage patterns and the same types of houses over and over. That makes it easier to recognize when a crack is seasonal, when a leak is the real cause and when a home actually needs piers.",
+      "Get three foundation repair quotes in DeSoto and you can end up with three different diagnoses for the same crack, because most companies split their time across a whole metro area instead of learning one city's soil. A crew that works only in DeSoto sees the same clay soil, the same drainage patterns and the same types of houses over and over. That makes it easier to recognize when a crack is seasonal, when a leak is the real cause and when a home actually needs piers.",
       "We focus on DeSoto and nowhere else. That keeps the service area simple: if your property is in DeSoto, from the neighborhoods near I-35E to the homes along Westmoreland Rd and Cockrell Hill Rd, it is covered. It also means inspections can be scheduled around the city without long drive times eating into the day.",
       "This page is about choosing a provider, not the repair itself. For the full overview of how we work, see our main foundation repair company page. Below are local factors worth asking any company about.",
     ],
